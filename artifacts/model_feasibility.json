@@ -1,0 +1,67 @@
+{
+  "checked_utc": "2026-10-29",
+  "model": "XingChen-AGI/Xing4.0-29B-A4B",
+  "base_revision": "a32a2e99b5877c6b7ad16e9954ec08488bcc5fa2",
+  "gguf_revision": "195d1bd04080d73bdead6f40d8d7d1a8f43d5050",
+  "license_label": "apache-2.0",
+  "architecture": {
+    "model_type": "xing4_0",
+    "publisher_total_parameters_approx": 29000000000,
+    "publisher_active_parameters_per_token_approx": 4000000000,
+    "bf16_weight_bytes": 62438573536,
+    "layers": 40,
+    "first_dense_layers": 2,
+    "hidden_size": 3584,
+    "attention_heads": 32,
+    "kv_heads_reference": 32,
+    "kv_lora_rank": 512,
+    "rope_head_dim": 64,
+    "routed_experts": 64,
+    "experts_selected_per_token": 4,
+    "shared_experts": 1,
+    "hc_mult": 4,
+    "native_config_context_tokens": 262144
+  },
+  "host": {
+    "os": "Amazon Linux 2023.12.20261028",
+    "physical_ram_bytes": 8157741056,
+    "active_swap_bytes": 21474832384,
+    "root_free_bytes_at_stage1": 81959718912,
+    "cpu_threads": 2,
+    "gpu_detected": false,
+    "swappiness": 200,
+    "initial_model_resident_budget_gib": 4.5
+  },
+  "weights": [
+    {"format": "BF16 safetensors", "bytes": 62438573536, "near_full_residency_host_gib": 62.7, "classification": "Impractical on target hardware"},
+    {"format": "FP8 repository", "approx_bytes": 33200000000, "near_full_residency_host_gib_approx": 34.0, "classification": "Impractical on target hardware"},
+    {"format": "GGUF IQ2_M-slim", "bytes": 11800813760, "near_full_residency_host_gib": 14.08, "classification": "Plausible but unverified"},
+    {"format": "GGUF IQ3_XXS", "bytes": 13989927648, "near_full_residency_host_gib": 16.12, "classification": "Plausible but unverified"},
+    {"format": "GGUF IQ3_M", "bytes": 15446399712, "near_full_residency_host_gib": 17.48, "classification": "Plausible but unverified"},
+    {"format": "GGUF IQ4_XS", "bytes": 18272862944, "near_full_residency_host_gib": 20.11, "classification": "Impractical on target hardware"},
+    {"format": "GGUF IQ4_NL", "bytes": 20104012544, "near_full_residency_host_gib": 21.81, "classification": "Impractical on target hardware"}
+  ],
+  "kv_cache_bytes_per_token_f16": {
+    "compressed_mla_k_only_lower_bound": 46080,
+    "compressed_mla_k_plus_separate_v": 87040,
+    "transformers_expanded_k_plus_v": 819200
+  },
+  "runtime_temporary_overhead_gib_estimate": [0.5, 2.0],
+  "throughput": "Unmeasured; possible sub-token/s behavior under major page-fault thrashing",
+  "options": [
+    {"name": "stock llama.cpp", "classification": "Unsupported"},
+    {"name": "pinned Xing4.0 llama.cpp CPU port", "classification": "Plausible but unverified"},
+    {"name": "Transformers custom code BF16", "classification": "Impractical on target hardware"},
+    {"name": "vLLM Xing4 plugin", "architecture_classification": "Confirmed compatible", "host_classification": "Impractical on target hardware"},
+    {"name": "SGLang Xing4 plugin", "architecture_classification": "Confirmed compatible", "host_classification": "Impractical on target hardware"}
+  ],
+  "recommended_next_experiment": "After review, compile pinned Xing4.0 CPU port without weights and validate infrastructure with Qwen2.5-Coder-1.5B-Instruct Q4_K_M GGUF before one Xing4.0 quant download.",
+  "weights_downloaded": false,
+  "sources": [
+    "https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B/tree/a32a2e99b5877c6b7ad16e9954ec08488bcc5fa2",
+    "https://huggingface.co/api/models/XingChen-AGI/Xing4.0-29B-A4B-GGUF?blobs=true",
+    "https://github.com/ggml-org/llama.cpp/pull/29012",
+    "https://github.com/XingChen-AGI/xing4-vllm-plugin",
+    "https://github.com/XingChen-AGI/xing4-sglang-plugin"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "case": "boundary",
+  "context_tokens": 1024,
+  "generation_limit_tokens": 192,
+  "thinking": false,
+  "results": [],
+  "status": "failed",
+  "error": "timed out",
+  "peak_rss_mib": 4088.2,
+  "peak_anonymous_mib": 1744.1,
+  "peak_process_swap_mib": 0.0,
+  "peak_system_swap_mib": 135.0,
+  "min_available_ram_mib": 5511.2,
+  "peak_cgroup_memory_full_avg10": 0.65,
+  "engine_log_tail": [
+    "7.03.288.604 I slot print_timing: id  0 | task 0 | n_gen =    168, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "7.07.201.791 I slot print_timing: id  0 | task 0 | n_gen =    170, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "7.11.063.153 I slot print_timing: id  0 | task 0 | n_gen =    172, tg =   0.52 t/s, tg_3s =   0.52 t/s",
+    "7.14.790.601 I slot print_timing: id  0 | task 0 | n_gen =    174, tg =   0.52 t/s, tg_3s =   0.54 t/s",
+    "7.18.783.136 I slot print_timing: id  0 | task 0 | n_gen =    176, tg =   0.52 t/s, tg_3s =   0.50 t/s",
+    "7.22.685.486 I slot print_timing: id  0 | task 0 | n_gen =    178, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "7.26.589.895 I slot print_timing: id  0 | task 0 | n_gen =    180, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "7.30.483.834 I slot print_timing: id  0 | task 0 | n_gen =    182, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "7.34.378.230 I slot print_timing: id  0 | task 0 | n_gen =    184, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "7.37.962.718 W srv          stop: cancel task, id_task = 0",
+    "7.38.009.592 I slot print_timing: id  0 | task 0 | n_gen =    186, tg =   0.52 t/s, tg_3s =   0.55 t/s",
+    "7.38.059.601 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

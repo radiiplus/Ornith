@@ -1,0 +1,84 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": false,
+  "tool_assisted": true,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Response must be a JSON object with only expression",
+          "content": "```json\n{\"answer\": \"((1/6+1/4-1/12)*2+(1/6-1/12)*1)\"}\n```",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 114.78,
+          "usage": {
+            "completion_tokens": 38,
+            "prompt_tokens": 155,
+            "total_tokens": 193,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "answer": "((1/6 + 1/4 - 1/12) * 2 + (1/6 - 1/12)) * 1",
+          "normalized_answer": "3/4",
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": false,
+          "feedback": "Objective reached with exact calculator",
+          "content": "```json\n{\"expression\": \"((1/6 + 1/4 - 1/12) * 2 + (1/6 - 1/12)) * 1\"}\n```",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 113.91,
+          "usage": {
+            "completion_tokens": 45,
+            "prompt_tokens": 176,
+            "total_tokens": 221,
+            "prompt_tokens_details": {
+              "cached_tokens": 87
+            }
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 4087.6,
+  "peak_anonymous_mib": 1794.5,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 5414.9,
+  "peak_cgroup_memory_full_avg10": 0.47,
+  "quality_passed": true,
+  "engine_log_tail": [
+    "2.32.075.715 I slot      release: id  0 | task 0 | stop processing: n_tokens = 192, truncated = 0",
+    "2.32.079.910 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.830 (> 0.100 thold), f_keep = 0.760",
+    "2.32.079.973 I slot launch_slot_: id  0 | task 42 | processing task, is_child = 0",
+    "2.39.882.242 I slot print_timing: id  0 | task 42 | prompt processing, n_tokens =     21, progress = 0.61, t =   7.80 s / 2.69 tokens per second",
+    "2.53.694.754 I slot print_timing: id  0 | task 42 | prompt processing, n_tokens =     85, progress = 0.98, t =  21.61 s / 3.93 tokens per second",
+    "4.25.989.931 I slot print_timing: id  0 | task 42 | prompt eval time =   27824.41 ms /    89 tokens (  312.63 ms per token,     3.20 tokens per second)",
+    "4.25.989.936 I slot print_timing: id  0 | task 42 |        eval time =   86085.51 ms /    45 tokens ( 1956.49 ms per token,     0.51 tokens per second)",
+    "4.25.989.937 I slot print_timing: id  0 | task 42 |       total time =  113909.92 ms /   134 tokens",
+    "4.25.989.939 I slot print_timing: id  0 | task 42 |    graphs reused =         79",
+    "4.25.989.940 I slot print_timing: id  0 | task 42 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "4.25.989.992 I slot      release: id  0 | task 42 | stop processing: n_tokens = 220, truncated = 0",
+    "4.25.992.234 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

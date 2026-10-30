@@ -1,0 +1,594 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "phases": [
+    {
+      "phase": "initial",
+      "status": "needs_review",
+      "detail": "Patch tested in staging only",
+      "model_calls": 0,
+      "model_prompt": null,
+      "model_metrics": null,
+      "streamed_chunks": 0,
+      "stream_trace": [],
+      "reasoning_preview": "",
+      "test_runs": 2,
+      "replayed": false,
+      "context_index_reused": false,
+      "patch": "[{\"new\": \"    return text.lower().replace(\\\" \\\", \\\"-\\\")\", \"old\": \"    return text.lower().replace(\\\" \\\", \\\"_\\\")\", \"path\": \"slug.py\"}]"
+    },
+    {
+      "phase": "replay",
+      "status": "needs_review",
+      "detail": "Patch tested in staging only",
+      "model_calls": 0,
+      "model_prompt": null,
+      "model_metrics": null,
+      "streamed_chunks": 0,
+      "stream_trace": [],
+      "reasoning_preview": "",
+      "test_runs": 2,
+      "replayed": true,
+      "context_index_reused": true,
+      "patch": "[{\"new\": \"    return text.lower().replace(\\\" \\\", \\\"-\\\")\", \"old\": \"    return text.lower().replace(\\\" \\\", \\\"_\\\")\", \"path\": \"slug.py\"}]"
+    },
+    {
+      "phase": "memory_guided",
+      "status": "needs_review",
+      "detail": "Patch tested in staging only",
+      "model_calls": 1,
+      "model_prompt": {
+        "chars": 1587,
+        "has_verified_memory": true
+      },
+      "model_metrics": {
+        "request_seconds": 295.68,
+        "time_to_first_chunk_seconds": 94.38,
+        "prompt_tokens": 407,
+        "completion_tokens": 105,
+        "generation_tps": 0.517,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      },
+      "streamed_chunks": 104,
+      "stream_trace": [
+        {
+          "seconds": 94.38,
+          "kind": "content",
+          "text": "```"
+        },
+        {
+          "seconds": 96.28,
+          "kind": "content",
+          "text": "json"
+        },
+        {
+          "seconds": 98.11,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 100.09,
+          "kind": "content",
+          "text": "{"
+        },
+        {
+          "seconds": 102.01,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 103.91,
+          "kind": "content",
+          "text": " "
+        },
+        {
+          "seconds": 105.88,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 107.79,
+          "kind": "content",
+          "text": "h"
+        },
+        {
+          "seconds": 109.79,
+          "kind": "content",
+          "text": "ypo"
+        },
+        {
+          "seconds": 111.68,
+          "kind": "content",
+          "text": "thesis"
+        },
+        {
+          "seconds": 113.51,
+          "kind": "content",
+          "text": "\":"
+        },
+        {
+          "seconds": 115.49,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 117.49,
+          "kind": "content",
+          "text": "Replacing"
+        },
+        {
+          "seconds": 119.48,
+          "kind": "content",
+          "text": " space"
+        },
+        {
+          "seconds": 121.41,
+          "kind": "content",
+          "text": " with"
+        },
+        {
+          "seconds": 123.32,
+          "kind": "content",
+          "text": " hy"
+        },
+        {
+          "seconds": 125.29,
+          "kind": "content",
+          "text": "phen"
+        },
+        {
+          "seconds": 127.21,
+          "kind": "content",
+          "text": " makes"
+        },
+        {
+          "seconds": 129.2,
+          "kind": "content",
+          "text": " the"
+        },
+        {
+          "seconds": 131.12,
+          "kind": "content",
+          "text": " test"
+        },
+        {
+          "seconds": 133.09,
+          "kind": "content",
+          "text": " pass"
+        },
+        {
+          "seconds": 135.18,
+          "kind": "content",
+          "text": ".\","
+        },
+        {
+          "seconds": 137.1,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 139.08,
+          "kind": "content",
+          "text": " "
+        },
+        {
+          "seconds": 141.08,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 142.9,
+          "kind": "content",
+          "text": "expected"
+        },
+        {
+          "seconds": 144.88,
+          "kind": "content",
+          "text": "\":"
+        },
+        {
+          "seconds": 146.88,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 148.78,
+          "kind": "content",
+          "text": "python"
+        },
+        {
+          "seconds": 150.7,
+          "kind": "content",
+          "text": "3"
+        },
+        {
+          "seconds": 152.59,
+          "kind": "content",
+          "text": " -"
+        },
+        {
+          "seconds": 154.58,
+          "kind": "content",
+          "text": "m"
+        },
+        {
+          "seconds": 156.49,
+          "kind": "content",
+          "text": " unittest"
+        },
+        {
+          "seconds": 158.4,
+          "kind": "content",
+          "text": " discover"
+        },
+        {
+          "seconds": 160.39,
+          "kind": "content",
+          "text": " -"
+        },
+        {
+          "seconds": 162.3,
+          "kind": "content",
+          "text": "s"
+        },
+        {
+          "seconds": 164.28,
+          "kind": "content",
+          "text": " tests"
+        },
+        {
+          "seconds": 166.2,
+          "kind": "content",
+          "text": " passes"
+        },
+        {
+          "seconds": 168.1,
+          "kind": "content",
+          "text": "\","
+        },
+        {
+          "seconds": 170.02,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 171.98,
+          "kind": "content",
+          "text": " "
+        },
+        {
+          "seconds": 173.91,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 175.88,
+          "kind": "content",
+          "text": "ed"
+        },
+        {
+          "seconds": 177.89,
+          "kind": "content",
+          "text": "its"
+        },
+        {
+          "seconds": 179.81,
+          "kind": "content",
+          "text": "\":"
+        },
+        {
+          "seconds": 181.7,
+          "kind": "content",
+          "text": " ["
+        },
+        {
+          "seconds": 183.59,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 185.52,
+          "kind": "content",
+          "text": "   "
+        },
+        {
+          "seconds": 187.49,
+          "kind": "content",
+          "text": " {"
+        },
+        {
+          "seconds": 189.39,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 191.31,
+          "kind": "content",
+          "text": "     "
+        },
+        {
+          "seconds": 193.21,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 195.18,
+          "kind": "content",
+          "text": "path"
+        },
+        {
+          "seconds": 197.01,
+          "kind": "content",
+          "text": "\":"
+        },
+        {
+          "seconds": 198.91,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 200.88,
+          "kind": "content",
+          "text": "slug"
+        },
+        {
+          "seconds": 202.79,
+          "kind": "content",
+          "text": ".py"
+        },
+        {
+          "seconds": 204.91,
+          "kind": "content",
+          "text": "\","
+        },
+        {
+          "seconds": 206.81,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 208.7,
+          "kind": "content",
+          "text": "     "
+        },
+        {
+          "seconds": 210.59,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 212.48,
+          "kind": "content",
+          "text": "old"
+        },
+        {
+          "seconds": 214.38,
+          "kind": "content",
+          "text": "\":"
+        },
+        {
+          "seconds": 216.29,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 218.29,
+          "kind": "content",
+          "text": "return"
+        },
+        {
+          "seconds": 220.18,
+          "kind": "content",
+          "text": " text"
+        },
+        {
+          "seconds": 222.1,
+          "kind": "content",
+          "text": ".lower"
+        },
+        {
+          "seconds": 224.08,
+          "kind": "content",
+          "text": "()."
+        },
+        {
+          "seconds": 225.99,
+          "kind": "content",
+          "text": "replace"
+        },
+        {
+          "seconds": 227.89,
+          "kind": "content",
+          "text": "(\\\""
+        },
+        {
+          "seconds": 229.87,
+          "kind": "content",
+          "text": " \\"
+        },
+        {
+          "seconds": 231.8,
+          "kind": "content",
+          "text": "\","
+        },
+        {
+          "seconds": 233.78,
+          "kind": "content",
+          "text": " \\\""
+        },
+        {
+          "seconds": 235.61,
+          "kind": "content",
+          "text": "_"
+        },
+        {
+          "seconds": 237.71,
+          "kind": "content",
+          "text": "\\\")"
+        },
+        {
+          "seconds": 239.68,
+          "kind": "content",
+          "text": "\","
+        },
+        {
+          "seconds": 241.6,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 243.57,
+          "kind": "content",
+          "text": "     "
+        },
+        {
+          "seconds": 245.42,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 247.39,
+          "kind": "content",
+          "text": "new"
+        },
+        {
+          "seconds": 249.28,
+          "kind": "content",
+          "text": "\":"
+        },
+        {
+          "seconds": 251.3,
+          "kind": "content",
+          "text": " \""
+        },
+        {
+          "seconds": 253.19,
+          "kind": "content",
+          "text": "return"
+        },
+        {
+          "seconds": 255.09,
+          "kind": "content",
+          "text": " text"
+        },
+        {
+          "seconds": 257.08,
+          "kind": "content",
+          "text": ".lower"
+        },
+        {
+          "seconds": 259.09,
+          "kind": "content",
+          "text": "()."
+        },
+        {
+          "seconds": 260.99,
+          "kind": "content",
+          "text": "replace"
+        },
+        {
+          "seconds": 262.88,
+          "kind": "content",
+          "text": "(\\\""
+        },
+        {
+          "seconds": 264.82,
+          "kind": "content",
+          "text": " \\"
+        },
+        {
+          "seconds": 266.79,
+          "kind": "content",
+          "text": "\","
+        },
+        {
+          "seconds": 268.71,
+          "kind": "content",
+          "text": " \\\""
+        },
+        {
+          "seconds": 270.61,
+          "kind": "content",
+          "text": "-\\"
+        },
+        {
+          "seconds": 272.58,
+          "kind": "content",
+          "text": "\")"
+        },
+        {
+          "seconds": 274.4,
+          "kind": "content",
+          "text": "\""
+        },
+        {
+          "seconds": 276.29,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 278.19,
+          "kind": "content",
+          "text": "   "
+        },
+        {
+          "seconds": 280.11,
+          "kind": "content",
+          "text": " }"
+        },
+        {
+          "seconds": 282.09,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 284.0,
+          "kind": "content",
+          "text": " "
+        },
+        {
+          "seconds": 286.0,
+          "kind": "content",
+          "text": " ]"
+        },
+        {
+          "seconds": 287.89,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 289.81,
+          "kind": "content",
+          "text": "}"
+        },
+        {
+          "seconds": 291.79,
+          "kind": "content",
+          "text": "\n"
+        },
+        {
+          "seconds": 293.69,
+          "kind": "content",
+          "text": "```"
+        }
+      ],
+      "reasoning_preview": "",
+      "test_runs": 2,
+      "replayed": false,
+      "context_index_reused": false,
+      "patch": "[{\"new\": \"return text.lower().replace(\\\" \\\", \\\"-\\\")\", \"old\": \"return text.lower().replace(\\\" \\\", \\\"_\\\")\", \"path\": \"slug.py\"}]"
+    }
+  ],
+  "status": "completed",
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "reused_server": false,
+  "seed_from": "artifacts/ornith-adaptive-eval.json",
+  "peak_rss_mib": 4086.3,
+  "peak_anonymous_mib": 1744.2,
+  "min_available_ram_mib": 5364.5,
+  "peak_cgroup_memory_full_avg10": 0.47,
+  "quality_passed": true
+}

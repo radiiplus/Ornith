@@ -1,0 +1,170 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "thinking": true,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "reused_server": false,
+  "source_chunks": [
+    {
+      "source": "incident.txt",
+      "ordinal": 0,
+      "chars": 256
+    },
+    {
+      "source": "incident.txt",
+      "ordinal": 1,
+      "chars": 124
+    }
+  ],
+  "stream": [
+    {
+      "seconds": 77.2,
+      "kind": "reasoning_content",
+      "text": "The"
+    },
+    {
+      "seconds": 79.11,
+      "kind": "reasoning_content",
+      "text": " user"
+    },
+    {
+      "seconds": 81.01,
+      "kind": "reasoning_content",
+      "text": " wants"
+    },
+    {
+      "seconds": 82.91,
+      "kind": "reasoning_content",
+      "text": " me"
+    },
+    {
+      "seconds": 84.8,
+      "kind": "reasoning_content",
+      "text": " to"
+    },
+    {
+      "seconds": 86.72,
+      "kind": "reasoning_content",
+      "text": " determine"
+    },
+    {
+      "seconds": 88.62,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 90.51,
+      "kind": "reasoning_content",
+      "text": " next"
+    },
+    {
+      "seconds": 92.41,
+      "kind": "reasoning_content",
+      "text": " action"
+    },
+    {
+      "seconds": 94.4,
+      "kind": "reasoning_content",
+      "text": " based"
+    },
+    {
+      "seconds": 96.3,
+      "kind": "reasoning_content",
+      "text": " on"
+    },
+    {
+      "seconds": 98.7,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 100.72,
+      "kind": "reasoning_content",
+      "text": " workflow"
+    },
+    {
+      "seconds": 102.61,
+      "kind": "reasoning_content",
+      "text": " and"
+    },
+    {
+      "seconds": 104.5,
+      "kind": "reasoning_content",
+      "text": " current"
+    },
+    {
+      "seconds": 106.41,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "seconds": 112.2,
+      "kind": "content",
+      "text": "{\""
+    },
+    {
+      "seconds": 114.22,
+      "kind": "content",
+      "text": "next"
+    },
+    {
+      "seconds": 116.13,
+      "kind": "content",
+      "text": "_action"
+    },
+    {
+      "seconds": 118.03,
+      "kind": "content",
+      "text": "\":"
+    },
+    {
+      "seconds": 119.9,
+      "kind": "content",
+      "text": " \""
+    },
+    {
+      "seconds": 121.74,
+      "kind": "content",
+      "text": "is"
+    },
+    {
+      "seconds": 123.62,
+      "kind": "content",
+      "text": "olate"
+    },
+    {
+      "seconds": 125.6,
+      "kind": "content",
+      "text": " the"
+    },
+    {
+      "seconds": 127.4,
+      "kind": "content",
+      "text": " service"
+    },
+    {
+      "seconds": 129.31,
+      "kind": "content",
+      "text": "\"}"
+    }
+  ],
+  "status": "completed",
+  "answer": "{\"next_action\": \"isolate the service\"}",
+  "model_metrics": {
+    "request_seconds": 94.32,
+    "time_to_first_chunk_seconds": 40.4,
+    "prompt_tokens": 143,
+    "completion_tokens": 29,
+    "generation_tps": 0.519,
+    "reasoning_chars": 81,
+    "finish_reason": "stop"
+  },
+  "answer_value": null,
+  "quality_passed": false,
+  "peak_rss_mib": 4086.8,
+  "peak_anonymous_mib": 1792.3,
+  "min_available_ram_mib": 5354.2,
+  "peak_cgroup_memory_full_avg10": 0.47
+}

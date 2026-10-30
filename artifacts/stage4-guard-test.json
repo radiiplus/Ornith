@@ -1,0 +1,152 @@
+{
+  "timestamp_utc": "2026-10-29T17:21:29.659426+00:00",
+  "engine": "llama.cpp Xing4.0 CPU port",
+  "engine_revision": "cba0325974f809ff8f2c07c39d2f2ec2a4173293",
+  "engine_binary": "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/llama-server",
+  "model": "/home/ec2-user/xing-specialist/models/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+  "model_revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361",
+  "model_quantization": "Q4_K_M",
+  "model_sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+  "model_bytes": 1117320768,
+  "context_tokens": 2048,
+  "generation_limit_tokens": 16,
+  "threads": 2,
+  "cpu_model": "Intel(R) Xeon(R) Platinum 8488C",
+  "cpu_logical_count": 2,
+  "os_release": "Amazon Linux 2023.12.20261028",
+  "software_versions": {
+    "python": "3.9.25",
+    "git": "git version 2.50.1",
+    "cmake": "cmake version 3.22.2",
+    "gcc": "gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)",
+    "engine": "version: 0.7.0-dev (build 1, commit cba0325)"
+  },
+  "pressure_mib": 0,
+  "max_anonymous_mib": 128,
+  "min_available_mib": 1024,
+  "max_swap_used_mib": 1024,
+  "load_mode": "auto",
+  "disk_free_bytes_before": 80126562304,
+  "runs": [],
+  "status": "failed",
+  "error": "Anonymous memory guard exceeded; engine stopped",
+  "samples": [
+    {
+      "rss_bytes": 1421312,
+      "rss_high_water_bytes": 1421312,
+      "virtual_bytes": 24903680,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 196608,
+      "file_pss_bytes": 1017856,
+      "anonymous_pss_bytes": 196608,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 0,
+      "mem_available_bytes": 7369785344,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "rss_bytes": 65388544,
+      "rss_high_water_bytes": 65388544,
+      "virtual_bytes": 295731200,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 51634176,
+      "file_pss_bytes": 10603520,
+      "anonymous_pss_bytes": 51634176,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 0,
+      "mem_available_bytes": 7312199680,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      ],
+      "seconds": 0.203
+    },
+    {
+      "rss_bytes": 60780544,
+      "rss_high_water_bytes": 70766592,
+      "virtual_bytes": 424411136,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 46247936,
+      "file_pss_bytes": 11381760,
+      "anonymous_pss_bytes": 46247936,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 0,
+      "mem_available_bytes": 7308398592,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      ],
+      "seconds": 0.405
+    },
+    {
+      "rss_bytes": 66297856,
+      "rss_high_water_bytes": 70766592,
+      "virtual_bytes": 564105216,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 51765248,
+      "file_pss_bytes": 11381760,
+      "anonymous_pss_bytes": 51765248,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 0,
+      "mem_available_bytes": 7308398592,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      ],
+      "seconds": 0.607
+    },
+    {
+      "rss_bytes": 1451782144,
+      "rss_high_water_bytes": 1451782144,
+      "virtual_bytes": 2694221824,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 353013760,
+      "file_pss_bytes": 1128836096,
+      "anonymous_pss_bytes": 353013760,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 0,
+      "mem_available_bytes": 7045648384,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+      ],
+      "seconds": 0.831
+    }
+  ],
+  "peak_rss_bytes": 1451782144,
+  "peak_virtual_bytes": 2694221824,
+  "peak_anonymous_bytes": 353013760,
+  "peak_file_pss_bytes": 1128836096,
+  "peak_process_swap_bytes": 0,
+  "peak_system_swap_used_bytes": 0,
+  "major_faults_delta": 0,
+  "disk_read_bytes_delta": 0,
+  "engine_log_start": [
+    "0.00.000.955 I srv  llama_server: initializing ...",
+    "0.00.002.105 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)",
+    "0.00.002.208 I srv  init_listene: The UI is disabled",
+    "0.00.002.209 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable",
+    "0.00.002.296 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)",
+    "0.00.003.798 I srv    load_model: loading model '/home/ec2-user/xing-specialist/models/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf'",
+    "0.00.590.003 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden"
+  ],
+  "engine_log_tail": [
+    "0.00.000.955 I srv  llama_server: initializing ...",
+    "0.00.002.105 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)",
+    "0.00.002.208 I srv  init_listene: The UI is disabled",
+    "0.00.002.209 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable",
+    "0.00.002.296 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)",
+    "0.00.003.798 I srv    load_model: loading model '/home/ec2-user/xing-specialist/models/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf'",
+    "0.00.590.003 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden"
+  ],
+  "disk_free_bytes_after": 80126562304
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "arithmetic-add",
+    "group": "arithmetic",
+    "split": "train",
+    "sha256": "93d2d5992ef7ad76d9497fc9cd05f5745fbb3fee0e52cc8078b9253db89d81d2",
+    "baseline_exit": 1,
+    "verified_exit": 0
+  },
+  {
+    "id": "slug-hyphen",
+    "group": "slug",
+    "split": "train",
+    "sha256": "bb0b0080f0d4face6ef5af893f8cd4c333646b33dbb644944585d7f363af0511",
+    "baseline_exit": 1,
+    "verified_exit": 0
+  },
+  {
+    "id": "adult-boundary",
+    "group": "boundary",
+    "split": "eval",
+    "sha256": "b7c5b844591da2c479f4c48eee3316a558d46d328339743438db7ba287ead3c6",
+    "baseline_exit": 1,
+    "verified_exit": 0
+  }
+]

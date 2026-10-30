@@ -1,0 +1,81 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "```json\n{\n  \"answer\": \"1/2\"\n}\n```",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 75.51,
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 139,
+            "total_tokens": 158,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "answer": "1/2",
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Check each time interval separately, then add the results",
+          "content": "{\"answer\":\"1/2\"}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 41.47,
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 166,
+            "total_tokens": 174,
+            "prompt_tokens_details": {
+              "cached_tokens": 71
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 4087.8,
+  "peak_anonymous_mib": 1794.5,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 5439.1,
+  "peak_cgroup_memory_full_avg10": 0.4,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "1.52.629.204 I slot      release: id  0 | task 0 | stop processing: n_tokens = 157, truncated = 0",
+    "1.52.633.124 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.783 (> 0.100 thold), f_keep = 0.828",
+    "1.52.633.194 I slot launch_slot_: id  0 | task 23 | processing task, is_child = 0",
+    "2.00.712.321 I slot print_timing: id  0 | task 23 | prompt processing, n_tokens =     27, progress = 0.59, t =   8.08 s / 3.34 tokens per second",
+    "2.14.294.976 I slot print_timing: id  0 | task 23 | prompt processing, n_tokens =     91, progress = 0.98, t =  21.66 s / 4.20 tokens per second",
+    "2.34.096.766 I slot print_timing: id  0 | task 23 | prompt eval time =   27692.51 ms /    95 tokens (  291.50 ms per token,     3.43 tokens per second)",
+    "2.34.096.773 I slot print_timing: id  0 | task 23 |        eval time =   13771.02 ms /     8 tokens ( 1967.29 ms per token,     0.51 tokens per second)",
+    "2.34.096.774 I slot print_timing: id  0 | task 23 |       total time =   41463.54 ms /   103 tokens",
+    "2.34.096.776 I slot print_timing: id  0 | task 23 |    graphs reused =         23",
+    "2.34.096.776 I slot print_timing: id  0 | task 23 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "2.34.096.825 I slot      release: id  0 | task 23 | stop processing: n_tokens = 173, truncated = 0",
+    "2.34.098.587 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

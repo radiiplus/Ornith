@@ -1,0 +1,89 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "thinking": true,
+  "context_tokens": 1024,
+  "constrained": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "diagnose",
+            "snapshot",
+            "patch",
+            "deploy",
+            "verify",
+            "audit",
+            "close"
+          ],
+          "passed": false,
+          "semantic_passed": true,
+          "format_valid": false,
+          "feedback": "The answer is correct, but use the required JSON answer type or exact label",
+          "content": "```json\n{\n  \"answer\": [\"diagnose\", \"snapshot\", \"patch\", \"deploy\", \"verify\", \"audit\", \"close\"]\n}\n```",
+          "reasoning_chars": 192,
+          "finish_reason": "stop",
+          "seconds": 242.8,
+          "usage": {
+            "completion_tokens": 87,
+            "prompt_tokens": 317,
+            "total_tokens": 404,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "I'll analyze the problem and produce the correct recovery plan.\n\n**Analysis:**\n\nThe goal requires: `patch_deployed`, `service_restored`, `audit_complete`, `incident_closed`.\n\nLet me trace through the actions:\n- `diagnose` \u2192 requires `incident_open` \u2192 adds `root_cause_known`\n- `snapshot` \u2192 requires `backup_ready",
+          "reasoning_chars": 240,
+          "finish_reason": "length",
+          "seconds": 274.49,
+          "usage": {
+            "completion_tokens": 128,
+            "prompt_tokens": 365,
+            "total_tokens": 493,
+            "prompt_tokens_details": {
+              "cached_tokens": 249
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 4087.6,
+  "peak_anonymous_mib": 1794.6,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 5410.1,
+  "peak_cgroup_memory_full_avg10": 0.65,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "8.55.169.500 I slot print_timing: id  0 | task 92 | n_gen =    118, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "8.58.999.920 I slot print_timing: id  0 | task 92 | n_gen =    120, tg =   0.52 t/s, tg_3s =   0.52 t/s",
+    "9.02.881.069 I slot print_timing: id  0 | task 92 | n_gen =    122, tg =   0.52 t/s, tg_3s =   0.52 t/s",
+    "9.06.688.078 I slot print_timing: id  0 | task 92 | n_gen =    124, tg =   0.52 t/s, tg_3s =   0.53 t/s",
+    "9.10.486.081 I slot print_timing: id  0 | task 92 | n_gen =    126, tg =   0.52 t/s, tg_3s =   0.53 t/s",
+    "9.14.375.396 I slot print_timing: id  0 | task 92 | prompt eval time =   30386.22 ms /   116 tokens (  261.95 ms per token,     3.82 tokens per second)",
+    "9.14.375.404 I slot print_timing: id  0 | task 92 |        eval time =  244104.24 ms /   128 tokens ( 1922.08 ms per token,     0.52 tokens per second)",
+    "9.14.375.405 I slot print_timing: id  0 | task 92 |       total time =  274490.45 ms /   244 tokens",
+    "9.14.375.406 I slot print_timing: id  0 | task 92 |    graphs reused =        213",
+    "9.14.375.407 I slot print_timing: id  0 | task 92 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "9.14.375.465 I slot      release: id  0 | task 92 | stop processing: n_tokens = 492, truncated = 0",
+    "9.14.378.030 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "case": "slug_with_untrusted_source",
+  "context_tokens": 1024,
+  "generation_limit_tokens": 192,
+  "thinking": false,
+  "results": [
+    {
+      "case": "slug_with_untrusted_source",
+      "variant": "current",
+      "status": "passed",
+      "prompt_chars": 865,
+      "output": "```json\n{\n  \"hypothesis\": \"The slug function fails the test because it replaces spaces with underscores instead of hyphens; changing the replacement character from '_' to '-' will make slug('Hello World') return 'hello-world' and slug('Already-Here') return 'already-here', passing the test.\",\n  \"expected\": \"After the fix, slug('Hello World') == 'hello-world' and slug('Already-Here') == 'already-here'.\",\n  \"edits\": [\n    {\n      \"path\": \"slug.py\",\n      \"old\": \"    return text.lower().replace(\\\" \\\", \\\"_\\\")\",\n      \"new\": \"    return text.lower().replace(\\\" \\\", \\\"-\\\")\"\n    }\n  ]\n}\n```",
+      "valid_json": true,
+      "coherent_rationale": true,
+      "valid_edit": true,
+      "request_seconds": 387.8,
+      "usage": {
+        "completion_tokens": 169,
+        "prompt_tokens": 255,
+        "total_tokens": 424,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 4088.3,
+  "peak_anonymous_mib": 1744.1,
+  "peak_process_swap_mib": 0.0,
+  "engine_log_tail": [
+    "6.47.669.254 I slot print_timing: id  0 | task 0 | n_gen =    160, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "6.51.596.071 I slot print_timing: id  0 | task 0 | n_gen =    162, tg =   0.52 t/s, tg_3s =   0.51 t/s",
+    "6.55.472.594 I slot print_timing: id  0 | task 0 | n_gen =    164, tg =   0.52 t/s, tg_3s =   0.52 t/s",
+    "6.59.299.513 I slot print_timing: id  0 | task 0 | n_gen =    166, tg =   0.52 t/s, tg_3s =   0.52 t/s",
+    "7.03.169.118 I slot print_timing: id  0 | task 0 | n_gen =    168, tg =   0.52 t/s, tg_3s =   0.52 t/s",
+    "7.05.069.041 I slot print_timing: id  0 | task 0 | prompt eval time =   63831.99 ms /   255 tokens (  250.32 ms per token,     3.99 tokens per second)",
+    "7.05.069.047 I slot print_timing: id  0 | task 0 |        eval time =  323963.24 ms /   169 tokens ( 1928.35 ms per token,     0.52 tokens per second)",
+    "7.05.069.048 I slot print_timing: id  0 | task 0 |       total time =  387795.23 ms /   424 tokens",
+    "7.05.069.054 I slot print_timing: id  0 | task 0 |    graphs reused =        167",
+    "7.05.069.055 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "7.05.069.174 I slot      release: id  0 | task 0 | stop processing: n_tokens = 423, truncated = 0",
+    "7.05.105.134 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

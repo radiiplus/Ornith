@@ -1,0 +1,92 @@
+{
+  "source": "artifacts/ornith-reasoning-stress-no-thinking.json",
+  "model": "Ornith-1.5-9B",
+  "thinking": false,
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "2/3",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them",
+          "seconds": 51.14,
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 124,
+            "total_tokens": 132,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Yes",
+          "normalized_answer": "entailed",
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": false,
+          "feedback": "Objective reached; output format was normalized",
+          "seconds": 37.69,
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 135,
+            "total_tokens": 141,
+            "prompt_tokens_details": {
+              "cached_tokens": 36
+            }
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "diagnose, snapshot, patch, deploy, verify, audit, close",
+          "normalized_answer": [
+            "diagnose",
+            "snapshot",
+            "patch",
+            "deploy",
+            "verify",
+            "audit",
+            "close"
+          ],
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": false,
+          "feedback": "Objective reached; output format was normalized",
+          "seconds": 105.47,
+          "usage": {
+            "completion_tokens": 20,
+            "prompt_tokens": 303,
+            "total_tokens": 323,
+            "prompt_tokens_details": {
+              "cached_tokens": 36
+            }
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "objectives_reached": 2,
+  "attempts_after_first_success_ignored": true
+}

@@ -1,0 +1,66 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "case": "boundary",
+  "context_tokens": 1024,
+  "generation_limit_tokens": 192,
+  "thinking": false,
+  "results": [
+    {
+      "case": "boundary",
+      "variant": "previous",
+      "status": "regression",
+      "prompt_chars": 773,
+      "output": "```json\n{\n  \"hypothesis\": \"The is_adult function incorrectly uses a strict greater-than comparison (age > 18), which causes is_adult(18) to return False. Changing the comparison to greater-than-or-equal (age >= 18) will make is_adult(18) return True while keeping is_adult(17) and is_adult(19) unchanged, so the test in test_boundary.py will pass.\",\n  \"expected\": \"is_adult(17) is False, is_adult(18) is True, is_adult(19) is True.\",\n  \"edits\": [\n    {\n      \"path\": \"access.py\",\n      \"old\": \"    return age > 18\",\n      \"new\": \"    return age >= 18\"\n    }\n  ]\n}\n",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "valid_json": false,
+      "valid_edit": false,
+      "request_seconds": 166.68,
+      "usage": {
+        "completion_tokens": 192,
+        "prompt_tokens": 247,
+        "total_tokens": 439,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "case": "boundary",
+      "variant": "current",
+      "status": "passed",
+      "prompt_chars": 879,
+      "output": "```json\n{\n  \"hypothesis\": \"The boundary uses a strict greater-than comparison (age > 18). At exactly 18, the condition evaluates to False, so is_adult(18) returns False. The test expects 18 to be treated as an adult (True), so the boundary must be inclusive of 18.\",\n  \"expected\": \"is_adult(18) returns True, is_adult(17) returns False, and is_adult(19) returns True, so the test passes.\",\n  \"edits\": [\n    {\n      \"path\": \"access.py\",\n      \"old\": \"    return age > 18\",\n      \"new\": \"    return age >= 18\"\n    }\n  ]\n}\n```",
+      "valid_json": true,
+      "coherent_rationale": true,
+      "valid_edit": true,
+      "request_seconds": 144.2,
+      "usage": {
+        "completion_tokens": 176,
+        "prompt_tokens": 268,
+        "total_tokens": 444,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 5092.9,
+  "peak_anonymous_mib": 1959.0,
+  "peak_process_swap_mib": 0.0,
+  "engine_log_tail": [
+    "5.00.352.081 I slot print_timing: id  0 | task 197 | n_gen =    150, tg =   1.42 t/s, tg_3s =   1.66 t/s",
+    "5.03.428.364 I slot print_timing: id  0 | task 197 | n_gen =    155, tg =   1.42 t/s, tg_3s =   1.63 t/s",
+    "5.06.708.835 I slot print_timing: id  0 | task 197 | n_gen =    161, tg =   1.44 t/s, tg_3s =   1.83 t/s",
+    "5.10.018.787 I slot print_timing: id  0 | task 197 | n_gen =    168, tg =   1.46 t/s, tg_3s =   2.11 t/s",
+    "5.13.131.063 I slot print_timing: id  0 | task 197 | n_gen =    174, tg =   1.47 t/s, tg_3s =   1.93 t/s",
+    "5.14.052.191 I slot print_timing: id  0 | task 197 | prompt eval time =   25365.05 ms /   268 tokens (   94.65 ms per token,    10.57 tokens per second)",
+    "5.14.052.200 I slot print_timing: id  0 | task 197 |        eval time =  118714.39 ms /   176 tokens (  678.37 ms per token,     1.47 tokens per second)",
+    "5.14.052.200 I slot print_timing: id  0 | task 197 |       total time =  144079.45 ms /   444 tokens",
+    "5.14.052.201 I slot print_timing: id  0 | task 197 |    graphs reused =        365",
+    "5.14.052.202 I slot print_timing: id  0 | task 197 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "5.14.052.241 I slot      release: id  0 | task 197 | stop processing: n_tokens = 443, truncated = 0",
+    "5.14.074.830 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

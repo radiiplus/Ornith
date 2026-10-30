@@ -1,0 +1,109 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "2/3",
+          "passed": false,
+          "feedback": "Numeric answer is incorrect",
+          "content": "{\"answer\":\"2/3\"}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 51.14,
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 124,
+            "total_tokens": 132,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Yes",
+          "passed": false,
+          "feedback": "Invalid logic verifier",
+          "content": "{\"answer\":\"Yes\"}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 37.69,
+          "usage": {
+            "completion_tokens": 6,
+            "prompt_tokens": 135,
+            "total_tokens": 141,
+            "prompt_tokens_details": {
+              "cached_tokens": 36
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "diagnose, snapshot, patch, deploy, verify, audit, close",
+          "passed": false,
+          "feedback": "Invalid planning verifier",
+          "content": "{\"answer\":\"diagnose, snapshot, patch, deploy, verify, audit, close\"}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 105.47,
+          "usage": {
+            "completion_tokens": 20,
+            "prompt_tokens": 303,
+            "total_tokens": 323,
+            "prompt_tokens_details": {
+              "cached_tokens": 36
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "failed",
+  "error": "Cgroup memory full pressure exceeded 5.0%",
+  "peak_rss_mib": 4087.8,
+  "peak_anonymous_mib": 2254.2,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 4976.7,
+  "peak_cgroup_memory_full_avg10": 4.83,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "3.51.287.295 I slot print_timing: id  0 | task 21 | prompt eval time =   68803.07 ms /   267 tokens (  257.69 ms per token,     3.88 tokens per second)",
+    "3.51.287.305 I slot print_timing: id  0 | task 21 |        eval time =   36379.02 ms /    20 tokens ( 1914.69 ms per token,     0.52 tokens per second)",
+    "3.51.287.307 I slot print_timing: id  0 | task 21 |       total time =  105182.09 ms /   287 tokens",
+    "3.51.287.309 I slot print_timing: id  0 | task 21 |    graphs reused =         30",
+    "3.51.287.309 I slot print_timing: id  0 | task 21 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "3.51.287.377 I slot      release: id  0 | task 21 | stop processing: n_tokens = 322, truncated = 0",
+    "3.51.300.221 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.883 (> 0.100 thold), f_keep = 0.913",
+    "3.51.300.499 I slot launch_slot_: id  0 | task 45 | processing task, is_child = 0",
+    "3.59.385.465 I slot print_timing: id  0 | task 45 | prompt processing, n_tokens =     30, progress = 0.80, t =   8.08 s / 3.71 tokens per second",
+    "4.12.913.453 I slot print_timing: id  0 | task 45 | prompt processing, n_tokens =     94, progress = 0.99, t =  21.61 s / 4.35 tokens per second",
+    "4.22.302.540 I srv    operator(): operator(): cleaning up before exit...",
+    "Received second interrupt, terminating immediately."
+  ]
+}

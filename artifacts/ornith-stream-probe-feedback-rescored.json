@@ -1,0 +1,475 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "thinking": true,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "reused_server": false,
+  "source_chunks": [
+    {
+      "source": "incident.txt",
+      "ordinal": 0,
+      "chars": 256
+    },
+    {
+      "source": "incident.txt",
+      "ordinal": 1,
+      "chars": 124
+    }
+  ],
+  "stream": [
+    {
+      "attempt": 1,
+      "seconds": 41.33,
+      "kind": "reasoning_content",
+      "text": "The"
+    },
+    {
+      "attempt": 1,
+      "seconds": 43.42,
+      "kind": "reasoning_content",
+      "text": " user"
+    },
+    {
+      "attempt": 1,
+      "seconds": 45.34,
+      "kind": "reasoning_content",
+      "text": " wants"
+    },
+    {
+      "attempt": 1,
+      "seconds": 47.41,
+      "kind": "reasoning_content",
+      "text": " me"
+    },
+    {
+      "attempt": 1,
+      "seconds": 49.32,
+      "kind": "reasoning_content",
+      "text": " to"
+    },
+    {
+      "attempt": 1,
+      "seconds": 51.32,
+      "kind": "reasoning_content",
+      "text": " use"
+    },
+    {
+      "attempt": 1,
+      "seconds": 53.32,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "attempt": 1,
+      "seconds": 55.23,
+      "kind": "reasoning_content",
+      "text": " cited"
+    },
+    {
+      "attempt": 1,
+      "seconds": 57.13,
+      "kind": "reasoning_content",
+      "text": " workflow"
+    },
+    {
+      "attempt": 1,
+      "seconds": 59.03,
+      "kind": "reasoning_content",
+      "text": " and"
+    },
+    {
+      "attempt": 1,
+      "seconds": 61.01,
+      "kind": "reasoning_content",
+      "text": " current"
+    },
+    {
+      "attempt": 1,
+      "seconds": 63.0,
+      "kind": "reasoning_content",
+      "text": " state"
+    },
+    {
+      "attempt": 1,
+      "seconds": 64.92,
+      "kind": "reasoning_content",
+      "text": " to"
+    },
+    {
+      "attempt": 1,
+      "seconds": 66.9,
+      "kind": "reasoning_content",
+      "text": " determine"
+    },
+    {
+      "attempt": 1,
+      "seconds": 68.91,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "attempt": 1,
+      "seconds": 70.91,
+      "kind": "reasoning_content",
+      "text": " next"
+    },
+    {
+      "attempt": 1,
+      "seconds": 72.82,
+      "kind": "reasoning_content",
+      "text": " action"
+    },
+    {
+      "attempt": 1,
+      "seconds": 74.8,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "attempt": 1,
+      "seconds": 76.8,
+      "kind": "reasoning_content",
+      "text": " Let"
+    },
+    {
+      "attempt": 1,
+      "seconds": 78.7,
+      "kind": "reasoning_content",
+      "text": " me"
+    },
+    {
+      "attempt": 1,
+      "seconds": 80.6,
+      "kind": "reasoning_content",
+      "text": " analyze"
+    },
+    {
+      "attempt": 1,
+      "seconds": 82.51,
+      "kind": "reasoning_content",
+      "text": " this"
+    },
+    {
+      "attempt": 1,
+      "seconds": 84.42,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "attempt": 1,
+      "seconds": 86.33,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "attempt": 1,
+      "seconds": 92.2,
+      "kind": "content",
+      "text": "{\""
+    },
+    {
+      "attempt": 1,
+      "seconds": 94.3,
+      "kind": "content",
+      "text": "next"
+    },
+    {
+      "attempt": 1,
+      "seconds": 96.21,
+      "kind": "content",
+      "text": "_action"
+    },
+    {
+      "attempt": 1,
+      "seconds": 98.13,
+      "kind": "content",
+      "text": "\":"
+    },
+    {
+      "attempt": 1,
+      "seconds": 100.03,
+      "kind": "content",
+      "text": " \""
+    },
+    {
+      "attempt": 1,
+      "seconds": 102.01,
+      "kind": "content",
+      "text": "validate"
+    },
+    {
+      "attempt": 1,
+      "seconds": 103.9,
+      "kind": "content",
+      "text": " the"
+    },
+    {
+      "attempt": 1,
+      "seconds": 105.8,
+      "kind": "content",
+      "text": " health"
+    },
+    {
+      "attempt": 1,
+      "seconds": 107.71,
+      "kind": "content",
+      "text": " check"
+    },
+    {
+      "attempt": 1,
+      "seconds": 109.6,
+      "kind": "content",
+      "text": "\"}"
+    },
+    {
+      "attempt": 2,
+      "seconds": 27.58,
+      "kind": "reasoning_content",
+      "text": "The"
+    },
+    {
+      "attempt": 2,
+      "seconds": 29.48,
+      "kind": "reasoning_content",
+      "text": " user"
+    },
+    {
+      "attempt": 2,
+      "seconds": 31.39,
+      "kind": "reasoning_content",
+      "text": " wants"
+    },
+    {
+      "attempt": 2,
+      "seconds": 33.29,
+      "kind": "reasoning_content",
+      "text": " me"
+    },
+    {
+      "attempt": 2,
+      "seconds": 35.18,
+      "kind": "reasoning_content",
+      "text": " to"
+    },
+    {
+      "attempt": 2,
+      "seconds": 37.09,
+      "kind": "reasoning_content",
+      "text": " determine"
+    },
+    {
+      "attempt": 2,
+      "seconds": 38.99,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "attempt": 2,
+      "seconds": 40.89,
+      "kind": "reasoning_content",
+      "text": " next"
+    },
+    {
+      "attempt": 2,
+      "seconds": 42.81,
+      "kind": "reasoning_content",
+      "text": " action"
+    },
+    {
+      "attempt": 2,
+      "seconds": 44.71,
+      "kind": "reasoning_content",
+      "text": " based"
+    },
+    {
+      "attempt": 2,
+      "seconds": 46.69,
+      "kind": "reasoning_content",
+      "text": " on"
+    },
+    {
+      "attempt": 2,
+      "seconds": 48.62,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "attempt": 2,
+      "seconds": 50.52,
+      "kind": "reasoning_content",
+      "text": " workflow"
+    },
+    {
+      "attempt": 2,
+      "seconds": 52.41,
+      "kind": "reasoning_content",
+      "text": " and"
+    },
+    {
+      "attempt": 2,
+      "seconds": 54.32,
+      "kind": "reasoning_content",
+      "text": " current"
+    },
+    {
+      "attempt": 2,
+      "seconds": 56.22,
+      "kind": "reasoning_content",
+      "text": " state"
+    },
+    {
+      "attempt": 2,
+      "seconds": 58.11,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "attempt": 2,
+      "seconds": 60.08,
+      "kind": "reasoning_content",
+      "text": "\n\n"
+    },
+    {
+      "attempt": 2,
+      "seconds": 61.98,
+      "kind": "reasoning_content",
+      "text": "Workflow"
+    },
+    {
+      "attempt": 2,
+      "seconds": 63.91,
+      "kind": "reasoning_content",
+      "text": " order"
+    },
+    {
+      "attempt": 2,
+      "seconds": 65.79,
+      "kind": "reasoning_content",
+      "text": ":"
+    },
+    {
+      "attempt": 2,
+      "seconds": 67.69,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "attempt": 2,
+      "seconds": 69.59,
+      "kind": "reasoning_content",
+      "text": "1"
+    },
+    {
+      "attempt": 2,
+      "seconds": 71.51,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "attempt": 2,
+      "seconds": 77.42,
+      "kind": "content",
+      "text": "{\""
+    },
+    {
+      "attempt": 2,
+      "seconds": 79.38,
+      "kind": "content",
+      "text": "answer"
+    },
+    {
+      "attempt": 2,
+      "seconds": 81.22,
+      "kind": "content",
+      "text": "\":"
+    },
+    {
+      "attempt": 2,
+      "seconds": 83.18,
+      "kind": "content",
+      "text": " \""
+    },
+    {
+      "attempt": 2,
+      "seconds": 85.1,
+      "kind": "content",
+      "text": "restart"
+    },
+    {
+      "attempt": 2,
+      "seconds": 87.01,
+      "kind": "content",
+      "text": " the"
+    },
+    {
+      "attempt": 2,
+      "seconds": 88.99,
+      "kind": "content",
+      "text": " service"
+    },
+    {
+      "attempt": 2,
+      "seconds": 90.88,
+      "kind": "content",
+      "text": "\"}"
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "answer": "{\"next_action\": \"validate the health check\"}",
+      "answer_value": null,
+      "semantic_value": "validate the health check",
+      "semantic_passed": false,
+      "passed": false,
+      "model_metrics": {
+        "request_seconds": 111.51,
+        "time_to_first_chunk_seconds": 41.33,
+        "prompt_tokens": 147,
+        "completion_tokens": 37,
+        "generation_tps": 0.513,
+        "reasoning_chars": 113,
+        "finish_reason": "stop"
+      },
+      "format_valid": false
+    },
+    {
+      "attempt": 2,
+      "answer": "{\"answer\": \"restart the service\"}",
+      "answer_value": "restart the service",
+      "semantic_value": "restart the service",
+      "semantic_passed": true,
+      "passed": true,
+      "model_metrics": {
+        "request_seconds": 92.8,
+        "time_to_first_chunk_seconds": 27.58,
+        "prompt_tokens": 172,
+        "completion_tokens": 35,
+        "generation_tps": 0.521,
+        "reasoning_chars": 107,
+        "finish_reason": "stop"
+      },
+      "format_valid": true
+    }
+  ],
+  "status": "completed",
+  "answer": "{\"answer\": \"restart the service\"}",
+  "answer_value": "restart the service",
+  "model_metrics": {
+    "request_seconds": 92.8,
+    "time_to_first_chunk_seconds": 27.58,
+    "prompt_tokens": 172,
+    "completion_tokens": 35,
+    "generation_tps": 0.521,
+    "reasoning_chars": 107,
+    "finish_reason": "stop"
+  },
+  "quality_passed": true,
+  "peak_rss_mib": 4086.8,
+  "peak_anonymous_mib": 1847.0,
+  "min_available_ram_mib": 5291.9,
+  "peak_cgroup_memory_full_avg10": 0.32,
+  "scoring_revision": 2
+}

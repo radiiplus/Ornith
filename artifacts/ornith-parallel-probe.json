@@ -1,0 +1,20 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "parallel": 2,
+  "context_per_slot": 1024,
+  "wall_seconds": 17.99,
+  "answers": [
+    {
+      "request": 1,
+      "seconds": 17.99,
+      "answer": "1"
+    },
+    {
+      "request": 2,
+      "seconds": 17.93,
+      "answer": "2"
+    }
+  ],
+  "memory_breach": null,
+  "peak_rss_mib": 4087.6
+}

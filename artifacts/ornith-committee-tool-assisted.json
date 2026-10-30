@@ -1,0 +1,84 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": false,
+  "tool_assisted": true,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "com(8,3)*(com(9,2)+com(9,3)+com(9,4)) + com(8,4)*(com(9,2)+com(9,3))",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Unsupported arithmetic expression. Check each time interval separately, then add the results. Return plain JSON without a code fence and use the required answer type",
+          "content": "```json\n{\"answer\": \"com(8,3)*(com(9,2)+com(9,3)+com(9,4)) + com(8,4)*(com(9,2)+com(9,3))\"}\n```",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 141.5,
+          "usage": {
+            "completion_tokens": 54,
+            "prompt_tokens": 134,
+            "total_tokens": 188,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "<think>\nThe problem: A six-person committee is chosen from eight engineers and nine designers. It must include at least three engineers and at least two designers. One named engineer and one named designer cannot both serve. How many valid committees are there?\n\nLet me parse this carefully.\n\nWe have 8 engineers, 9 designers. Committee of 6 people",
+          "reasoning_chars": 0,
+          "finish_reason": "length",
+          "seconds": 178.2,
+          "usage": {
+            "completion_tokens": 72,
+            "prompt_tokens": 217,
+            "total_tokens": 289,
+            "prompt_tokens_details": {
+              "cached_tokens": 66
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 4087.9,
+  "peak_anonymous_mib": 1794.5,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 5411.7,
+  "peak_cgroup_memory_full_avg10": 0.65,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "2.58.683.394 I slot      release: id  0 | task 0 | stop processing: n_tokens = 187, truncated = 0",
+    "2.58.688.880 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.576 (> 0.100 thold), f_keep = 0.668",
+    "2.58.688.949 I slot launch_slot_: id  0 | task 58 | processing task, is_child = 0",
+    "3.19.913.401 I slot print_timing: id  0 | task 58 | prompt processing, n_tokens =     83, progress = 0.69, t =  21.22 s / 3.91 tokens per second",
+    "3.33.622.069 I slot print_timing: id  0 | task 58 | prompt processing, n_tokens =    147, progress = 0.98, t =  34.93 s / 4.21 tokens per second",
+    "5.56.882.804 I slot print_timing: id  0 | task 58 | prompt eval time =   41116.65 ms /   151 tokens (  272.30 ms per token,     3.67 tokens per second)",
+    "5.56.882.814 I slot print_timing: id  0 | task 58 |        eval time =  137077.16 ms /    72 tokens ( 1930.66 ms per token,     0.52 tokens per second)",
+    "5.56.882.815 I slot print_timing: id  0 | task 58 |       total time =  178193.82 ms /   223 tokens",
+    "5.56.882.816 I slot print_timing: id  0 | task 58 |    graphs reused =        121",
+    "5.56.882.817 I slot print_timing: id  0 | task 58 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "5.56.882.878 I slot      release: id  0 | task 58 | stop processing: n_tokens = 288, truncated = 0",
+    "5.56.885.223 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

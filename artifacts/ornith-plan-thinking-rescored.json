@@ -1,0 +1,50 @@
+{
+  "source": "artifacts/ornith-plan-thinking.json",
+  "model": "Ornith-1.5-9B",
+  "thinking": true,
+  "cases": [
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "diagnose",
+            "snapshot",
+            "patch",
+            "deploy",
+            "verify",
+            "audit",
+            "close"
+          ],
+          "normalized_answer": [
+            "diagnose",
+            "snapshot",
+            "patch",
+            "deploy",
+            "verify",
+            "audit",
+            "close"
+          ],
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": false,
+          "feedback": "Objective reached; output format was normalized",
+          "seconds": 242.8,
+          "usage": {
+            "completion_tokens": 87,
+            "prompt_tokens": 317,
+            "total_tokens": 404,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "objectives_reached": 1,
+  "attempts_after_first_success_ignored": true
+}

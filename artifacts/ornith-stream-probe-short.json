@@ -1,0 +1,28 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "thinking": true,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "reused_server": true,
+  "source_chunks": [
+    {
+      "source": "incident.txt",
+      "ordinal": 0,
+      "chars": 256
+    },
+    {
+      "source": "incident.txt",
+      "ordinal": 1,
+      "chars": 124
+    }
+  ],
+  "stream": [],
+  "status": "failed",
+  "error": "Anonymous memory guard exceeded",
+  "peak_rss_mib": 5279.4,
+  "peak_anonymous_mib": 2514.3,
+  "min_available_ram_mib": 4642.8,
+  "peak_cgroup_memory_full_avg10": 0
+}

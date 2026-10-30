@@ -1,0 +1,92 @@
+[
+  {
+    "id": "arithmetic-add",
+    "group": "arithmetic",
+    "split": "train",
+    "domain": "code_repair",
+    "verifier": "isolated_tests",
+    "sha256": "93d2d5992ef7ad76d9497fc9cd05f5745fbb3fee0e52cc8078b9253db89d81d2",
+    "baseline_exit": 1,
+    "verified_exit": 0
+  },
+  {
+    "id": "slug-hyphen",
+    "group": "slug",
+    "split": "train",
+    "domain": "code_repair",
+    "verifier": "isolated_tests",
+    "sha256": "7d9904b4f95c41da31b6449542af878b569452950e5c06bd4433b727c784a524",
+    "baseline_exit": 1,
+    "verified_exit": 0
+  },
+  {
+    "id": "adult-boundary",
+    "group": "boundary",
+    "split": "eval",
+    "domain": "code_repair",
+    "verifier": "isolated_tests",
+    "sha256": "bb73148516426107208ad295de36475b4d552776c219366d92142de891720714",
+    "baseline_exit": 1,
+    "verified_exit": 0
+  },
+  {
+    "id": "factory-rate",
+    "group": "rate",
+    "split": "train",
+    "domain": "quantitative",
+    "verifier": "arithmetic",
+    "sha256": "8b46627f408b4a94a068d217e6cb026ee1bf7fe03a86e58c83ff12022c7f4a33",
+    "answer_checked": true,
+    "explanation_reviewed": false
+  },
+  {
+    "id": "price-discount",
+    "group": "percentage",
+    "split": "eval",
+    "domain": "quantitative",
+    "verifier": "arithmetic",
+    "sha256": "d95368971f03056d47c0e71d2679499469b74a65a3317d171b3be69a57f9cbf1",
+    "answer_checked": true,
+    "explanation_reviewed": false
+  },
+  {
+    "id": "report-workflow",
+    "group": "report_workflow",
+    "split": "train",
+    "domain": "planning",
+    "verifier": "plan",
+    "sha256": "21e5d25ba9740292497c01d4dcc2def111c8484f0bb6ba10bc7726dfb14bb65a",
+    "answer_checked": true,
+    "explanation_reviewed": false
+  },
+  {
+    "id": "incident-workflow",
+    "group": "incident_workflow",
+    "split": "eval",
+    "domain": "planning",
+    "verifier": "plan",
+    "sha256": "2b3a5b9955fa23770d5b68861dc2cc35e2e2ee12394ed2d2899be2b2aef888f3",
+    "answer_checked": true,
+    "explanation_reviewed": false
+  },
+  {
+    "id": "either-or",
+    "group": "disjunction",
+    "split": "train",
+    "domain": "logic",
+    "verifier": "logic",
+    "sha256": "89244f2b3b77d3e318f169fac332a2efb6c873541bf5be627e7f420dc4949c95",
+    "answer_checked": true,
+    "explanation_reviewed": false
+  },
+  {
+    "id": "converse-fallacy",
+    "group": "conditional_converse",
+    "split": "eval",
+    "domain": "logic",
+    "verifier": "logic",
+    "sha256": "a383f3797c3267bcc44d05f8169f4aa4f6db32217b84b8c77319f8c323bc2f4b",
+    "answer_checked": true,
+    "explanation_reviewed": false
+  }
+]

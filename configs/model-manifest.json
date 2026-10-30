@@ -1,0 +1,29 @@
+{
+  "temporary": {
+    "repository": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+    "revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361",
+    "file": "models/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+    "quantization": "Q4_K_M",
+    "bytes": 1117320768,
+    "sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+    "local_status": "checksum verified; baseline measured; server started on demand"
+  },
+  "intended": {
+    "repository": "XingChen-AGI/Xing4.0-29B-A4B-GGUF",
+    "revision": "195d1bd04080d73bdead6f40d8d7d1a8f43d5050",
+    "file": "models/xing4_0-29b-iq2_M-slim.gguf",
+    "quantization": "IQ2_M-slim",
+    "bytes": 11800813760,
+    "sha256": "eab889116ae30ab32c3d2948f42409c4e2a4f238b89904b6976448cd067be312",
+    "local_status": "previously checksum verified; local GGUF removed to free disk for Ornith experiments"
+  },
+  "ornith": {
+    "repository": "bartowski/Ornith-1.5-9B-GGUF",
+    "revision": "1fc60d6805eaa18bbed4088391db9336eb9581c4",
+    "file": "models/ornith-1.5-9b-iq2_m.gguf",
+    "quantization": "IQ2_M",
+    "bytes": 3769426816,
+    "sha256": "88ade210cf31da75951b1e86e00ad6d656232c705721d427884af3434c097dd2",
+    "local_status": "checksum verified; capped slug repair passed; boundary repair timed out; constrained coding quiz passed 1 of 3; not approved as agent backend"
+  }
+}

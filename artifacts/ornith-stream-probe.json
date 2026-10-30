@@ -1,0 +1,27 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "thinking": true,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "source_chunks": [
+    {
+      "source": "incident.txt",
+      "ordinal": 0,
+      "chars": 256
+    },
+    {
+      "source": "incident.txt",
+      "ordinal": 1,
+      "chars": 124
+    }
+  ],
+  "stream": [],
+  "status": "failed",
+  "error": "Cgroup memory full pressure exceeded 5.0%",
+  "peak_rss_mib": 3967.3,
+  "peak_anonymous_mib": 1276.8,
+  "min_available_ram_mib": 4244.8,
+  "peak_cgroup_memory_full_avg10": 0
+}

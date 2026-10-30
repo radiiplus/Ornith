@@ -1,0 +1,52 @@
+{
+  "source": "artifacts/ornith-pumps-thinking-feedback.json",
+  "model": "Ornith-1.5-9B",
+  "thinking": true,
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "seconds": 281.11,
+          "usage": {
+            "completion_tokens": 128,
+            "prompt_tokens": 137,
+            "total_tokens": 265,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "answer": "1/3",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them",
+          "seconds": 138.48,
+          "usage": {
+            "completion_tokens": 58,
+            "prompt_tokens": 164,
+            "total_tokens": 222,
+            "prompt_tokens_details": {
+              "cached_tokens": 69
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "objectives_reached": 0,
+  "attempts_after_first_success_ignored": true
+}

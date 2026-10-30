@@ -1,0 +1,243 @@
+{
+  "timestamp_utc": "2026-10-30T07:00:40.269336+00:00",
+  "engine": "llama.cpp CPU",
+  "engine_revision": "cba0325",
+  "engine_binary": "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/llama-server",
+  "model": "/home/ec2-user/xing-specialist/models/ornith-1.5-9b-iq3_m.gguf",
+  "model_name": "Ornith-1.5-9B",
+  "model_revision": "1fc60d6805eaa18bbed4088391db9336eb9581c4",
+  "model_quantization": "IQ3_M",
+  "model_sha256": "23efb400479854570b7bc286eef3a205ee309332af92acaf8f6c877f1ce7dc5c",
+  "model_bytes": 4722533248,
+  "context_tokens": 1024,
+  "generation_limit_tokens": 32,
+  "prompt_sha256": "e33c1c46a4b6756db9566fe3dbf76ab33df6eb8b06cc5c7378420ceec065ccdc",
+  "threads": 2,
+  "cpu_model": "Intel(R) Xeon(R) Platinum 8488C",
+  "cpu_logical_count": 2,
+  "os_release": "Amazon Linux 2023.12.20261028",
+  "software_versions": {
+    "python": "3.9.25",
+    "git": "git version 2.50.1",
+    "cmake": "cmake version 3.22.2",
+    "gcc": "gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-5)",
+    "engine": "version: 0.7.0-dev (build 1, commit cba0325)"
+  },
+  "pressure_mib": 0,
+  "max_anonymous_mib": 2048,
+  "min_available_mib": 1536,
+  "max_swap_used_mib": 512,
+  "max_cgroup_full_pressure": 5.0,
+  "load_mode": "mmap",
+  "oversized_mmap": false,
+  "no_warmup": true,
+  "batch_size": 256,
+  "ubatch_size": 128,
+  "startup_timeout_seconds": 120,
+  "request_timeout_seconds": 120,
+  "fit": "off",
+  "flash_attn": "auto",
+  "numa": null,
+  "disk_free_bytes_before": 62284410880,
+  "runs": [],
+  "status": "failed",
+  "error": "Cgroup memory full pressure exceeded 5.0%; engine stopped",
+  "samples": [
+    {
+      "rss_bytes": 3891200,
+      "rss_high_water_bytes": 3891200,
+      "virtual_bytes": 27717632,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 368640,
+      "file_pss_bytes": 2379776,
+      "anonymous_pss_bytes": 368640,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 548864,
+      "mem_available_bytes": 7508234240,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=24646",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=17594"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 0.001
+    },
+    {
+      "rss_bytes": 52224000,
+      "rss_high_water_bytes": 52224000,
+      "virtual_bytes": 282705920,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 38588416,
+      "file_pss_bytes": 10528768,
+      "anonymous_pss_bytes": 38588416,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 37433344,
+      "mem_available_bytes": 7506567168,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=85016",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=73116"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 0.203
+    },
+    {
+      "rss_bytes": 95133696,
+      "rss_high_water_bytes": 95133696,
+      "virtual_bytes": 459735040,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 81580032,
+      "file_pss_bytes": 10528768,
+      "anonymous_pss_bytes": 81580032,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 57061376,
+      "mem_available_bytes": 7508725760,
+      "memory_psi": [
+        "some avg10=0.00 avg60=0.00 avg300=0.00 total=93422",
+        "full avg10=0.00 avg60=0.00 avg300=0.00 total=81077"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 0.405
+    },
+    {
+      "rss_bytes": 108703744,
+      "rss_high_water_bytes": 108703744,
+      "virtual_bytes": 607277056,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 94875648,
+      "file_pss_bytes": 10725376,
+      "anonymous_pss_bytes": 94875648,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 56975360,
+      "mem_available_bytes": 7500468224,
+      "memory_psi": [
+        "some avg10=0.54 avg60=0.09 avg300=0.02 total=93500",
+        "full avg10=0.54 avg60=0.09 avg300=0.02 total=81149"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 0.607
+    },
+    {
+      "rss_bytes": 4858871808,
+      "rss_high_water_bytes": 4858871808,
+      "virtual_bytes": 7308509184,
+      "process_swap_bytes": 0,
+      "anonymous_bytes": 123531264,
+      "file_pss_bytes": 4733720576,
+      "anonymous_pss_bytes": 123531264,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 74125312,
+      "mem_available_bytes": 7477268480,
+      "memory_psi": [
+        "some avg10=0.54 avg60=0.09 avg300=0.02 total=132911",
+        "full avg10=0.54 avg60=0.09 avg300=0.02 total=111788"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 0.842
+    },
+    {
+      "rss_bytes": 4965855232,
+      "rss_high_water_bytes": 4967124992,
+      "virtual_bytes": 7308509184,
+      "process_swap_bytes": 34914304,
+      "anonymous_bytes": 218128384,
+      "file_pss_bytes": 4733720576,
+      "anonymous_pss_bytes": 218128384,
+      "major_faults": 0,
+      "disk_read_bytes": 0,
+      "system_swap_used_bytes": 207978496,
+      "mem_available_bytes": 7469580288,
+      "memory_psi": [
+        "some avg10=0.54 avg60=0.09 avg300=0.02 total=412526",
+        "full avg10=0.54 avg60=0.09 avg300=0.02 total=342270"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 1.176
+    },
+    {
+      "rss_bytes": 4963651584,
+      "rss_high_water_bytes": 4967518208,
+      "virtual_bytes": 7308509184,
+      "process_swap_bytes": 102887424,
+      "anonymous_bytes": 226770944,
+      "file_pss_bytes": 4733720576,
+      "anonymous_pss_bytes": 226770944,
+      "major_faults": 4,
+      "disk_read_bytes": 24576,
+      "system_swap_used_bytes": 281853952,
+      "mem_available_bytes": 7475261440,
+      "memory_psi": [
+        "some avg10=0.54 avg60=0.09 avg300=0.02 total=624923",
+        "full avg10=0.54 avg60=0.09 avg300=0.02 total=528979"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 1.399
+    },
+    {
+      "rss_bytes": 4951515136,
+      "rss_high_water_bytes": 4967518208,
+      "virtual_bytes": 7308509184,
+      "process_swap_bytes": 134590464,
+      "anonymous_bytes": 214708224,
+      "file_pss_bytes": 4733720576,
+      "anonymous_pss_bytes": 214708224,
+      "major_faults": 7,
+      "disk_read_bytes": 73728,
+      "system_swap_used_bytes": 311984128,
+      "mem_available_bytes": 7480868864,
+      "memory_psi": [
+        "some avg10=0.54 avg60=0.09 avg300=0.02 total=842663",
+        "full avg10=0.54 avg60=0.09 avg300=0.02 total=728048"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 1.633
+    },
+    {
+      "rss_bytes": 4965109760,
+      "rss_high_water_bytes": 4973809664,
+      "virtual_bytes": 7308509184,
+      "process_swap_bytes": 163741696,
+      "anonymous_bytes": 228282368,
+      "file_pss_bytes": 4733720576,
+      "anonymous_pss_bytes": 228282368,
+      "major_faults": 10,
+      "disk_read_bytes": 98304,
+      "system_swap_used_bytes": 340992000,
+      "mem_available_bytes": 7476133888,
+      "memory_psi": [
+        "some avg10=0.54 avg60=0.09 avg300=0.02 total=1029446",
+        "full avg10=0.54 avg60=0.09 avg300=0.02 total=897870"
+      ],
+      "cgroup_memory_full_avg10": 0.0,
+      "seconds": 1.856
+    }
+  ],
+  "peak_rss_bytes": 4973809664,
+  "peak_virtual_bytes": 7308509184,
+  "peak_anonymous_bytes": 228282368,
+  "peak_file_pss_bytes": 4733720576,
+  "peak_process_swap_bytes": 163741696,
+  "peak_system_swap_used_bytes": 340992000,
+  "major_faults_delta": 10,
+  "disk_read_bytes_delta": 98304,
+  "engine_log_start": [
+    "0.00.001.201 I srv  llama_server: initializing ...",
+    "0.00.002.516 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)",
+    "0.00.002.634 I srv  init_listene: The UI is disabled",
+    "0.00.002.635 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable",
+    "0.00.002.737 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)",
+    "0.00.004.281 I srv    load_model: loading model 'models/ornith-1.5-9b-iq3_m.gguf'"
+  ],
+  "engine_log_tail": [
+    "0.00.001.201 I srv  llama_server: initializing ...",
+    "0.00.002.516 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)",
+    "0.00.002.634 I srv  init_listene: The UI is disabled",
+    "0.00.002.635 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable",
+    "0.00.002.737 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)",
+    "0.00.004.281 I srv    load_model: loading model 'models/ornith-1.5-9b-iq3_m.gguf'"
+  ],
+  "disk_free_bytes_after": 62284410880
+}

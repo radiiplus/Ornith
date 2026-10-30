@@ -1,0 +1,54 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "fixture": "examples/bytecode-boundary-demo/report_reader.py",
+  "ground_truth": {
+    "verified": true,
+    "normal_exit": 1,
+    "optimized_exit": 0,
+    "optimized_output": "OUTSIDE_MARKER"
+  },
+  "optimized_bytecode": "  0 LOAD_GLOBAL          Path\n  2 LOAD_FAST            workspace\n  4 CALL_FUNCTION        \n  6 LOAD_METHOD          resolve\n  8 CALL_METHOD          \n 10 STORE_FAST           base\n 12 LOAD_FAST            base\n 14 LOAD_FAST            name\n 16 BINARY_TRUE_DIVIDE   \n 18 LOAD_METHOD          resolve\n 20 CALL_METHOD          \n 22 STORE_FAST           report\n 24 LOAD_FAST            report\n 26 LOAD_METHOD          read_text\n 28 CALL_METHOD          \n 30 RETURN_VALUE         ",
+  "responses": [
+    {
+      "mode": "source_only",
+      "raw_answer": "{\"verdict\": \"unsafe\", \"cause\": \"injection\", \"evidence\": \"The check report.is_relative_to(base) can be bypassed via path traversal sequences like ../ in the name argument, escaping the workspace boundary.\"}",
+      "seconds": 136.21,
+      "answer": {
+        "verdict": "unsafe",
+        "cause": "injection",
+        "evidence": "The check report.is_relative_to(base) can be bypassed via path traversal sequences like ../ in the name argument, escaping the workspace boundary."
+      },
+      "classification_passed": false,
+      "evidence_supported": false,
+      "passed": false
+    },
+    {
+      "mode": "source_and_bytecode",
+      "raw_answer": "{\"verdict\": \"unsafe\", \"cause\": \"injection\", \"evidence\": \"The boundary check relies on the caller-supplied 'name' argument, which is attacker-controlled and can contain path separators (e.g., '..'), allowing traversal outside the workspace base directory.\"}",
+      "seconds": 156.21,
+      "answer": {
+        "verdict": "unsafe",
+        "cause": "injection",
+        "evidence": "The boundary check relies on the caller-supplied 'name' argument, which is attacker-controlled and can contain path separators (e.g., '..'), allowing traversal outside the workspace base directory."
+      },
+      "classification_passed": false,
+      "evidence_supported": false,
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 4087.0,
+  "min_available_ram_mib": 5325.7,
+  "engine_log_tail": [
+    "3.19.192.944 I slot print_timing: id  0 | task 53 | prompt processing, n_tokens =    128, progress = 0.77, t =  26.30 s / 4.87 tokens per second",
+    "3.20.790.689 I slot print_timing: id  0 | task 53 | prompt processing, n_tokens =    129, progress = 0.78, t =  27.90 s / 4.62 tokens per second",
+    "3.34.174.946 I slot print_timing: id  0 | task 53 | prompt processing, n_tokens =    193, progress = 0.99, t =  41.29 s / 4.67 tokens per second",
+    "5.29.091.693 I slot print_timing: id  0 | task 53 | prompt eval time =   47411.28 ms /   197 tokens (  240.67 ms per token,     4.16 tokens per second)",
+    "5.29.091.705 I slot print_timing: id  0 | task 53 |        eval time =  108792.21 ms /    58 tokens ( 1908.64 ms per token,     0.52 tokens per second)",
+    "5.29.091.706 I slot print_timing: id  0 | task 53 |       total time =  156203.49 ms /   255 tokens",
+    "5.29.091.708 I slot print_timing: id  0 | task 53 |    graphs reused =        104",
+    "5.29.091.709 I slot print_timing: id  0 | task 53 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "5.29.091.780 I slot      release: id  0 | task 53 | stop processing: n_tokens = 362, truncated = 0",
+    "5.29.093.397 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "source": "artifacts/ornith-pumps-feedback.json",
+  "model": "Ornith-1.5-9B",
+  "thinking": false,
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "1/2",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them. Return plain JSON without a code fence and use the required answer type",
+          "seconds": 75.51,
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 139,
+            "total_tokens": 158,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "answer": "1/2",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them",
+          "seconds": 41.47,
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 166,
+            "total_tokens": 174,
+            "prompt_tokens_details": {
+              "cached_tokens": 71
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "objectives_reached": 0,
+  "attempts_after_first_success_ignored": true
+}

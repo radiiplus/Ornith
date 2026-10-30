@@ -1,0 +1,34 @@
+{
+  "source": "artifacts/ornith-pumps-tool-assisted.json",
+  "model": "Ornith-1.5-9B",
+  "thinking": false,
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "((1/6+1/4-1/12)*2+(1/6-1/12)*1)",
+          "normalized_answer": "3/4",
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": false,
+          "feedback": "Objective reached with exact calculator; output format was normalized",
+          "seconds": 114.78,
+          "usage": {
+            "completion_tokens": 38,
+            "prompt_tokens": 155,
+            "total_tokens": 193,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "objectives_reached": 1,
+  "attempts_after_first_success_ignored": true
+}

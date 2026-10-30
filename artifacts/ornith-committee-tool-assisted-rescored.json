@@ -1,0 +1,52 @@
+{
+  "source": "artifacts/ornith-committee-tool-assisted.json",
+  "model": "Ornith-1.5-9B",
+  "thinking": false,
+  "cases": [
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "com(8,3)*(com(9,2)+com(9,3)+com(9,4)) + com(8,4)*(com(9,2)+com(9,3))",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expression computes the wrong result. Enumerate allowed engineer/designer splits, then subtract committees containing both incompatible people. Return plain JSON without a code fence and use the required answer type",
+          "seconds": 141.5,
+          "usage": {
+            "completion_tokens": 54,
+            "prompt_tokens": 134,
+            "total_tokens": 188,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "seconds": 178.2,
+          "usage": {
+            "completion_tokens": 72,
+            "prompt_tokens": 217,
+            "total_tokens": 289,
+            "prompt_tokens_details": {
+              "cached_tokens": 66
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "objectives_reached": 0,
+  "attempts_after_first_success_ignored": true
+}

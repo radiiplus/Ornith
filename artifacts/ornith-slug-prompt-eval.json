@@ -1,0 +1,66 @@
+{
+  "model": "Ornith-1.5-9B",
+  "quantization": "IQ2_M",
+  "case": "slug_with_untrusted_source",
+  "context_tokens": 1024,
+  "generation_limit_tokens": 192,
+  "thinking": false,
+  "results": [
+    {
+      "case": "slug_with_untrusted_source",
+      "variant": "previous",
+      "status": "passed",
+      "prompt_chars": 865,
+      "output": "```json\n{\n  \"hypothesis\": \"The slug function fails the test because it replaces spaces with underscores instead of hyphens; changing the replacement character from '_' to '-' will make slug('Hello World') return 'hello-world' and slug('Already-Here') return 'already-here', passing the test.\",\n  \"expected\": \"After the fix, slug('Hello World') == 'hello-world' and slug('Already-Here') == 'already-here'.\",\n  \"edits\": [\n    {\n      \"path\": \"slug.py\",\n      \"old\": \"    return text.lower().replace(\\\" \\\", \\\"_\\\")\",\n      \"new\": \"    return text.lower().replace(\\\" \\\", \\\"-\\\")\"\n    }\n  ]\n}\n```",
+      "valid_json": true,
+      "coherent_rationale": true,
+      "valid_edit": true,
+      "request_seconds": 148.99,
+      "usage": {
+        "completion_tokens": 169,
+        "prompt_tokens": 255,
+        "total_tokens": 424,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "case": "slug_with_untrusted_source",
+      "variant": "current",
+      "status": "regression",
+      "prompt_chars": 971,
+      "output": "```json\n{\"hypothesis\":\"The slug function only replaces spaces with underscores and lowercases the text, so multi-word input like 'Hello World' becomes 'hello_world' instead of the expected 'hello-world'. The missing replacement of spaces with hyphens causes the test to fail.\",\"expected\":\"After the edit, slug('Hello World') returns 'hello-world' and slug('Already-Here') returns 'already-here', matching the assertions in test_slug_with_untrusted_source.py.\",\"edits\":[{\"path\":\"slug.py\",\"old\":\"    return text.lower().replace(\\\" \\\", \\\"_\\\")\",\"new\":\"    return text.lower().replace(\\\" \\\", \\\"_\\\").replace(\\\" \\\", \\\"-\\\")\"}]}\n```",
+      "valid_json": true,
+      "coherent_rationale": true,
+      "valid_edit": false,
+      "request_seconds": 134.25,
+      "usage": {
+        "completion_tokens": 149,
+        "prompt_tokens": 276,
+        "total_tokens": 425,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 5092.9,
+  "peak_anonymous_mib": 1958.5,
+  "peak_process_swap_mib": 0.0,
+  "engine_log_tail": [
+    "4.28.720.494 I slot print_timing: id  0 | task 174 | n_gen =    125, tg =   1.37 t/s, tg_3s =   1.36 t/s",
+    "4.32.336.747 I slot print_timing: id  0 | task 174 | n_gen =    130, tg =   1.37 t/s, tg_3s =   1.38 t/s",
+    "4.36.122.956 I slot print_timing: id  0 | task 174 | n_gen =    135, tg =   1.37 t/s, tg_3s =   1.32 t/s",
+    "4.39.819.330 I slot print_timing: id  0 | task 174 | n_gen =    140, tg =   1.37 t/s, tg_3s =   1.35 t/s",
+    "4.43.464.335 I slot print_timing: id  0 | task 174 | n_gen =    145, tg =   1.37 t/s, tg_3s =   1.37 t/s",
+    "4.46.446.071 I slot print_timing: id  0 | task 174 | prompt eval time =   26023.40 ms /   276 tokens (   94.29 ms per token,    10.61 tokens per second)",
+    "4.46.446.186 I slot print_timing: id  0 | task 174 |        eval time =  108114.13 ms /   149 tokens (  730.50 ms per token,     1.37 tokens per second)",
+    "4.46.446.212 I slot print_timing: id  0 | task 174 |       total time =  134137.53 ms /   425 tokens",
+    "4.46.446.237 I slot print_timing: id  0 | task 174 |    graphs reused =        315",
+    "4.46.446.261 I slot print_timing: id  0 | task 174 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "4.46.446.596 I slot      release: id  0 | task 174 | stop processing: n_tokens = 424, truncated = 0",
+    "4.46.469.347 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

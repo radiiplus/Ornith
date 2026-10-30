@@ -1,0 +1,9 @@
+{
+  "physical_ram_gib_observed": 7.60,
+  "os_and_services_reserve_gib": 2.0,
+  "runtime_and_kv_reserve_gib": 1.0,
+  "initial_model_resident_budget_gib": 4.5,
+  "minimum_root_free_after_new_swap_gib": 30.0,
+  "initial_context_tokens": 2048,
+  "notes": "Planning limits, not evidence that Xing4.0 can run. Reassess from measured RSS, PSI, page faults and throughput."
+}

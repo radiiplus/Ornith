@@ -1,0 +1,508 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "thinking": true,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "reused_server": true,
+  "source_chunks": [
+    {
+      "source": "incident.txt",
+      "ordinal": 0,
+      "chars": 256
+    },
+    {
+      "source": "incident.txt",
+      "ordinal": 1,
+      "chars": 124
+    }
+  ],
+  "stream": [
+    {
+      "seconds": 32.06,
+      "kind": "reasoning_content",
+      "text": "The"
+    },
+    {
+      "seconds": 33.65,
+      "kind": "reasoning_content",
+      "text": " user"
+    },
+    {
+      "seconds": 35.18,
+      "kind": "reasoning_content",
+      "text": " wants"
+    },
+    {
+      "seconds": 36.76,
+      "kind": "reasoning_content",
+      "text": " me"
+    },
+    {
+      "seconds": 38.3,
+      "kind": "reasoning_content",
+      "text": " to"
+    },
+    {
+      "seconds": 40.17,
+      "kind": "reasoning_content",
+      "text": " determine"
+    },
+    {
+      "seconds": 52.18,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 68.85,
+      "kind": "reasoning_content",
+      "text": " next"
+    },
+    {
+      "seconds": 81.06,
+      "kind": "reasoning_content",
+      "text": " action"
+    },
+    {
+      "seconds": 87.19,
+      "kind": "reasoning_content",
+      "text": " based"
+    },
+    {
+      "seconds": 90.08,
+      "kind": "reasoning_content",
+      "text": " on"
+    },
+    {
+      "seconds": 92.86,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 95.67,
+      "kind": "reasoning_content",
+      "text": " workflow"
+    },
+    {
+      "seconds": 98.48,
+      "kind": "reasoning_content",
+      "text": " and"
+    },
+    {
+      "seconds": 101.35,
+      "kind": "reasoning_content",
+      "text": " current"
+    },
+    {
+      "seconds": 104.17,
+      "kind": "reasoning_content",
+      "text": " state"
+    },
+    {
+      "seconds": 107.0,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "seconds": 109.87,
+      "kind": "reasoning_content",
+      "text": "\n\n"
+    },
+    {
+      "seconds": 112.69,
+      "kind": "reasoning_content",
+      "text": "The"
+    },
+    {
+      "seconds": 115.55,
+      "kind": "reasoning_content",
+      "text": " workflow"
+    },
+    {
+      "seconds": 118.37,
+      "kind": "reasoning_content",
+      "text": " is"
+    },
+    {
+      "seconds": 121.25,
+      "kind": "reasoning_content",
+      "text": ":"
+    },
+    {
+      "seconds": 124.16,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "seconds": 127.0,
+      "kind": "reasoning_content",
+      "text": "1"
+    },
+    {
+      "seconds": 129.87,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "seconds": 132.76,
+      "kind": "reasoning_content",
+      "text": " Is"
+    },
+    {
+      "seconds": 135.61,
+      "kind": "reasoning_content",
+      "text": "olate"
+    },
+    {
+      "seconds": 138.46,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 141.27,
+      "kind": "reasoning_content",
+      "text": " service"
+    },
+    {
+      "seconds": 144.09,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "seconds": 146.98,
+      "kind": "reasoning_content",
+      "text": "2"
+    },
+    {
+      "seconds": 149.79,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "seconds": 152.68,
+      "kind": "reasoning_content",
+      "text": " Roll"
+    },
+    {
+      "seconds": 155.55,
+      "kind": "reasoning_content",
+      "text": " back"
+    },
+    {
+      "seconds": 158.35,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 161.18,
+      "kind": "reasoning_content",
+      "text": " deployment"
+    },
+    {
+      "seconds": 164.05,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "seconds": 166.88,
+      "kind": "reasoning_content",
+      "text": "3"
+    },
+    {
+      "seconds": 169.69,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "seconds": 171.26,
+      "kind": "reasoning_content",
+      "text": " Restart"
+    },
+    {
+      "seconds": 172.78,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 174.3,
+      "kind": "reasoning_content",
+      "text": " service"
+    },
+    {
+      "seconds": 175.87,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "seconds": 177.39,
+      "kind": "reasoning_content",
+      "text": "4"
+    },
+    {
+      "seconds": 178.96,
+      "kind": "reasoning_content",
+      "text": "."
+    },
+    {
+      "seconds": 180.46,
+      "kind": "reasoning_content",
+      "text": " Validate"
+    },
+    {
+      "seconds": 181.99,
+      "kind": "reasoning_content",
+      "text": " the"
+    },
+    {
+      "seconds": 183.58,
+      "kind": "reasoning_content",
+      "text": "\n"
+    },
+    {
+      "seconds": 188.36,
+      "kind": "content",
+      "text": "```"
+    },
+    {
+      "seconds": 189.89,
+      "kind": "content",
+      "text": "json"
+    },
+    {
+      "seconds": 191.47,
+      "kind": "content",
+      "text": "\n"
+    },
+    {
+      "seconds": 193.05,
+      "kind": "content",
+      "text": "{"
+    },
+    {
+      "seconds": 194.6,
+      "kind": "content",
+      "text": "\n"
+    },
+    {
+      "seconds": 196.17,
+      "kind": "content",
+      "text": " "
+    },
+    {
+      "seconds": 197.67,
+      "kind": "content",
+      "text": " \""
+    },
+    {
+      "seconds": 199.19,
+      "kind": "content",
+      "text": "answer"
+    },
+    {
+      "seconds": 200.76,
+      "kind": "content",
+      "text": "\":"
+    },
+    {
+      "seconds": 202.27,
+      "kind": "content",
+      "text": " \""
+    },
+    {
+      "seconds": 203.78,
+      "kind": "content",
+      "text": "Restart"
+    },
+    {
+      "seconds": 205.36,
+      "kind": "content",
+      "text": " the"
+    },
+    {
+      "seconds": 206.88,
+      "kind": "content",
+      "text": " service"
+    },
+    {
+      "seconds": 208.38,
+      "kind": "content",
+      "text": "\","
+    },
+    {
+      "seconds": 209.95,
+      "kind": "content",
+      "text": "\n"
+    },
+    {
+      "seconds": 211.46,
+      "kind": "content",
+      "text": " "
+    },
+    {
+      "seconds": 212.98,
+      "kind": "content",
+      "text": " \""
+    },
+    {
+      "seconds": 214.55,
+      "kind": "content",
+      "text": "reason"
+    },
+    {
+      "seconds": 216.1,
+      "kind": "content",
+      "text": "\":"
+    },
+    {
+      "seconds": 218.0,
+      "kind": "content",
+      "text": " \""
+    },
+    {
+      "seconds": 224.46,
+      "kind": "content",
+      "text": "The"
+    },
+    {
+      "seconds": 227.28,
+      "kind": "content",
+      "text": " workflow"
+    },
+    {
+      "seconds": 230.15,
+      "kind": "content",
+      "text": " order"
+    },
+    {
+      "seconds": 232.97,
+      "kind": "content",
+      "text": " is"
+    },
+    {
+      "seconds": 235.77,
+      "kind": "content",
+      "text": ":"
+    },
+    {
+      "seconds": 238.57,
+      "kind": "content",
+      "text": " isolate"
+    },
+    {
+      "seconds": 241.37,
+      "kind": "content",
+      "text": " \u2192"
+    },
+    {
+      "seconds": 244.18,
+      "kind": "content",
+      "text": " rollback"
+    },
+    {
+      "seconds": 247.05,
+      "kind": "content",
+      "text": " \u2192"
+    },
+    {
+      "seconds": 249.86,
+      "kind": "content",
+      "text": " restart"
+    },
+    {
+      "seconds": 252.68,
+      "kind": "content",
+      "text": " \u2192"
+    },
+    {
+      "seconds": 255.55,
+      "kind": "content",
+      "text": " validate"
+    },
+    {
+      "seconds": 258.36,
+      "kind": "content",
+      "text": "."
+    },
+    {
+      "seconds": 261.16,
+      "kind": "content",
+      "text": " Is"
+    },
+    {
+      "seconds": 263.97,
+      "kind": "content",
+      "text": "olation"
+    },
+    {
+      "seconds": 266.77,
+      "kind": "content",
+      "text": " and"
+    },
+    {
+      "seconds": 269.58,
+      "kind": "content",
+      "text": " rollback"
+    },
+    {
+      "seconds": 272.4,
+      "kind": "content",
+      "text": " are"
+    },
+    {
+      "seconds": 275.2,
+      "kind": "content",
+      "text": " complete"
+    },
+    {
+      "seconds": 278.06,
+      "kind": "content",
+      "text": ","
+    },
+    {
+      "seconds": 280.88,
+      "kind": "content",
+      "text": " so"
+    },
+    {
+      "seconds": 283.69,
+      "kind": "content",
+      "text": " the"
+    },
+    {
+      "seconds": 286.56,
+      "kind": "content",
+      "text": " first"
+    },
+    {
+      "seconds": 289.37,
+      "kind": "content",
+      "text": " incomplete"
+    },
+    {
+      "seconds": 292.18,
+      "kind": "content",
+      "text": " step"
+    },
+    {
+      "seconds": 294.99,
+      "kind": "content",
+      "text": " is"
+    }
+  ],
+  "status": "completed",
+  "answer": "```json\n{\n  \"answer\": \"Restart the service\",\n  \"reason\": \"The workflow order is: isolate \u2192 rollback \u2192 restart \u2192 validate. Isolation and rollback are complete, so the first incomplete step is",
+  "model_metrics": {
+    "request_seconds": 294.99,
+    "time_to_first_chunk_seconds": 32.06,
+    "prompt_tokens": 145,
+    "completion_tokens": 96,
+    "generation_tps": 0.361,
+    "reasoning_chars": 196,
+    "finish_reason": "length"
+  },
+  "peak_rss_mib": 5092.9,
+  "peak_anonymous_mib": 2195.0,
+  "min_available_ram_mib": 4913.5,
+  "peak_cgroup_memory_full_avg10": 0
+}

@@ -1,0 +1,45 @@
+{
+  "timestamp_utc": "2026-10-29T16:53:15.509854+00:00",
+  "memory_kb": {
+    "MemTotal": "7966544 kB",
+    "MemAvailable": "7302024 kB",
+    "MemFree": "5805024 kB",
+    "Cached": "1718768 kB",
+    "SwapTotal": "20971516 kB",
+    "SwapFree": "20971516 kB"
+  },
+  "swap": [
+    {
+      "name": "/swapfile",
+      "type": "file",
+      "size_kb": 20971516,
+      "used_kb": 0,
+      "priority": -2
+    }
+  ],
+  "swappiness": 200,
+  "root_disk_bytes": {
+    "total": 107294470144,
+    "used": 25334751232,
+    "free": 81959718912
+  },
+  "vmstat": {
+    "pswpin": 0,
+    "pswpout": 0,
+    "pgmajfault": 1202,
+    "oom_kill": 0
+  },
+  "processes": [
+    {
+      "pid": 1,
+      "name": "systemd",
+      "rss_kb": "17876 kB",
+      "virtual_kb": "173948 kB",
+      "major_faults": 193
+    }
+  ],
+  "memory_pressure": [
+    "some avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+    "full avg10=0.00 avg60=0.00 avg300=0.00 total=0"
+  ]
+}
