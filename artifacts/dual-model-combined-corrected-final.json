@@ -1,0 +1,610 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "needs_review",
+      "objective": "Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?",
+      "steps": [],
+      "plan_revisions": 1,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.75,
+          "request_seconds": 29.0,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 6.037,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 29.2,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 324,
+          "completion_tokens": 148,
+          "generation_tps": 6.258,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.8,
+          "request_seconds": 19.86,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 367,
+          "completion_tokens": 83,
+          "generation_tps": 6.333,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 9.51,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 408,
+          "completion_tokens": 54,
+          "generation_tps": 6.413,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan_revision",
+          "load_seconds": 1.71,
+          "request_seconds": 21.66,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 300,
+          "completion_tokens": 101,
+          "generation_tps": 6.213,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?. Verified steps: . Remaining work requires review: Answer failed: Numeric answer is incorrect",
+      "case": "staggered-pumps",
+      "wall_seconds": 114.81,
+      "passed": false,
+      "generated_tokens": 543,
+      "effective_tps": 4.73,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.75,
+          "request_seconds": 29.0,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 6.037,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 29.2,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 324,
+          "completion_tokens": 148,
+          "generation_tps": 6.258,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.8,
+          "request_seconds": 19.86,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 367,
+          "completion_tokens": 83,
+          "generation_tps": 6.333,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 9.51,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 408,
+          "completion_tokens": 54,
+          "generation_tps": 6.413,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 1.71,
+          "request_seconds": 21.66,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 300,
+          "completion_tokens": 101,
+          "generation_tps": 6.213,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2084.6
+    },
+    {
+      "task_id": 2,
+      "status": "verified",
+      "objective": "A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?",
+      "steps": [
+        {
+          "step": "step1",
+          "attempt": 1,
+          "passed": true,
+          "correction_failures": 0,
+          "evidence": "Answer passed the deterministic checker",
+          "contradicted": false
+        }
+      ],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 16.95,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 129,
+          "completion_tokens": 96,
+          "generation_tps": 6.382,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 35.3,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 293,
+          "completion_tokens": 189,
+          "generation_tps": 6.222,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.76,
+          "request_seconds": 14.79,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 347,
+          "completion_tokens": 54,
+          "generation_tps": 6.309,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?. Verified steps: step1. All planned checks passed.",
+      "case": "six-fact-implication",
+      "wall_seconds": 68.96,
+      "passed": true,
+      "generated_tokens": 339,
+      "effective_tps": 4.916,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 16.95,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 129,
+          "completion_tokens": 96,
+          "generation_tps": 6.382,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 35.3,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 293,
+          "completion_tokens": 189,
+          "generation_tps": 6.222,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.76,
+          "request_seconds": 14.79,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 347,
+          "completion_tokens": 54,
+          "generation_tps": 6.309,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2084.6
+    },
+    {
+      "task_id": 3,
+      "status": "needs_review",
+      "objective": "An incident is open. Produce a valid recovery plan that deploys the patch, restores service, completes the audit, and closes the incident. Actions can be taken only when all their prerequisites hold.",
+      "steps": [],
+      "plan_revisions": 1,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.76,
+          "request_seconds": 20.87,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 134,
+          "completion_tokens": 116,
+          "generation_tps": 6.269,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 37.96,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 530,
+          "completion_tokens": 176,
+          "generation_tps": 6.176,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.65,
+          "request_seconds": 19.18,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 566,
+          "completion_tokens": 55,
+          "generation_tps": 6.231,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 9.08,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 574,
+          "completion_tokens": 54,
+          "generation_tps": 6.233,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan_revision",
+          "load_seconds": 1.7,
+          "request_seconds": 24.9,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 223,
+          "completion_tokens": 134,
+          "generation_tps": 6.373,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: An incident is open. Produce a valid recovery plan that deploys the patch, restores service, completes the audit, and closes the incident. Actions can be taken only when all their prerequisites hold.. Verified steps: . Remaining work requires review: Answer failed: Plan uses an unknown action",
+      "case": "incident-deployment",
+      "wall_seconds": 117.49,
+      "passed": false,
+      "generated_tokens": 535,
+      "effective_tps": 4.554,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.76,
+          "request_seconds": 20.87,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 134,
+          "completion_tokens": 116,
+          "generation_tps": 6.269,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 37.96,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 530,
+          "completion_tokens": 176,
+          "generation_tps": 6.176,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.65,
+          "request_seconds": 19.18,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 566,
+          "completion_tokens": 55,
+          "generation_tps": 6.231,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 9.08,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 574,
+          "completion_tokens": 54,
+          "generation_tps": 6.233,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 1.7,
+          "request_seconds": 24.9,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 223,
+          "completion_tokens": 134,
+          "generation_tps": 6.373,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2084.6
+    },
+    {
+      "task_id": 4,
+      "status": "failed",
+      "objective": "A six-person committee is chosen from eight engineers and nine designers. It must include at least three engineers and at least two designers. One named engineer and one named designer cannot both serve. How many valid committees are there?",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 23.7,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 139,
+          "completion_tokens": 137,
+          "generation_tps": 6.333,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 19.85,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 158,
+          "completion_tokens": 123,
+          "generation_tps": 6.335,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: A six-person committee is chosen from eight engineers and nine designers. It must include at least three engineers and at least two designers. One named engineer and one named designer cannot both serve. How many valid committees are there?. Router stopped: Objective gate could not confirm the original request",
+      "case": "committee-count",
+      "wall_seconds": 43.57,
+      "passed": false,
+      "generated_tokens": 260,
+      "effective_tps": 5.967,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 23.7,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 139,
+          "completion_tokens": 137,
+          "generation_tps": 6.333,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 19.85,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 158,
+          "completion_tokens": 123,
+          "generation_tps": 6.335,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2084.6
+    }
+  ],
+  "status": "failed",
+  "prompt_style": "system",
+  "error": "Two-model run deadline reached",
+  "peak_rss_mib": 2084.6,
+  "wall_seconds": 350.97,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.75,
+      "request_seconds": 29.0,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 166,
+      "completion_tokens": 157,
+      "generation_tps": 6.037,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 29.2,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 324,
+      "completion_tokens": 148,
+      "generation_tps": 6.258,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.8,
+      "request_seconds": 19.86,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 367,
+      "completion_tokens": 83,
+      "generation_tps": 6.333,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 9.51,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 408,
+      "completion_tokens": 54,
+      "generation_tps": 6.413,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.71,
+      "request_seconds": 21.66,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 300,
+      "completion_tokens": 101,
+      "generation_tps": 6.213,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 16.95,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 129,
+      "completion_tokens": 96,
+      "generation_tps": 6.382,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 35.3,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 293,
+      "completion_tokens": 189,
+      "generation_tps": 6.222,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.76,
+      "request_seconds": 14.79,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 347,
+      "completion_tokens": 54,
+      "generation_tps": 6.309,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.76,
+      "request_seconds": 20.87,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 134,
+      "completion_tokens": 116,
+      "generation_tps": 6.269,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 37.96,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 530,
+      "completion_tokens": 176,
+      "generation_tps": 6.176,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.65,
+      "request_seconds": 19.18,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 566,
+      "completion_tokens": 55,
+      "generation_tps": 6.231,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 9.08,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 574,
+      "completion_tokens": 54,
+      "generation_tps": 6.233,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.7,
+      "request_seconds": 24.9,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 223,
+      "completion_tokens": 134,
+      "generation_tps": 6.373,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 23.7,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 139,
+      "completion_tokens": 137,
+      "generation_tps": 6.333,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 19.85,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 158,
+      "completion_tokens": 123,
+      "generation_tps": 6.335,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

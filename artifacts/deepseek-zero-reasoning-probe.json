@@ -1,0 +1,64 @@
+{
+  "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+  "quantization": "Q4_K_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": true,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "1/2",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them",
+          "content": "{\n  \"answer\": \"1/2\"\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 11.32,
+          "usage": {
+            "completion_tokens": 20,
+            "prompt_tokens": 124,
+            "total_tokens": 144,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 3.0063424331626787
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.9,
+  "peak_anonymous_mib": 1075.2,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6038.4,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "0.11.006.714 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'",
+    "0.11.011.548 I srv  llama_server: model loaded",
+    "0.11.011.558 I srv  llama_server: listening on http://127.0.0.1:37739",
+    "0.11.088.407 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1",
+    "0.11.088.602 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0",
+    "0.22.404.236 I slot print_timing: id  0 | task 0 | prompt eval time =    4995.61 ms /   124 tokens (   40.29 ms per token,    24.82 tokens per second)",
+    "0.22.404.249 I slot print_timing: id  0 | task 0 |        eval time =    6319.97 ms /    20 tokens (  332.63 ms per token,     3.01 tokens per second)",
+    "0.22.404.251 I slot print_timing: id  0 | task 0 |       total time =   11315.58 ms /   144 tokens",
+    "0.22.404.257 I slot print_timing: id  0 | task 0 |    graphs reused =         18",
+    "0.22.404.257 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "0.22.404.311 I slot      release: id  0 | task 0 | stop processing: n_tokens = 143, truncated = 0",
+    "0.22.483.755 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

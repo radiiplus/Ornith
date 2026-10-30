@@ -1,0 +1,162 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "case": "tenant_reports",
+  "fixture": {
+    "baseline": {
+      "exit_code": 1,
+      "output": "euse_another_report (test_reports.ReportTests) ... FAIL\ntest_unauthorized_tenant_is_rejected_even_when_cached (test_reports.ReportTests) ... ok\n\n======================================================================\nFAIL: test_cache_keeps_users_and_tenants_separate (test_reports.ReportTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_reports.py\", line 20, in test_cache_keeps_users_and_tenants_separate\n    self.assertEqual(service.report(first, 'south'), {'tenant': 'south', 'total': 9})\nAssertionError: {'tenant': 'north', 'total': 4} != {'tenant': 'south', 'total': 9}\n- {'tenant': 'north', 'total': 4}\n?             ^ ^              ^\n\n+ {'tenant': 'south', 'total': 9}\n?             ^ ^              ^\n\n\n======================================================================\nFAIL: test_switching_tenants_does_not_reuse_another_report (test_reports.ReportTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_reports.py\", line 13, in test_switching_tenants_does_not_reuse_another_report\n    self.assertEqual(service.report(user, 'south'), {'tenant': 'south', 'total': 15})\nAssertionError: {'tenant': 'north', 'total': 50} != {'tenant': 'south', 'total': 15}\n- {'tenant': 'north', 'total': 50}\n?             ^ ^               -\n\n+ {'tenant': 'south', 'total': 15}\n?             ^ ^              +\n\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=2)\n",
+      "timed_out": false
+    },
+    "oracle": {
+      "exit_code": 0,
+      "output": "test_cache_keeps_users_and_tenants_separate (test_reports.ReportTests) ... ok\ntest_switching_tenants_does_not_reuse_another_report (test_reports.ReportTests) ... ok\ntest_unauthorized_tenant_is_rejected_even_when_cached (test_reports.ReportTests) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+      "timed_out": false
+    }
+  },
+  "steps": [
+    {
+      "number": 1,
+      "raw": "{\"action\": \"list\", \"target\": \"\", \"why\": \"Explore workspace structure to find report service and tenant handling\", \"expect\": \"List of files including service.py and tests\"}",
+      "proposal": {
+        "action": "list",
+        "target": "",
+        "why": "Explore workspace structure to find report service and tenant handling",
+        "expect": "List of files including service.py and tests"
+      },
+      "observation": "reporting/__init__.py\nreporting/auth.py\nreporting/cache.py\nreporting/render.py\nreporting/service.py\nreporting/store.py\ntests/test_reports.py",
+      "seconds": 157.52
+    },
+    {
+      "number": 2,
+      "raw": "{\"action\": \"read\", \"target\": \"reporting/service.py\", \"why\": \"Read report service to find tenant handling bug\", \"expect\": \"Find report() method and tenant context handling\"}",
+      "proposal": {
+        "action": "read",
+        "target": "reporting/service.py",
+        "why": "Read report service to find tenant handling bug",
+        "expect": "Find report() method and tenant context handling"
+      },
+      "observation": "from .auth import allowed\nfrom .render import render\n\n\nclass ReportService:\n    def __init__(self, store, cache):\n        self.store = store\n        self.cache = cache\n\n    def report(self, user, tenant):\n        if not allowed(user, tenant):\n            raise PermissionError('tenant access denied')\n        key = user['id']\n        cached = self.cache.get(key)\n        if cached is not None:\n            return cached\n        result = render(tenant, self.store.totals(tenant))\n        self.cache.put(key, result)\n        return result\n",
+      "seconds": 163.47
+    },
+    {
+      "number": 3,
+      "raw": "{\"action\": \"read\", \"target\": \"reporting/cache.py\", \"why\": \"Cache stores by user id, not tenant\", \"expect\": \"Cache key uses user id only, ignoring tenant\"}",
+      "proposal": {
+        "action": "read",
+        "target": "reporting/cache.py",
+        "why": "Cache stores by user id, not tenant",
+        "expect": "Cache key uses user id only, ignoring tenant"
+      },
+      "observation": "class ReportCache:\n    def __init__(self):\n        self.entries = {}\n\n    def get(self, key):\n        return self.entries.get(key)\n\n    def put(self, key, report):\n        self.entries[key] = report\n",
+      "seconds": 195.51
+    },
+    {
+      "number": 4,
+      "raw": "{\"action\": \"read\", \"target\": \"reporting/auth.py\", \"why\": \"Check allowed() for cross-tenant access bug\", \"expect\": \"allowed() checks user id only, not tenant\"}",
+      "proposal": {
+        "action": "read",
+        "target": "reporting/auth.py",
+        "why": "Check allowed() for cross-tenant access bug",
+        "expect": "allowed() checks user id only, not tenant"
+      },
+      "observation": "def allowed(user, tenant):\n    return tenant in user['tenants']\n",
+      "seconds": 197.32
+    },
+    {
+      "number": 5,
+      "raw": "{\"action\": \"final\", \"target\": \"reporting/cache.py\", \"old\": \"    def get(self, key):\\n        return self.entries.get(key)\", \"new\": \"    def get(self, key, tenant):\\n        return self.entries.get((key, tenant))\", \"why\": \"Cache keyed by user id only, ignoring tenant\", \"expect\": \"Cache lookup must include tenant to prevent cross-tenant leak\"}",
+      "proposal": {
+        "action": "final",
+        "target": "reporting/cache.py",
+        "old": "    def get(self, key):\n        return self.entries.get(key)",
+        "new": "    def get(self, key, tenant):\n        return self.entries.get((key, tenant))",
+        "why": "Cache keyed by user id only, ignoring tenant",
+        "expect": "Cache lookup must include tenant to prevent cross-tenant leak"
+      },
+      "observation": "Final edit checked against isolated tests: {\"passed\": false, \"reason\": \"Edit did not match exactly once\"}",
+      "seconds": 283.6,
+      "grade": {
+        "passed": false,
+        "reason": "Edit did not match exactly once"
+      }
+    },
+    {
+      "number": 6,
+      "raw": "{\"action\":\"final\",\"target\":\"reporting/cache.py\",\"old\":\"    def get(self, key):\\n        return self.entries.get(key)\",\"new\":\"    def get(self, key):\\n        return self.entries.get(key)\",\"why\":\"Cache keyed by user id only, ignoring tenant\",\"expect\":\"Cache lookup must include tenant to prevent cross-tenant leak\"}",
+      "proposal": {
+        "action": "final",
+        "target": "reporting/cache.py",
+        "old": "    def get(self, key):\n        return self.entries.get(key)",
+        "new": "    def get(self, key):\n        return self.entries.get(key)",
+        "why": "Cache keyed by user id only, ignoring tenant",
+        "expect": "Cache lookup must include tenant to prevent cross-tenant leak"
+      },
+      "observation": "Final edit checked against isolated tests: {\"passed\": false, \"reason\": \"Edit did not match exactly once\"}",
+      "seconds": 228.19,
+      "grade": {
+        "passed": false,
+        "reason": "Edit did not match exactly once"
+      }
+    }
+  ],
+  "status": "completed",
+  "metrics": {
+    "tool_actions": 3,
+    "tested": false,
+    "true_file_inspected": true,
+    "distinct_files_inspected": 3,
+    "moved_from_decoy_to_cause": false,
+    "predictions_recorded": 3,
+    "final_attempts": 2,
+    "recovered_after_failed_edit": false,
+    "repeated_action": true,
+    "hypotheses": [
+      "Explore workspace structure to find report service and tenant handling",
+      "Read report service to find tenant handling bug",
+      "Cache stores by user id, not tenant",
+      "Check allowed() for cross-tenant access bug",
+      "Cache keyed by user id only, ignoring tenant",
+      "Cache keyed by user id only, ignoring tenant"
+    ],
+    "predictions": [
+      "List of files including service.py and tests",
+      "Find report() method and tenant context handling",
+      "Cache key uses user id only, ignoring tenant",
+      "allowed() checks user id only, not tenant",
+      "Cache lookup must include tenant to prevent cross-tenant leak",
+      "Cache lookup must include tenant to prevent cross-tenant leak"
+    ]
+  },
+  "peak_rss_mib": 4086.4,
+  "engine_log_tail": [
+    "2.00.099.226 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    373, progress = 0.99, t =  83.19 s / 4.48 tokens per second",
+    "4.25.096.069 I slot print_timing: id  0 | task 0 | prompt eval time =   89419.93 ms /   377 tokens (  237.19 ms per token,     4.22 tokens per second)",
+    "4.25.096.076 I slot print_timing: id  0 | task 0 |        eval time =  138767.17 ms /    73 tokens ( 1927.32 ms per token,     0.52 tokens per second)",
+    "4.25.096.076 I slot print_timing: id  0 | task 0 |       total time =  228187.10 ms /   450 tokens",
+    "4.25.096.082 I slot print_timing: id  0 | task 0 |    graphs reused =         72",
+    "4.25.096.083 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "4.25.096.188 I slot      release: id  0 | task 0 | stop processing: n_tokens = 449, truncated = 0",
+    "4.25.098.924 I srv    operator(): operator(): cleaning up before exit..."
+  ],
+  "interruptions": [
+    {
+      "status": "failed",
+      "error": "Anonymous memory guard exceeded",
+      "after_steps": 3
+    },
+    {
+      "status": "completed",
+      "error": null,
+      "after_steps": 4
+    },
+    {
+      "status": "failed",
+      "error": "Cgroup memory full pressure exceeded 5.0%",
+      "after_steps": 5
+    }
+  ],
+  "grade": {
+    "passed": false,
+    "reason": "Edit did not match exactly once"
+  }
+}

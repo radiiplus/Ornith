@@ -1,0 +1,61 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [],
+  "status": "failed",
+  "error": "Two-model run deadline reached",
+  "peak_rss_mib": 2083.9,
+  "wall_seconds": 129.76,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.75,
+      "request_seconds": 28.21,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 166,
+      "completion_tokens": 157,
+      "generation_tps": 6.26,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 29.84,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 319,
+      "completion_tokens": 152,
+      "generation_tps": 6.256,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.79,
+      "request_seconds": 17.68,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 308,
+      "completion_tokens": 77,
+      "generation_tps": 6.419,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 9.44,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 318,
+      "completion_tokens": 59,
+      "generation_tps": 6.508,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

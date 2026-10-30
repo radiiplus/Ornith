@@ -1,0 +1,138 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "failed",
+      "objective": "A six-person committee is chosen from eight engineers and nine designers. It must include at least three engineers and at least two designers. One named engineer and one named designer cannot both serve. How many valid committees are there?",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.7,
+          "request_seconds": 24.97,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 139,
+          "completion_tokens": 152,
+          "generation_tps": 6.72,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 19.09,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 158,
+          "completion_tokens": 123,
+          "generation_tps": 6.58,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 33.28,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 266,
+          "completion_tokens": 188,
+          "generation_tps": 6.51,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: A six-person committee is chosen from eight engineers and nine designers. It must include at least three engineers and at least two designers. One named engineer and one named designer cannot both serve. How many valid committees are there?. Router stopped: [Errno 104] Connection reset by peer",
+      "case": "committee-count",
+      "wall_seconds": 82.52,
+      "passed": false,
+      "generated_tokens": 463,
+      "effective_tps": 5.611,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.7,
+          "request_seconds": 24.97,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 139,
+          "completion_tokens": 152,
+          "generation_tps": 6.72,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 19.09,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 158,
+          "completion_tokens": 123,
+          "generation_tps": 6.58,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 33.28,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 266,
+          "completion_tokens": 188,
+          "generation_tps": 6.51,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.6
+    }
+  ],
+  "status": "completed",
+  "prompt_style": "system",
+  "peak_rss_mib": 2083.6,
+  "wall_seconds": 82.52,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.7,
+      "request_seconds": 24.97,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 139,
+      "completion_tokens": 152,
+      "generation_tps": 6.72,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 19.09,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 158,
+      "completion_tokens": 123,
+      "generation_tps": 6.58,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 33.28,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 266,
+      "completion_tokens": 188,
+      "generation_tps": 6.51,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

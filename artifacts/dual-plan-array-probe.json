@@ -1,0 +1,206 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "failed",
+      "objective": "An incident is open. Produce a valid recovery plan that deploys the patch, restores service, completes the audit, and closes the incident. Actions can be taken only when all their prerequisites hold.",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.81,
+          "request_seconds": 21.01,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 134,
+          "completion_tokens": 116,
+          "generation_tps": 6.229,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 38.85,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 530,
+          "completion_tokens": 176,
+          "generation_tps": 6.044,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.64,
+          "request_seconds": 19.49,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 568,
+          "completion_tokens": 57,
+          "generation_tps": 6.297,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 9.52,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 576,
+          "completion_tokens": 57,
+          "generation_tps": 6.268,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan_revision",
+          "load_seconds": 1.75,
+          "request_seconds": 53.07,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 223,
+          "completion_tokens": 320,
+          "generation_tps": 6.5,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        }
+      ],
+      "conclusion": "Original objective: An incident is open. Produce a valid recovery plan that deploys the patch, restores service, completes the audit, and closes the incident. Actions can be taken only when all their prerequisites hold.. Router stopped: Expecting property name enclosed in double quotes: line 32 column 7 (char 1517)",
+      "case": "incident-deployment",
+      "wall_seconds": 147.44,
+      "passed": false,
+      "generated_tokens": 726,
+      "effective_tps": 4.924,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.81,
+          "request_seconds": 21.01,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 134,
+          "completion_tokens": 116,
+          "generation_tps": 6.229,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 38.85,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 530,
+          "completion_tokens": 176,
+          "generation_tps": 6.044,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.64,
+          "request_seconds": 19.49,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 568,
+          "completion_tokens": 57,
+          "generation_tps": 6.297,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 9.52,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 576,
+          "completion_tokens": 57,
+          "generation_tps": 6.268,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 1.75,
+          "request_seconds": 53.07,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 223,
+          "completion_tokens": 320,
+          "generation_tps": 6.5,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        }
+      ],
+      "peak_rss_mib": 2084.6
+    }
+  ],
+  "status": "completed",
+  "prompt_style": "system",
+  "peak_rss_mib": 2084.6,
+  "wall_seconds": 147.56,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.81,
+      "request_seconds": 21.01,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 134,
+      "completion_tokens": 116,
+      "generation_tps": 6.229,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 38.85,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 530,
+      "completion_tokens": 176,
+      "generation_tps": 6.044,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.64,
+      "request_seconds": 19.49,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 568,
+      "completion_tokens": 57,
+      "generation_tps": 6.297,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 9.52,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 576,
+      "completion_tokens": 57,
+      "generation_tps": 6.268,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.75,
+      "request_seconds": 53.07,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 223,
+      "completion_tokens": 320,
+      "generation_tps": 6.5,
+      "reasoning_chars": 0,
+      "finish_reason": "length"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 4,
+      "status": "failed",
+      "objective": "Fix add so the test passes",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.78,
+          "request_seconds": 18.18,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 86,
+          "completion_tokens": 103,
+          "generation_tps": 6.181,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 14.85,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 99,
+          "completion_tokens": 91,
+          "generation_tps": 6.269,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: Fix add so the test passes. Router stopped: Objective gate could not confirm the original request",
+      "case": "repair-demo",
+      "wall_seconds": 34.83,
+      "passed": false,
+      "generated_tokens": 194,
+      "effective_tps": 5.57,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.78,
+          "request_seconds": 18.18,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 86,
+          "completion_tokens": 103,
+          "generation_tps": 6.181,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 14.85,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 99,
+          "completion_tokens": 91,
+          "generation_tps": 6.269,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.7
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.7,
+  "wall_seconds": 35.01,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.78,
+      "request_seconds": 18.18,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 86,
+      "completion_tokens": 103,
+      "generation_tps": 6.181,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 14.85,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 99,
+      "completion_tokens": 91,
+      "generation_tps": 6.269,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

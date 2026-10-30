@@ -1,5 +1,14 @@
 # Xing-Specialist
 
+The current two-model experiment uses VibeThinker-1.5B for planning and
+DeepSeek-R1-Distill-Qwen-1.5B for bounded execution. See the
+[router protocol](docs/two-model-router.md) and run the verified local suite with
+`bash scripts/run_dual_pipeline.sh --suite`. The Ornith instructions and results
+below document the previous 9B baseline.
+The corrected local suite passed 4/9 cases; a small-data LoRA pilot is
+documented separately in [the training report](docs/lora-pilot.md) and is not
+enabled in the router.
+
 For a new host or coding-agent session, start with [the handoff](docs/new-instance-handoff.md).
 
 A bounded software-repair agent with a model-independent local HTTP backend, isolated test execution, and evidence-backed SQLite memory. The temporary Qwen coding model remains available; Ornith-1.5-9B is under bounded evaluation on this 8 GB host. The Xing4.0 GGUF was removed after its load attempts failed and can be reacquired later.
@@ -45,7 +54,9 @@ The [verified reasoning experiment](docs/verified-reasoning-experiment.md) cover
 
 The [Ornith reasoning stress report](docs/ornith-reasoning-stress.md) records bounded quantitative, logic, and multi-step planning runs with executable checkers and feedback retries. Run a single challenge through `bash scripts/run_ornith_stress.sh --case staggered-pumps --tool-assisted`; the launcher enforces the same CPU and memory scope described in the report. `scripts/rescore_ornith_stress.py` can replay saved responses through the current checker without loading the model.
 
-The [bytecode blind-spot probe](docs/ornith-bytecode-analysis.md) checks whether Ornith identifies a boundary assertion removed by `python -O`. Source-only and raw-bytecode prompts missed the cause; a disassembler-generated method delta led to a correct, independently checked explanation. Run it with `bash scripts/run_ornith_bytecode_probe.sh` under the standard resource envelope.
+The [bytecode blind-spot probe](docs/ornith-bytecode-analysis.md) checks whether Ornith identifies boundary guards disabled by `python -O`. Source-only and raw-bytecode prompts missed the original cause; a disassembler-generated delta led to a correct explanation. The evidence-and-feedback mode corrected the original case semantically, but Ornith still missed a held-out `__debug__` case after feedback. The tool independently verified both flaws. Run it with `bash scripts/run_ornith_bytecode_probe.sh --mode feedback` under the standard resource envelope.
+
+The [multi-file investigation probe](docs/ornith-investigation.md) tests whether Ornith explores a regression, records predictions, revises its search path, and proposes an edit that passes isolated tests. Run `bash scripts/run_ornith_investigation.sh --case tenant_reports` or `--case discount_shipping`; each run saves its action trace and separate exploration metrics.
 
 ## Tests
 

@@ -1,0 +1,205 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 5,
+      "status": "needs_review",
+      "objective": "Fix add so the test passes",
+      "steps": [],
+      "plan_revisions": 1,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.87,
+          "request_seconds": 13.21,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 101,
+          "completion_tokens": 68,
+          "generation_tps": 6.033,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 27.49,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 163,
+          "completion_tokens": 151,
+          "generation_tps": 6.071,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.8,
+          "request_seconds": 11.84,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 147,
+          "completion_tokens": 56,
+          "generation_tps": 6.096,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 31.04,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 162,
+          "completion_tokens": 192,
+          "generation_tps": 6.267,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan_revision",
+          "load_seconds": 1.79,
+          "request_seconds": 12.49,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 168,
+          "completion_tokens": 57,
+          "generation_tps": 6.115,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: Fix add so the test passes. Verified steps: . Remaining work requires review: Unterminated string starting at: line 17 column 18 (char 456)",
+      "case": "repair-demo",
+      "wall_seconds": 101.86,
+      "passed": false,
+      "generated_tokens": 524,
+      "effective_tps": 5.144,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.87,
+          "request_seconds": 13.21,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 101,
+          "completion_tokens": 68,
+          "generation_tps": 6.033,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 27.49,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 163,
+          "completion_tokens": 151,
+          "generation_tps": 6.071,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.8,
+          "request_seconds": 11.84,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 147,
+          "completion_tokens": 56,
+          "generation_tps": 6.096,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 31.04,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 162,
+          "completion_tokens": 192,
+          "generation_tps": 6.267,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 1.79,
+          "request_seconds": 12.49,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 168,
+          "completion_tokens": 57,
+          "generation_tps": 6.115,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.8
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.8,
+  "wall_seconds": 101.97,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.87,
+      "request_seconds": 13.21,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 101,
+      "completion_tokens": 68,
+      "generation_tps": 6.033,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 27.49,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 163,
+      "completion_tokens": 151,
+      "generation_tps": 6.071,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.8,
+      "request_seconds": 11.84,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 147,
+      "completion_tokens": 56,
+      "generation_tps": 6.096,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 31.04,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 162,
+      "completion_tokens": 192,
+      "generation_tps": 6.267,
+      "reasoning_chars": 0,
+      "finish_reason": "length"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.79,
+      "request_seconds": 12.49,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 168,
+      "completion_tokens": 57,
+      "generation_tps": 6.115,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

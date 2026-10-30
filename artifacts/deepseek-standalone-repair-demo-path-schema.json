@@ -1,0 +1,32 @@
+{
+  "model": "deepseek-r1-distill-qwen-1.5b-q4_k_m.gguf",
+  "role": "execution",
+  "case": "repair-demo",
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 1,
+  "patch": "[{\"new\": \"return a + b\", \"old\": \"return a - b\", \"path\": \"calc.py\"}]",
+  "detail": "Patch tested in staging only",
+  "passed": true,
+  "wall_seconds": 49.01,
+  "peak_rss_mib": 2083.8,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 3.9,
+      "request_seconds": 44.7,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 283,
+      "completion_tokens": 98,
+      "generation_tps": 2.922,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 98,
+  "effective_tps": 2.0
+}

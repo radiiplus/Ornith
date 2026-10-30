@@ -1,0 +1,43 @@
+{
+  "model": "deepseek-r1-distill-qwen-1.5b-q4_k_m.gguf",
+  "role": "execution",
+  "case": "repair-demo",
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 2,
+  "patch": "",
+  "detail": "Staging failed: Invalid or unapproved exact-text edit",
+  "passed": false,
+  "wall_seconds": 87.84,
+  "peak_rss_mib": 2083.8,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 3.69,
+      "request_seconds": 46.2,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 283,
+      "completion_tokens": 103,
+      "generation_tps": 2.948,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 37.6,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 202,
+      "completion_tokens": 96,
+      "generation_tps": 2.988,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 199,
+  "effective_tps": 2.265
+}

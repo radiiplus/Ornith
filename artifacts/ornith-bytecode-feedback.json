@@ -1,0 +1,67 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "fixture": "examples/bytecode-boundary-demo/report_reader.py",
+  "ground_truth": {
+    "verified": true,
+    "normal_exit": 1,
+    "optimized_exit": 0,
+    "optimized_output": "OUTSIDE_MARKER"
+  },
+  "optimized_bytecode": "  0 LOAD_GLOBAL          Path\n  2 LOAD_FAST            workspace\n  4 CALL_FUNCTION        \n  6 LOAD_METHOD          resolve\n  8 CALL_METHOD          \n 10 STORE_FAST           base\n 12 LOAD_FAST            base\n 14 LOAD_FAST            name\n 16 BINARY_TRUE_DIVIDE   \n 18 LOAD_METHOD          resolve\n 20 CALL_METHOD          \n 22 STORE_FAST           report\n 24 LOAD_FAST            report\n 26 LOAD_METHOD          read_text\n 28 CALL_METHOD          \n 30 RETURN_VALUE         ",
+  "bytecode_delta": {
+    "assert_statements_in_source": 1,
+    "methods_removed_in_optimized": [
+      "is_relative_to"
+    ],
+    "methods_remaining_in_optimized": [
+      "resolve",
+      "resolve",
+      "read_text"
+    ]
+  },
+  "responses": [
+    {
+      "mode": "evidence_first",
+      "raw_answer": "{\"analysis\": \"The source uses Path.is_relative_to(base) as a guard. The optimized bytecode omits the is_relative_to check entirely (no LOAD_METHOD/LOAD_FAST for it), so the guard does not survive optimization. Normal mode (python) executes the guard; python -O mode drops the assert, so the guard is bypassed. Cause: assert statement stripped under -O.\", \"verdict\": \"guard_removed\", \"normal\": \"guard_active\", \"optimized",
+      "seconds": 250.52,
+      "answer": {
+        "verdict": null,
+        "cause": null,
+        "evidence": ""
+      },
+      "prediction_passed": false,
+      "cause_passed": false,
+      "passed": false
+    },
+    {
+      "mode": "feedback_revision",
+      "raw_answer": "{\"verdict\":\"guard_removed\",\"cause\":\"is_relative_to assertion was removed during optimization\",\"evidence\":\"The guard assert report.is_relative_to(base) was stripped in the optimized bytecode (methods_removed_in_optimized: [is_relative_to]), so the boundary check no longer runs under python -O; normal Python raised AssertionError before reading while python -O returned OUTSIDE_MARKER from ../outside.txt\",\"confidence\":0.9}",
+      "seconds": 209.7,
+      "answer": {
+        "verdict": "guard_removed",
+        "cause": "is_relative_to assertion was removed during optimization",
+        "evidence": "The guard assert report.is_relative_to(base) was stripped in the optimized bytecode (methods_removed_in_optimized: [is_relative_to]), so the boundary check no longer runs under python -O; normal Python raised AssertionError before reading while python -O returned OUTSIDE_MARKER from ../outside.txt",
+        "confidence": 0.9
+      },
+      "prediction_passed": false,
+      "cause_passed": false,
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "checker_feedback": "First answer: {\"verdict\": null, \"cause\": null, \"evidence\": \"\"}\nControlled execution: normal Python raised AssertionError before reading; python -O returned OUTSIDE_MARKER from ../outside.txt.\nDisassembler comparison: {\"assert_statements_in_source\": 1, \"methods_removed_in_optimized\": [\"is_relative_to\"], \"methods_remaining_in_optimized\": [\"resolve\", \"resolve\", \"read_text\"]}\nRevise the guard, execution predictions, and cause using this evidence. Do not repeat a claim that conflicts with the execution result.",
+  "peak_rss_mib": 4086.8,
+  "min_available_ram_mib": 5282.7,
+  "engine_log_tail": [
+    "4.47.204.058 I slot launch_slot_: id  0 | task 101 | processing task, is_child = 0",
+    "5.13.697.171 I slot print_timing: id  0 | task 101 | prompt processing, n_tokens =    118, progress = 0.83, t =  26.49 s / 4.45 tokens per second",
+    "5.27.364.629 I slot print_timing: id  0 | task 101 | prompt processing, n_tokens =    182, progress = 0.99, t =  40.16 s / 4.53 tokens per second",
+    "8.16.894.752 I slot print_timing: id  0 | task 101 | prompt eval time =   46377.01 ms /   186 tokens (  249.34 ms per token,     4.01 tokens per second)",
+    "8.16.894.760 I slot print_timing: id  0 | task 101 |        eval time =  163313.64 ms /    86 tokens ( 1921.34 ms per token,     0.52 tokens per second)",
+    "8.16.894.761 I slot print_timing: id  0 | task 101 |       total time =  209690.66 ms /   272 tokens",
+    "8.16.894.762 I slot print_timing: id  0 | task 101 |    graphs reused =        179",
+    "8.16.894.763 I slot print_timing: id  0 | task 101 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "8.16.894.920 I slot      release: id  0 | task 101 | stop processing: n_tokens = 495, truncated = 0",
+    "8.16.896.412 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

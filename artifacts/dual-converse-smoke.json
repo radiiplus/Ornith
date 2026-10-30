@@ -1,0 +1,69 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "failed",
+      "objective": "Passing tests is sufficient for deployment. A build was deployed. Must it have passed tests?",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 3.7,
+          "request_seconds": 38.11,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 81,
+          "completion_tokens": 101,
+          "generation_tps": 2.882,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: Passing tests is sufficient for deployment. A build was deployed. Must it have passed tests?. Router stopped: Model server unavailable or timed out: TimeoutError",
+      "case": "converse-fallacy",
+      "wall_seconds": 94.5,
+      "passed": false,
+      "generated_tokens": 101,
+      "effective_tps": 1.069,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 3.7,
+          "request_seconds": 38.11,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 81,
+          "completion_tokens": 101,
+          "generation_tps": 2.882,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.8
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.8,
+  "wall_seconds": 95.09,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 3.7,
+      "request_seconds": 38.11,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 81,
+      "completion_tokens": 101,
+      "generation_tps": 2.882,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

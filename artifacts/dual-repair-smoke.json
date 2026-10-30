@@ -1,0 +1,69 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 2,
+      "status": "failed",
+      "objective": "Fix add so the test passes",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 3.66,
+          "request_seconds": 67.11,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 69,
+          "completion_tokens": 192,
+          "generation_tps": 2.982,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        }
+      ],
+      "conclusion": "Original objective: Fix add so the test passes. Router stopped: Model server unavailable or timed out: TimeoutError",
+      "case": "repair-demo",
+      "wall_seconds": 124.08,
+      "passed": false,
+      "generated_tokens": 192,
+      "effective_tps": 1.547,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 3.66,
+          "request_seconds": 67.11,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 69,
+          "completion_tokens": 192,
+          "generation_tps": 2.982,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        }
+      ],
+      "peak_rss_mib": 2083.7
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.7,
+  "wall_seconds": 125.03,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 3.66,
+      "request_seconds": 67.11,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 69,
+      "completion_tokens": 192,
+      "generation_tps": 2.982,
+      "reasoning_chars": 0,
+      "finish_reason": "length"
+    }
+  ]
+}

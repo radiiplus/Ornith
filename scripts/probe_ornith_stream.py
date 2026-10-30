@@ -149,11 +149,11 @@ def main():
                 result['stream'].append(item)
                 print(json.dumps({'event': 'model_' + kind, **item}), flush=True)
 
-            schema = {'type': 'json_schema', 'schema': {'type': 'object',
+            schema = {'type': 'json_schema', 'json_schema': {'schema': {'type': 'object',
                       'properties': {'answer': {'type': 'string', 'enum': [
                           'Isolate the service', 'Roll back the deployment',
                           'Restart the service', 'Validate the health check']}},
-                      'required': ['answer'], 'additionalProperties': False}}
+                      'required': ['answer'], 'additionalProperties': False}}}
             backend = OpenAICompatibleBackend(f'http://127.0.0.1:{port}/v1', 'local',
                                               on_chunk=model_chunk, thinking_budget=24,
                                               response_format=schema)

@@ -1,0 +1,240 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "needs_review",
+      "objective": "A six-person committee is chosen from eight engineers and nine designers. It must include at least three engineers and at least two designers. One named engineer and one named designer cannot both serve. How many valid committees are there?",
+      "steps": [],
+      "plan_revisions": 1,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.67,
+          "request_seconds": 24.73,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 139,
+          "completion_tokens": 152,
+          "generation_tps": 6.782,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 18.91,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 158,
+          "completion_tokens": 123,
+          "generation_tps": 6.656,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 32.3,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 266,
+          "completion_tokens": 188,
+          "generation_tps": 6.71,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.69,
+          "request_seconds": 13.05,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 335,
+          "completion_tokens": 49,
+          "generation_tps": 6.701,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 7.81,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 342,
+          "completion_tokens": 49,
+          "generation_tps": 6.544,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan_revision",
+          "load_seconds": 1.85,
+          "request_seconds": 17.24,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 244,
+          "completion_tokens": 84,
+          "generation_tps": 6.44,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: A six-person committee is chosen from eight engineers and nine designers. It must include at least three engineers and at least two designers. One named engineer and one named designer cannot both serve. How many valid committees are there?. Verified steps: . Remaining work requires review: Answer failed: Numeric answer is incorrect",
+      "case": "committee-count",
+      "wall_seconds": 119.54,
+      "passed": false,
+      "generated_tokens": 645,
+      "effective_tps": 5.396,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.67,
+          "request_seconds": 24.73,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 139,
+          "completion_tokens": 152,
+          "generation_tps": 6.782,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 18.91,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 158,
+          "completion_tokens": 123,
+          "generation_tps": 6.656,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 32.3,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 266,
+          "completion_tokens": 188,
+          "generation_tps": 6.71,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.69,
+          "request_seconds": 13.05,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 335,
+          "completion_tokens": 49,
+          "generation_tps": 6.701,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 7.81,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 342,
+          "completion_tokens": 49,
+          "generation_tps": 6.544,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 1.85,
+          "request_seconds": 17.24,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 244,
+          "completion_tokens": 84,
+          "generation_tps": 6.44,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.8
+    }
+  ],
+  "status": "completed",
+  "prompt_style": "system",
+  "peak_rss_mib": 2083.8,
+  "wall_seconds": 119.66,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.67,
+      "request_seconds": 24.73,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 139,
+      "completion_tokens": 152,
+      "generation_tps": 6.782,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 18.91,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 158,
+      "completion_tokens": 123,
+      "generation_tps": 6.656,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 32.3,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 266,
+      "completion_tokens": 188,
+      "generation_tps": 6.71,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.69,
+      "request_seconds": 13.05,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 335,
+      "completion_tokens": 49,
+      "generation_tps": 6.701,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 7.81,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 342,
+      "completion_tokens": 49,
+      "generation_tps": 6.544,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.85,
+      "request_seconds": 17.24,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 244,
+      "completion_tokens": 84,
+      "generation_tps": 6.44,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

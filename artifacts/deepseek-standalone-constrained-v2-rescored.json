@@ -1,0 +1,208 @@
+{
+  "source": "artifacts/deepseek-standalone-constrained-v2.json",
+  "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+  "thinking": false,
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "1/2",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them",
+          "seconds": 11.41,
+          "usage": {
+            "completion_tokens": 20,
+            "prompt_tokens": 124,
+            "total_tokens": 144,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "entailed",
+          "normalized_answer": "entailed",
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": true,
+          "feedback": "Objective reached",
+          "seconds": 10.29,
+          "usage": {
+            "completion_tokens": 18,
+            "prompt_tokens": 139,
+            "total_tokens": 157,
+            "prompt_tokens_details": {
+              "cached_tokens": 33
+            }
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "diagnose",
+            "snapshot",
+            "patch",
+            "deploy",
+            "verify",
+            "audit",
+            "close"
+          ],
+          "normalized_answer": [
+            "diagnose",
+            "snapshot",
+            "patch",
+            "deploy",
+            "verify",
+            "audit",
+            "close"
+          ],
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": true,
+          "feedback": "Objective reached",
+          "seconds": 27.18,
+          "usage": {
+            "completion_tokens": 48,
+            "prompt_tokens": 304,
+            "total_tokens": 352,
+            "prompt_tokens_details": {
+              "cached_tokens": 38
+            }
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "120",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Enumerate allowed engineer/designer splits, then subtract committees containing both incompatible people",
+          "seconds": 9.01,
+          "usage": {
+            "completion_tokens": 20,
+            "prompt_tokens": 96,
+            "total_tokens": 116,
+            "prompt_tokens_details": {
+              "cached_tokens": 38
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "price-discount",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "40.50",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect",
+          "seconds": 8.2,
+          "usage": {
+            "completion_tokens": 22,
+            "prompt_tokens": 73,
+            "total_tokens": 95,
+            "prompt_tokens_details": {
+              "cached_tokens": 51
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-workflow",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "diagnose",
+            "restart",
+            "close"
+          ],
+          "normalized_answer": [
+            "diagnose",
+            "restart",
+            "close"
+          ],
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": true,
+          "feedback": "Objective reached",
+          "seconds": 15.31,
+          "usage": {
+            "completion_tokens": 32,
+            "prompt_tokens": 143,
+            "total_tokens": 175,
+            "prompt_tokens_details": {
+              "cached_tokens": 38
+            }
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "converse-fallacy",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "not_entailed",
+          "normalized_answer": "not_entailed",
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": true,
+          "feedback": "Objective reached",
+          "seconds": 8.28,
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 98,
+            "total_tokens": 117,
+            "prompt_tokens_details": {
+              "cached_tokens": 53
+            }
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "objectives_reached": 4,
+  "attempts_after_first_success_ignored": true
+}

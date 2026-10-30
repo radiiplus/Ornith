@@ -1,0 +1,43 @@
+{
+  "model": "vibethinker-1.5b-q4_k_m.gguf",
+  "role": "reasoning",
+  "case": "tenant_reports",
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 2,
+  "patch": "",
+  "detail": "Proposal rejected: Unterminated string starting at: line 8 column 13 (char 914)",
+  "passed": false,
+  "wall_seconds": 146.42,
+  "peak_rss_mib": 2083.9,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 3.79,
+      "request_seconds": 69.28,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 606,
+      "completion_tokens": 124,
+      "generation_tps": 2.8,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 73.02,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 419,
+      "completion_tokens": 192,
+      "generation_tps": 2.885,
+      "reasoning_chars": 0,
+      "finish_reason": "length"
+    }
+  ],
+  "generated_tokens": 316,
+  "effective_tps": 2.158
+}

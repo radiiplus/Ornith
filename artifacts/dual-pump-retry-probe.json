@@ -1,0 +1,274 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "needs_review",
+      "objective": "Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?",
+      "steps": [],
+      "plan_revisions": 1,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.81,
+          "request_seconds": 30.41,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 5.741,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 31.25,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 324,
+          "completion_tokens": 148,
+          "generation_tps": 5.919,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 3.38,
+          "request_seconds": 23.73,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 383,
+          "completion_tokens": 80,
+          "generation_tps": 5.385,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 16.18,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 394,
+          "completion_tokens": 80,
+          "generation_tps": 5.132,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan_revision",
+          "load_seconds": 1.75,
+          "request_seconds": 47.97,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 305,
+          "completion_tokens": 267,
+          "generation_tps": 6.294,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.7,
+          "request_seconds": 20.03,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 353,
+          "completion_tokens": 89,
+          "generation_tps": 6.51,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 12.69,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 364,
+          "completion_tokens": 80,
+          "generation_tps": 6.511,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?. Verified steps: . Remaining work requires review: Answer failed: invalid syntax (<unknown>, line 1)",
+      "case": "staggered-pumps",
+      "wall_seconds": 191.37,
+      "passed": false,
+      "generated_tokens": 901,
+      "effective_tps": 4.708,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.81,
+          "request_seconds": 30.41,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 5.741,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 31.25,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 324,
+          "completion_tokens": 148,
+          "generation_tps": 5.919,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 3.38,
+          "request_seconds": 23.73,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 383,
+          "completion_tokens": 80,
+          "generation_tps": 5.385,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 16.18,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 394,
+          "completion_tokens": 80,
+          "generation_tps": 5.132,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 1.75,
+          "request_seconds": 47.97,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 305,
+          "completion_tokens": 267,
+          "generation_tps": 6.294,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.7,
+          "request_seconds": 20.03,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 353,
+          "completion_tokens": 89,
+          "generation_tps": 6.51,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 12.69,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 364,
+          "completion_tokens": 80,
+          "generation_tps": 6.511,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2084.6
+    }
+  ],
+  "status": "completed",
+  "prompt_style": "system",
+  "peak_rss_mib": 2084.6,
+  "wall_seconds": 191.49,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.81,
+      "request_seconds": 30.41,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 166,
+      "completion_tokens": 157,
+      "generation_tps": 5.741,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 31.25,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 324,
+      "completion_tokens": 148,
+      "generation_tps": 5.919,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 3.38,
+      "request_seconds": 23.73,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 383,
+      "completion_tokens": 80,
+      "generation_tps": 5.385,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 16.18,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 394,
+      "completion_tokens": 80,
+      "generation_tps": 5.132,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.75,
+      "request_seconds": 47.97,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 305,
+      "completion_tokens": 267,
+      "generation_tps": 6.294,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.7,
+      "request_seconds": 20.03,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 353,
+      "completion_tokens": 89,
+      "generation_tps": 6.51,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 12.69,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 364,
+      "completion_tokens": 80,
+      "generation_tps": 6.511,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

@@ -24,6 +24,6 @@
     "quantization": "IQ2_M",
     "bytes": 3769426816,
     "sha256": "88ade210cf31da75951b1e86e00ad6d656232c705721d427884af3434c097dd2",
-    "local_status": "checksum verified; capped slug repair passed; boundary repair timed out; constrained coding quiz passed 1 of 3; not approved as agent backend"
+    "local_status": "previously checksum verified; local Ornith GGUF files removed after model replacement"
   }
 }

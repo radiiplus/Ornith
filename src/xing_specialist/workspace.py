@@ -1,6 +1,7 @@
 """Validate and stage a small unified diff before touching a source repository."""
 
 from pathlib import Path
+import os
 import re
 import subprocess
 
@@ -48,8 +49,12 @@ def apply_patch(repository: Path, patch: str, allowed_paths: set) -> tuple:
         if not str(target.resolve()).startswith(str(root) + '/'):
             raise PatchError('Patch escapes the repository')
     for flags in (('--check',), ()):
+        environment = os.environ.copy()
+        environment.pop('GIT_DIR', None)
+        environment.pop('GIT_WORK_TREE', None)
+        environment['GIT_CEILING_DIRECTORIES'] = str(root.parent)
         completed = subprocess.run(['git', 'apply', *flags, '-'], input=patch, text=True,
-                                   cwd=root, capture_output=True, timeout=10)
+                                   cwd=root, env=environment, capture_output=True, timeout=10)
         if completed.returncode:
             raise PatchError('Patch did not apply cleanly: ' + completed.stderr[:1000])
     return paths

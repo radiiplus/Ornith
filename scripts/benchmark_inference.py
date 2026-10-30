@@ -331,6 +331,8 @@ def main():
     parser.add_argument('--startup-timeout', type=int, default=180)
     parser.add_argument('--request-timeout', type=int, default=300)
     parser.add_argument('--fit', choices=('on', 'off'), default='on')
+    parser.add_argument('--spec-type', choices=('none', 'ngram-simple'), default='none')
+    parser.add_argument('--spec-draft-n-max', type=int, default=8)
     parser.add_argument('--flash-attn', choices=('on', 'off', 'auto'), default='auto')
     parser.add_argument('--numa', choices=('distribute', 'isolate', 'numactl'))
     parser.add_argument('--output', type=Path, required=True)
@@ -359,6 +361,11 @@ def main():
                                               free_port(), args.load_mode, args.batch_size,
                                               args.ubatch_size, args.no_warmup, args.request_timeout,
                                               args.fit, args.flash_attn, args.numa)
+    if args.spec_type != 'none':
+        if not 1 <= args.spec_draft_n_max <= 64:
+            parser.error('Speculative draft length must be between 1 and 64')
+        engine.command.extend(['--spec-type', args.spec_type,
+                               '--spec-draft-n-max', str(args.spec_draft_n_max)])
     result = {
         'timestamp_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'engine': 'llama.cpp CPU',
@@ -370,6 +377,8 @@ def main():
         'model_quantization': args.model_quantization,
         'model_sha256': actual_sha256,
         'model_bytes': args.model.stat().st_size,
+        'spec_type': args.spec_type,
+        'spec_draft_n_max': args.spec_draft_n_max if args.spec_type != 'none' else 0,
         'context_tokens': args.context,
         'generation_limit_tokens': args.max_tokens,
         'prompt_sha256': hashlib.sha256(PROMPT.encode()).hexdigest(),

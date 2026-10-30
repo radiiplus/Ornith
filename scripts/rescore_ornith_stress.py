@@ -5,13 +5,14 @@ import argparse
 import json
 from pathlib import Path
 
-from stress_ornith_reasoning import CHALLENGES, assess_response
+from stress_ornith_reasoning import CHALLENGES, SEED, assess_response
 from prepare_verified_repairs import load_cases
 
 
 def rescore(source):
     saved = json.loads(source.read_text())
-    cases = {row['id']: row for row in load_cases(CHALLENGES)}
+    cases = {row['id']: row for row in load_cases(CHALLENGES) + load_cases(SEED)
+             if 'verifier' in row}
     results = []
     for item in saved['cases']:
         row = cases[item['id']]

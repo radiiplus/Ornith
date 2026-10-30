@@ -1,0 +1,250 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 9,
+      "status": "failed",
+      "objective": "Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.76,
+          "request_seconds": 28.33,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 6.216,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 41.11,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 546,
+          "completion_tokens": 192,
+          "generation_tps": 6.173,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 31.57,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 565,
+          "completion_tokens": 192,
+          "generation_tps": 6.195,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        }
+      ],
+      "conclusion": "Original objective: Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?. Router stopped: Planning failed: Expecting ',' delimiter: line 19 column 10 (char 837)",
+      "case": "staggered-pumps",
+      "wall_seconds": 102.8,
+      "passed": false,
+      "generated_tokens": 541,
+      "effective_tps": 5.263,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.76,
+          "request_seconds": 28.33,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 6.216,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 41.11,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 546,
+          "completion_tokens": 192,
+          "generation_tps": 6.173,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 31.57,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 565,
+          "completion_tokens": 192,
+          "generation_tps": 6.195,
+          "reasoning_chars": 0,
+          "finish_reason": "length"
+        }
+      ],
+      "peak_rss_mib": 2083.8
+    },
+    {
+      "task_id": 10,
+      "status": "failed",
+      "objective": "A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 17.45,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 129,
+          "completion_tokens": 105,
+          "generation_tps": 6.302,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 0.0,
+          "request_seconds": 13.61,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 147,
+          "completion_tokens": 84,
+          "generation_tps": 6.373,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?. Router stopped: Objective gate could not confirm the original request",
+      "case": "six-fact-implication",
+      "wall_seconds": 31.09,
+      "passed": false,
+      "generated_tokens": 189,
+      "effective_tps": 6.079,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 17.45,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 129,
+          "completion_tokens": 105,
+          "generation_tps": 6.302,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 13.61,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 147,
+          "completion_tokens": 84,
+          "generation_tps": 6.373,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.8
+    },
+    {
+      "task_id": 11,
+      "status": "failed",
+      "objective": "An incident is open. Produce a valid recovery plan that deploys the patch, restores service, completes the audit, and closes the incident. Actions can be taken only when all their prerequisites hold.",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [],
+      "conclusion": "Original objective: An incident is open. Produce a valid recovery plan that deploys the patch, restores service, completes the audit, and closes the incident. Actions can be taken only when all their prerequisites hold.. Router stopped: Model server unavailable or timed out: TimeoutError",
+      "case": "incident-deployment",
+      "wall_seconds": 18.26,
+      "passed": false,
+      "generated_tokens": 0,
+      "effective_tps": 0.0,
+      "model_events": [],
+      "peak_rss_mib": 2083.8
+    }
+  ],
+  "status": "running",
+  "peak_rss_mib": 2083.8,
+  "wall_seconds": 183.73,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.76,
+      "request_seconds": 28.33,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 166,
+      "completion_tokens": 157,
+      "generation_tps": 6.216,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 41.11,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 546,
+      "completion_tokens": 192,
+      "generation_tps": 6.173,
+      "reasoning_chars": 0,
+      "finish_reason": "length"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 31.57,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 565,
+      "completion_tokens": 192,
+      "generation_tps": 6.195,
+      "reasoning_chars": 0,
+      "finish_reason": "length"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 17.45,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 129,
+      "completion_tokens": 105,
+      "generation_tps": 6.302,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 13.61,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 147,
+      "completion_tokens": 84,
+      "generation_tps": 6.373,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 26.4,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 139,
+      "completion_tokens": 155,
+      "generation_tps": 6.124,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "model": "vibethinker-1.5b-q4_k_m.gguf",
+  "role": "reasoning",
+  "case": "repair-demo",
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 2,
+  "patch": "[{\"new\": \"a + b\", \"old\": \"a - b\", \"path\": \"calc.py\"}]",
+  "detail": "Patch tested in staging only",
+  "passed": true,
+  "wall_seconds": 87.63,
+  "peak_rss_mib": 2083.9,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 3.79,
+      "request_seconds": 41.92,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 293,
+      "completion_tokens": 85,
+      "generation_tps": 2.836,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 41.5,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 214,
+      "completion_tokens": 102,
+      "generation_tps": 2.847,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 187,
+  "effective_tps": 2.134
+}

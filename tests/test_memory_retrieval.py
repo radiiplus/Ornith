@@ -34,6 +34,7 @@ class MemoryRetrievalTests(unittest.TestCase):
     def test_secrets_redacted_and_query_sanitized(self):
         self.assertNotIn('AKIA1234567890ABCDEF', redact('AKIA1234567890ABCDEF'))
         self.assertNotIn('privatevalue', redact('{"api_key":"privatevalue"}'))
+        self.assertNotIn('github_pat_exampletoken', redact('github_pat_exampletoken'))
         with tempfile.TemporaryDirectory() as folder:
             store = MemoryStore(Path(folder) / 'memory.sqlite3')
             self.assertEqual(LessonRetriever(store).search('" OR *'), [])

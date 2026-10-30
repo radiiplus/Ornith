@@ -1,0 +1,80 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "fixture": "examples/bytecode-boundary-demo/debug_reader.py",
+  "expected_cause": "debug_guard_removed",
+  "ground_truth": {
+    "verified": true,
+    "normal_exit": 1,
+    "normal_exception": "ValueError",
+    "optimized_exit": 0,
+    "optimized_output": "OUTSIDE_MARKER"
+  },
+  "optimized_bytecode": "  0 LOAD_GLOBAL          Path\n  2 LOAD_FAST            workspace\n  4 CALL_FUNCTION        \n  6 LOAD_METHOD          resolve\n  8 CALL_METHOD          \n 10 STORE_FAST           base\n 12 LOAD_FAST            base\n 14 LOAD_FAST            name\n 16 BINARY_TRUE_DIVIDE   \n 18 LOAD_METHOD          resolve\n 20 CALL_METHOD          \n 22 STORE_FAST           report\n 24 LOAD_CONST           False\n 26 POP_JUMP_IF_FALSE    \n 28 LOAD_FAST            report\n 30 LOAD_METHOD          is_relative_to\n 32 LOAD_FAST            base\n 34 CALL_METHOD          \n 36 POP_JUMP_IF_TRUE     \n 38 LOAD_GLOBAL          ValueError\n 40 LOAD_CONST           'report is outside workspace'\n 42 CALL_FUNCTION        \n 44 RAISE_VARARGS        \n 46 LOAD_FAST            report\n 48 LOAD_METHOD          read_text\n 50 CALL_METHOD          \n 52 RETURN_VALUE         ",
+  "bytecode_delta": {
+    "assert_statements_in_source": 0,
+    "methods_removed_in_optimized": [],
+    "unreachable_methods_in_optimized": [
+      "is_relative_to"
+    ],
+    "methods_remaining_in_optimized": [
+      "resolve",
+      "resolve",
+      "is_relative_to",
+      "read_text"
+    ]
+  },
+  "responses": [
+    {
+      "mode": "evidence_first",
+      "raw_answer": "{\n  \"guard_survives_optimization\": true,\n  \"normal_mode_behavior\": \"guard_active\",\n  \"optimized_mode_behavior\": \"guard_removed\",\n  \"cause\": \"constant_folding\"\n}",
+      "seconds": 185.6,
+      "answer": {
+        "guard_survives_optimization": true,
+        "normal_mode_behavior": "guard_active",
+        "optimized_mode_behavior": "guard_removed",
+        "cause": "constant_folding"
+      },
+      "format_valid": false,
+      "prediction_passed": false,
+      "cause_passed": false,
+      "passed": false
+    },
+    {
+      "mode": "feedback_revision",
+      "raw_answer": "{\"guard_survives_optimization\": true, \"normal_mode_behavior\": \"guard_active\", \"optimized_mode_behavior\": \"guard_active\", \"cause\": \"is_relative_to_is_dynamic\"}",
+      "seconds": 130.81,
+      "answer": {
+        "guard_survives_optimization": true,
+        "normal_mode_behavior": "guard_active",
+        "optimized_mode_behavior": "guard_active",
+        "cause": "is_relative_to_is_dynamic"
+      },
+      "format_valid": false,
+      "prediction_passed": false,
+      "cause_passed": false,
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "checker_feedback": "First answer: {\"guard_survives_optimization\": true, \"normal_mode_behavior\": \"guard_active\", \"optimized_mode_behavior\": \"guard_removed\", \"cause\": \"constant_folding\"}\nControlled execution: normal Python raised ValueError before reading; python -O returned OUTSIDE_MARKER from ../outside.txt.\nDisassembler comparison: {\"assert_statements_in_source\": 0, \"methods_removed_in_optimized\": [], \"unreachable_methods_in_optimized\": [\"is_relative_to\"], \"methods_remaining_in_optimized\": [\"resolve\", \"resolve\", \"is_relative_to\", \"read_text\"]}\nRevise the guard, execution predictions, and cause using this evidence. Do not repeat a claim that conflicts with the execution result.",
+  "peak_rss_mib": 4086.5,
+  "min_available_ram_mib": 5278.2,
+  "engine_log_tail": [
+    "4.10.367.570 I slot print_timing: id  0 | task 54 | prompt processing, n_tokens =    128, progress = 0.84, t =  27.60 s / 4.64 tokens per second",
+    "4.18.397.357 I slot print_timing: id  0 | task 54 | prompt processing, n_tokens =    151, progress = 0.88, t =  35.63 s / 4.24 tokens per second",
+    "4.32.575.043 I slot print_timing: id  0 | task 54 | prompt processing, n_tokens =    215, progress = 0.99, t =  49.81 s / 4.32 tokens per second",
+    "5.53.575.959 I slot print_timing: id  0 | task 54 | prompt eval time =   56132.73 ms /   219 tokens (  256.31 ms per token,     3.90 tokens per second)",
+    "5.53.575.965 I slot print_timing: id  0 | task 54 |        eval time =   74675.85 ms /    39 tokens ( 1965.15 ms per token,     0.51 tokens per second)",
+    "5.53.575.966 I slot print_timing: id  0 | task 54 |       total time =  130808.58 ms /   258 tokens",
+    "5.53.575.968 I slot print_timing: id  0 | task 54 |    graphs reused =         86",
+    "5.53.575.968 I slot print_timing: id  0 | task 54 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "5.53.576.053 I slot      release: id  0 | task 54 | stop processing: n_tokens = 596, truncated = 0",
+    "5.53.577.501 I srv    operator(): operator(): cleaning up before exit..."
+  ],
+  "verified_finding": {
+    "verified": true,
+    "cause": "debug_guard_removed",
+    "evidence": "A constant-false jump makes is_relative_to unreachable. Normal execution raises ValueError; python -O reads OUTSIDE_MARKER outside the workspace."
+  },
+  "rescored_from": "artifacts/ornith-bytecode-debug-feedback.json"
+}

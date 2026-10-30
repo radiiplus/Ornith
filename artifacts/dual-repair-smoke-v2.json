@@ -1,0 +1,103 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 3,
+      "status": "failed",
+      "objective": "Fix add so the test passes",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 3.68,
+          "request_seconds": 38.72,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 86,
+          "completion_tokens": 103,
+          "generation_tps": 2.898,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 73.99,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 299,
+          "completion_tokens": 183,
+          "generation_tps": 2.894,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: Fix add so the test passes. Router stopped: Model server unavailable or timed out: TimeoutError",
+      "case": "repair-demo",
+      "wall_seconds": 121.69,
+      "passed": false,
+      "generated_tokens": 286,
+      "effective_tps": 2.35,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 3.68,
+          "request_seconds": 38.72,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 86,
+          "completion_tokens": 103,
+          "generation_tps": 2.898,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 73.99,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 299,
+          "completion_tokens": 183,
+          "generation_tps": 2.894,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.9
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.9,
+  "wall_seconds": 124.92,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 3.68,
+      "request_seconds": 38.72,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 86,
+      "completion_tokens": 103,
+      "generation_tps": 2.898,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 73.99,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 299,
+      "completion_tokens": 183,
+      "generation_tps": 2.894,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

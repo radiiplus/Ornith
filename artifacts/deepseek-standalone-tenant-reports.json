@@ -1,0 +1,43 @@
+{
+  "model": "deepseek-r1-distill-qwen-1.5b-q4_k_m.gguf",
+  "role": "execution",
+  "case": "tenant_reports",
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 2,
+  "patch": "",
+  "detail": "Staging failed: Edit source must occur exactly once: reporting/cache.py",
+  "passed": false,
+  "wall_seconds": 110.12,
+  "peak_rss_mib": 2083.9,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 3.71,
+      "request_seconds": 60.11,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 596,
+      "completion_tokens": 101,
+      "generation_tps": 2.85,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 45.99,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 409,
+      "completion_tokens": 114,
+      "generation_tps": 2.854,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 215,
+  "effective_tps": 1.952
+}

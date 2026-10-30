@@ -1,0 +1,100 @@
+{
+  "model": "VibeThinker-1.5B",
+  "quantization": "Q4_K_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": true,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Response must be a JSON object with only answer",
+          "content": "{\n  \"question\": \"Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?\",\n  \"answer\": \"\"\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 41.8,
+          "usage": {
+            "completion_tokens": 110,
+            "prompt_tokens": 134,
+            "total_tokens": 244,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 2.9930546852509186
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Response must be a JSON object with only answer",
+          "content": "{\n  \"question\": \"A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?\",\n  \"variables\": [\"a\",\"b\",\"c\",\"d\",\"e\",\"f\"],\n  \"premises\": [\"not a or b\", \"not b or c\", \"not c or d\", \"not d or e\", \"a or f\", \"not f\"],\n  \"conclusion\": \"e\"\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 49.22,
+          "usage": {
+            "completion_tokens": 133,
+            "prompt_tokens": 149,
+            "total_tokens": 282,
+            "prompt_tokens_details": {
+              "cached_tokens": 39
+            }
+          },
+          "generation_tps": 2.9578670659249413
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [],
+      "passed": false
+    }
+  ],
+  "status": "failed",
+  "error": "Stress-test deadline reached",
+  "peak_rss_mib": 2083.9,
+  "peak_anonymous_mib": 1088.8,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6011.9,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "1.42.120.979 I slot print_timing: id  0 | task 112 |        eval time =   44626.75 ms /   133 tokens (  338.08 ms per token,     2.96 tokens per second)",
+    "1.42.120.980 I slot print_timing: id  0 | task 112 |       total time =   49216.33 ms /   243 tokens",
+    "1.42.120.981 I slot print_timing: id  0 | task 112 |    graphs reused =        239",
+    "1.42.120.982 I slot print_timing: id  0 | task 112 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "1.42.121.036 I slot      release: id  0 | task 112 | stop processing: n_tokens = 281, truncated = 0",
+    "1.42.124.317 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.124 (> 0.100 thold), f_keep = 0.139",
+    "1.42.183.593 I slot launch_slot_: id  0 | task 246 | processing task, is_child = 0",
+    "1.47.095.423 I slot print_timing: id  0 | task 246 | prompt processing, n_tokens =    128, progress = 0.53, t =   4.91 s / 26.06 tokens per second",
+    "1.52.184.068 I slot print_timing: id  0 | task 246 | prompt processing, n_tokens =    256, progress = 0.94, t =  10.00 s / 25.60 tokens per second",
+    "2.26.735.208 I slot print_timing: id  0 | task 246 | n_gen =    100, tg =   2.96 t/s, tg_3s =   2.99 t/s",
+    "2.26.780.611 I srv    operator(): operator(): cleaning up before exit...",
+    "2.27.186.490 W srv          stop: cancel task, id_task = 246"
+  ]
+}

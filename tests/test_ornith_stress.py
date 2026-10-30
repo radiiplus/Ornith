@@ -34,7 +34,8 @@ class OrnithStressTests(unittest.TestCase):
         self.assertIn('patch_deployed', prompt)
         self.assertIn('JSON array of action-name strings', prompt)
         self.assertNotIn('diagnose","snapshot","patch","deploy"', prompt)
-        self.assertEqual(schema_for(row)['schema']['properties']['answer']['type'], 'array')
+        self.assertEqual(schema_for(row)['json_schema']['schema']['properties']['answer']['type'],
+                         'array')
 
     def test_semantic_equivalents_keep_format_failure_visible(self):
         plan, valid = normalize_answer(self.cases[2],
@@ -67,6 +68,10 @@ class OrnithStressTests(unittest.TestCase):
                                 tool_assisted=True)
         self.assertTrue(alias['passed'])
         self.assertFalse(alias['format_valid'])
+        prose = assess_response(row, '{"expression":"The pumps fill half the tank"}',
+                                tool_assisted=True)
+        self.assertFalse(prose['passed'])
+        self.assertIn('syntax', prose['feedback'])
 
     def test_counting_error_is_distinguished_from_combination_alias(self):
         row = self.cases[3]

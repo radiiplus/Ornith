@@ -1,0 +1,106 @@
+{
+  "model": "Ornith-1.5-9B IQ2_M",
+  "case": "discount_shipping",
+  "fixture": {
+    "baseline": {
+      "exit_code": 1,
+      "output": "test_coupon_still_above_threshold_keeps_free_shipping (test_order.CheckoutTests) ... ok\ntest_free_shipping_uses_discounted_subtotal (test_order.CheckoutTests) ... FAIL\ntest_no_coupon_keeps_free_shipping (test_order.CheckoutTests) ... ok\ntest_tax_and_delivery_use_discounted_amount (test_order.CheckoutTests) ... FAIL\ntest_under_threshold_without_coupon_pays_delivery (test_order.CheckoutTests) ... ok\n\n======================================================================\nFAIL: test_free_shipping_uses_discounted_subtotal (test_order.CheckoutTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_order.py\", line 8, in test_free_shipping_uses_discounted_subtotal\n    self.assertEqual(total(100, 20, 0), 90)\nAssertionError: 80 != 90\n\n======================================================================\nFAIL: test_tax_and_delivery_use_discounted_amount (test_order.CheckoutTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_order.py\", line 17, in test_tax_and_delivery_use_discounted_amount\n    self.assertEqual(total(100, 20, 10), 98)\nAssertionError: 88 != 98\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nFAILED (failures=2)\n",
+      "timed_out": false
+    },
+    "oracle": {
+      "exit_code": 0,
+      "output": "test_coupon_still_above_threshold_keeps_free_shipping (test_order.CheckoutTests) ... ok\ntest_free_shipping_uses_discounted_subtotal (test_order.CheckoutTests) ... ok\ntest_no_coupon_keeps_free_shipping (test_order.CheckoutTests) ... ok\ntest_tax_and_delivery_use_discounted_amount (test_order.CheckoutTests) ... ok\ntest_under_threshold_without_coupon_pays_delivery (test_order.CheckoutTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+      "timed_out": false
+    }
+  },
+  "steps": [
+    {
+      "number": 1,
+      "raw": "{\"action\": \"list\", \"target\": \"\", \"why\": \"\", \"expect\": \"\"}",
+      "proposal": {
+        "action": "list",
+        "target": "",
+        "why": "",
+        "expect": ""
+      },
+      "observation": "checkout/__init__.py\ncheckout/discount.py\ncheckout/formatting.py\ncheckout/order.py\ncheckout/shipping.py\ncheckout/tax.py\ntests/test_order.py",
+      "seconds": 116.88
+    },
+    {
+      "number": 2,
+      "raw": "{\"action\": \"read\", \"target\": \"checkout/order.py\", \"why\": \"The failing tests are about order totals (test_free_shipping_uses_discounted_subtotal and test_tax_and_delivery_use_discounted_amount), so I read the order module to see how totals are computed.\", \"expect\": \"I need to see the total() function implementation to understand why it returns 80 instead of 90.\", \"old\": \"\", \"new\": \"\"}",
+      "proposal": {
+        "action": "read",
+        "target": "checkout/order.py",
+        "why": "The failing tests are about order totals (test_free_shipping_uses_discounted_subtotal and test_tax_and_delivery_use_discounted_amount), so I read the order module to see how totals are computed.",
+        "expect": "I need to see the total() function implementation to understand why it returns 80 instead of 90.",
+        "old": "",
+        "new": ""
+      },
+      "observation": "from .discount import apply\nfrom .shipping import fee\nfrom .tax import charge\n\n\ndef total(subtotal, coupon_percent, tax_percent):\n    discounted = apply(subtotal, coupon_percent)\n    delivery = fee(subtotal)\n    return discounted + delivery + charge(discounted, tax_percent)\n",
+      "seconds": 255.32
+    },
+    {
+      "number": 3,
+      "raw": "{\"action\": \"read\", \"target\": \"checkout/discount.py\", \"why\": \"The total() function adds delivery on top of the discounted subtotal, but the tests expect delivery to be waived when a coupon drops the order below the free-shipping threshold. I need to see how apply() discounts the subtotal to understand the intended flow.\", \"expect\": \"If apply() correctly discounts the subtotal, then delivery should be waived (fee should return 0) when the discounted subtotal falls below the free-shipping threshold, not added on top of the discounted amount.\", \"old",
+      "proposal": {},
+      "observation": "Unknown action",
+      "seconds": 328.49
+    },
+    {
+      "number": 4,
+      "raw": "{\"action\": \"read\", \"target\": \"checkout/discount.py\", \"why\": \"Need to see apply() to understand how coupon discount is applied.\", \"expect\": \"apply() applies coupon to subtotal, not to delivery fee.\"}",
+      "proposal": {
+        "action": "read",
+        "target": "checkout/discount.py",
+        "why": "Need to see apply() to understand how coupon discount is applied.",
+        "expect": "apply() applies coupon to subtotal, not to delivery fee."
+      },
+      "observation": "def apply(subtotal, percent):\n    return subtotal * (100 - percent) // 100\n",
+      "seconds": 186.19
+    }
+  ],
+  "status": "failed",
+  "metrics": {
+    "tool_actions": 2,
+    "tested": false,
+    "true_file_inspected": true,
+    "distinct_files_inspected": 2,
+    "moved_from_decoy_to_cause": false,
+    "predictions_recorded": 2,
+    "final_attempts": 0,
+    "recovered_after_failed_edit": false,
+    "repeated_action": false,
+    "hypotheses": [
+      "",
+      "The failing tests are about order totals (test_free_shipping_uses_discounted_subtotal and test_tax_and_delivery_use_discounted_amount), so I read the order module to see how totals are computed.",
+      "",
+      "Need to see apply() to understand how coupon discount is applied."
+    ],
+    "predictions": [
+      "",
+      "I need to see the total() function implementation to understand why it returns 80 instead of 90.",
+      "",
+      "apply() applies coupon to subtotal, not to delivery fee."
+    ]
+  },
+  "peak_rss_mib": 4086.3,
+  "engine_log_tail": [
+    "3.43.167.695 I slot print_timing: id  0 | task 0 |       total time =  186170.86 ms /   430 tokens",
+    "3.43.167.701 I slot print_timing: id  0 | task 0 |    graphs reused =         49",
+    "3.43.167.702 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "3.43.167.875 I slot      release: id  0 | task 0 | stop processing: n_tokens = 429, truncated = 0",
+    "3.43.172.796 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.329 (> 0.100 thold), f_keep = 0.315",
+    "3.43.484.490 I slot launch_slot_: id  0 | task 55 | processing task, is_child = 0",
+    "4.32.313.295 I srv    operator(): operator(): cleaning up before exit...",
+    "Received second interrupt, terminating immediately."
+  ],
+  "interruptions": [
+    {
+      "status": "failed",
+      "error": "Anonymous memory guard exceeded",
+      "after_steps": 3
+    }
+  ],
+  "error": "Cgroup memory full pressure exceeded 5.0%"
+}

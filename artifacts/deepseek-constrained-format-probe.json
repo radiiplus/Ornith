@@ -1,0 +1,64 @@
+{
+  "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+  "quantization": "Q4_K_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": true,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "",
+          "reasoning_chars": 579,
+          "finish_reason": "length",
+          "seconds": 58.42,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 124,
+            "total_tokens": 284,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 2.976505320297338
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.9,
+  "peak_anonymous_mib": 1041.2,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6067.1,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "0.55.395.362 I slot print_timing: id  0 | task 0 | n_gen =    118, tg =   2.98 t/s, tg_3s =   2.99 t/s",
+    "0.58.454.452 I slot print_timing: id  0 | task 0 | n_gen =    127, tg =   2.98 t/s, tg_3s =   2.94 t/s",
+    "1.01.486.991 I slot print_timing: id  0 | task 0 | n_gen =    136, tg =   2.98 t/s, tg_3s =   2.97 t/s",
+    "1.04.563.997 I slot print_timing: id  0 | task 0 | n_gen =    145, tg =   2.98 t/s, tg_3s =   2.92 t/s",
+    "1.07.574.785 I slot print_timing: id  0 | task 0 | n_gen =    154, tg =   2.98 t/s, tg_3s =   2.99 t/s",
+    "1.09.580.157 I slot print_timing: id  0 | task 0 | prompt eval time =    4998.03 ms /   124 tokens (   40.31 ms per token,    24.81 tokens per second)",
+    "1.09.580.164 I slot print_timing: id  0 | task 0 |        eval time =   53418.35 ms /   160 tokens (  335.96 ms per token,     2.98 tokens per second)",
+    "1.09.580.165 I slot print_timing: id  0 | task 0 |       total time =   58416.38 ms /   284 tokens",
+    "1.09.580.171 I slot print_timing: id  0 | task 0 |    graphs reused =        157",
+    "1.09.580.172 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "1.09.580.227 I slot      release: id  0 | task 0 | stop processing: n_tokens = 283, truncated = 0",
+    "1.09.582.003 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

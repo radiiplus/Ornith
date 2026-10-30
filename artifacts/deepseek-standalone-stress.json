@@ -1,0 +1,151 @@
+{
+  "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+  "quantization": "Q4_K_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": false,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "",
+          "reasoning_chars": 579,
+          "finish_reason": "length",
+          "seconds": 57.92,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 124,
+            "total_tokens": 284,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 3.0000265474047305
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "",
+          "reasoning_chars": 447,
+          "finish_reason": "length",
+          "seconds": 56.98,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 139,
+            "total_tokens": 299,
+            "prompt_tokens_details": {
+              "cached_tokens": 33
+            }
+          },
+          "generation_tps": 3.028598945556134
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "",
+          "reasoning_chars": 703,
+          "finish_reason": "length",
+          "seconds": 63.93,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 304,
+            "total_tokens": 464,
+            "prompt_tokens_details": {
+              "cached_tokens": 33
+            }
+          },
+          "generation_tps": 2.9878137786997367
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "",
+          "reasoning_chars": 778,
+          "finish_reason": "length",
+          "seconds": 56.77,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 96,
+            "total_tokens": 256,
+            "prompt_tokens_details": {
+              "cached_tokens": 38
+            }
+          },
+          "generation_tps": 2.9499108477572533
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.8,
+  "peak_anonymous_mib": 1070.1,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6008.1,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "3.52.537.523 I slot print_timing: id  0 | task 485 | n_gen =    118, tg =   2.94 t/s, tg_3s =   3.03 t/s",
+    "3.55.597.147 I slot print_timing: id  0 | task 485 | n_gen =    127, tg =   2.94 t/s, tg_3s =   2.94 t/s",
+    "3.58.917.089 I slot print_timing: id  0 | task 485 | n_gen =    137, tg =   2.95 t/s, tg_3s =   3.01 t/s",
+    "4.01.997.127 I slot print_timing: id  0 | task 485 | n_gen =    146, tg =   2.95 t/s, tg_3s =   2.92 t/s",
+    "4.05.003.188 I slot print_timing: id  0 | task 485 | n_gen =    155, tg =   2.95 t/s, tg_3s =   2.99 t/s",
+    "4.06.697.321 I slot print_timing: id  0 | task 485 | prompt eval time =    2796.85 ms /    58 tokens (   48.22 ms per token,    20.74 tokens per second)",
+    "4.06.697.332 I slot print_timing: id  0 | task 485 |        eval time =   53899.93 ms /   160 tokens (  338.99 ms per token,     2.95 tokens per second)",
+    "4.06.697.333 I slot print_timing: id  0 | task 485 |       total time =   56696.79 ms /   218 tokens",
+    "4.06.697.334 I slot print_timing: id  0 | task 485 |    graphs reused =        632",
+    "4.06.697.334 I slot print_timing: id  0 | task 485 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "4.06.697.374 I slot      release: id  0 | task 485 | stop processing: n_tokens = 255, truncated = 0",
+    "4.06.699.506 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

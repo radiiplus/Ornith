@@ -1,0 +1,71 @@
+{
+  "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+  "quantization": "Q4_K_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": true,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "",
+          "reasoning_chars": 579,
+          "finish_reason": "length",
+          "seconds": 58.88,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 124,
+            "total_tokens": 284,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 2.9569058862418793
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [],
+      "passed": false
+    }
+  ],
+  "status": "failed",
+  "error": "Stress-test deadline reached",
+  "peak_rss_mib": 2084.0,
+  "peak_anonymous_mib": 1049.1,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6057.6,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "1.10.063.079 I slot print_timing: id  0 | task 0 |    graphs reused =        157",
+    "1.10.063.099 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "1.10.063.172 I slot      release: id  0 | task 0 | stop processing: n_tokens = 283, truncated = 0",
+    "1.10.066.642 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.237 (> 0.100 thold), f_keep = 0.117",
+    "1.10.071.632 I slot launch_slot_: id  0 | task 161 | processing task, is_child = 0",
+    "1.47.778.533 I slot print_timing: id  0 | task 161 | n_gen =    100, tg =   2.98 t/s, tg_3s =   3.01 t/s",
+    "1.51.162.751 I slot print_timing: id  0 | task 161 | n_gen =    110, tg =   2.98 t/s, tg_3s =   2.95 t/s",
+    "1.54.162.830 I slot print_timing: id  0 | task 161 | n_gen =    119, tg =   2.98 t/s, tg_3s =   3.00 t/s",
+    "1.57.470.635 I slot print_timing: id  0 | task 161 | n_gen =    129, tg =   2.98 t/s, tg_3s =   3.02 t/s",
+    "2.00.562.786 I slot print_timing: id  0 | task 161 | n_gen =    138, tg =   2.98 t/s, tg_3s =   2.91 t/s",
+    "2.02.301.065 I srv    operator(): operator(): cleaning up before exit...",
+    "2.03.074.832 W srv          stop: cancel task, id_task = 161"
+  ]
+}

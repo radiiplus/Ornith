@@ -1,0 +1,189 @@
+{
+  "source": "artifacts/vibethinker-standalone-constrained-v2.json",
+  "model": "VibeThinker-1.5B",
+  "thinking": false,
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "12/36",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them",
+          "seconds": 19.58,
+          "usage": {
+            "completion_tokens": 39,
+            "prompt_tokens": 134,
+            "total_tokens": 173,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "not_entailed",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Logic answer does not match the truth table",
+          "seconds": 18.61,
+          "usage": {
+            "completion_tokens": 38,
+            "prompt_tokens": 149,
+            "total_tokens": 187,
+            "prompt_tokens_details": {
+              "cached_tokens": 39
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "patch"
+          ],
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Plan violates an action precondition",
+          "seconds": 24.31,
+          "usage": {
+            "completion_tokens": 37,
+            "prompt_tokens": 314,
+            "total_tokens": 351,
+            "prompt_tokens_details": {
+              "cached_tokens": 44
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "1234567890",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Enumerate allowed engineer/designer splits, then subtract committees containing both incompatible people",
+          "seconds": 17.79,
+          "usage": {
+            "completion_tokens": 44,
+            "prompt_tokens": 106,
+            "total_tokens": 150,
+            "prompt_tokens_details": {
+              "cached_tokens": 44
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "price-discount",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "45.00",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect",
+          "seconds": 15.28,
+          "usage": {
+            "completion_tokens": 40,
+            "prompt_tokens": 83,
+            "total_tokens": 123,
+            "prompt_tokens_details": {
+              "cached_tokens": 57
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-workflow",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "restart",
+            "close"
+          ],
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Plan violates an action precondition",
+          "seconds": 21.12,
+          "usage": {
+            "completion_tokens": 46,
+            "prompt_tokens": 153,
+            "total_tokens": 199,
+            "prompt_tokens_details": {
+              "cached_tokens": 44
+            }
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "converse-fallacy",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "not_entailed",
+          "normalized_answer": "not_entailed",
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": true,
+          "feedback": "Objective reached",
+          "seconds": 16.92,
+          "usage": {
+            "completion_tokens": 42,
+            "prompt_tokens": 108,
+            "total_tokens": 150,
+            "prompt_tokens_details": {
+              "cached_tokens": 59
+            }
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "objectives_reached": 1,
+  "attempts_after_first_success_ignored": true
+}

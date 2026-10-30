@@ -7,6 +7,7 @@ import sqlite3
 
 
 def redact(value: str) -> str:
+    value = re.sub(r'github_pat_[A-Za-z0-9_]+', '[REDACTED_GITHUB_TOKEN]', value)
     value = re.sub(r'AKIA[0-9A-Z]{16}', '[REDACTED_AWS_KEY]', value)
     value = re.sub(r'(?i)(bearer\s+)[A-Za-z0-9._~+/-]+', r'\1[REDACTED]', value)
     value = re.sub(r'(?i)((?:token|secret|password|api[_-]?key)\s*[=:]\s*)\S+', r'\1[REDACTED]', value)
@@ -51,6 +52,10 @@ class MemoryStore:
             CREATE TABLE IF NOT EXISTS observations (
                 id INTEGER PRIMARY KEY, task_id INTEGER NOT NULL REFERENCES tasks(id),
                 action_id INTEGER REFERENCES actions(id), body TEXT NOT NULL, created_at TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS parked_observations (
+                id INTEGER PRIMARY KEY, task_id INTEGER NOT NULL REFERENCES tasks(id),
+                observation TEXT NOT NULL, context TEXT NOT NULL, relevance_tag TEXT NOT NULL,
+                reason TEXT NOT NULL, created_at TEXT NOT NULL);
             CREATE TABLE IF NOT EXISTS test_results (
                 id INTEGER PRIMARY KEY, task_id INTEGER NOT NULL REFERENCES tasks(id),
                 action_id INTEGER REFERENCES actions(id), command TEXT NOT NULL,
@@ -141,6 +146,38 @@ class MemoryStore:
             cursor = self.db.execute('INSERT INTO observations(task_id,action_id,body,created_at) VALUES (?,?,?,?)',
                                      (task_id, action_id, redact(body), now()))
         return cursor.lastrowid
+
+    def park_observation(self, task_id: int, observation: str, context: str,
+                         relevance_tag: str, reason: str) -> int:
+        if not all(isinstance(value, str) and value.strip()
+                   for value in (observation, context, relevance_tag, reason)):
+            raise ValueError('Parked observation fields must be nonempty strings')
+        with self.db:
+            cursor = self.db.execute('''INSERT INTO parked_observations
+                (task_id,observation,context,relevance_tag,reason,created_at)
+                VALUES (?,?,?,?,?,?)''',
+                (task_id, redact(observation)[:1000], redact(context)[:500],
+                 redact(relevance_tag)[:120], redact(reason)[:300], now()))
+        return cursor.lastrowid
+
+    def recall_parked(self, objective: str, limit: int = 5) -> list:
+        words = set(re.findall(r'[a-z0-9_]{4,}', objective.lower())) - {
+            'that', 'this', 'with', 'from', 'when', 'into', 'then', 'test', 'tests',
+            'code', 'file', 'fix', 'repair', 'find', 'would', 'should', 'after'}
+        if not words:
+            return []
+        rows = self.db.execute('''SELECT id,observation,context,relevance_tag,reason
+            FROM parked_observations ORDER BY id DESC LIMIT 500''').fetchall()
+        ranked = []
+        for row in rows:
+            tag_words = set(re.findall(r'[a-z0-9_]{4,}', row['relevance_tag'].lower()))
+            body_words = set(re.findall(r'[a-z0-9_]{4,}',
+                                            (row['observation'] + ' ' + row['reason']).lower()))
+            score = 2 * len(words & tag_words) + len(words & body_words)
+            if score:
+                ranked.append((score, row['id'], dict(row)))
+        ranked.sort(reverse=True)
+        return [item[2] for item in ranked[:max(0, min(limit, 10))]]
 
     def test_result(self, task_id: int, action_id: int, command: str, expected_exit: int,
                     actual_exit, stdout: str, stderr: str, regression: bool = False) -> int:

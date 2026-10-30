@@ -1,0 +1,206 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "needs_review",
+      "objective": "A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?",
+      "steps": [],
+      "plan_revisions": 1,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.8,
+          "request_seconds": 19.29,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 129,
+          "completion_tokens": 105,
+          "generation_tps": 6.169,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 24.35,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 231,
+          "completion_tokens": 126,
+          "generation_tps": 6.144,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 1.75,
+          "request_seconds": 13.78,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 269,
+          "completion_tokens": 56,
+          "generation_tps": 6.279,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "kind": "execution_plan",
+          "load_seconds": 0.0,
+          "request_seconds": 9.03,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 275,
+          "completion_tokens": 55,
+          "generation_tps": 6.338,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan_revision",
+          "load_seconds": 1.73,
+          "request_seconds": 20.45,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 212,
+          "completion_tokens": 101,
+          "generation_tps": 6.099,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?. Verified steps: . Remaining work requires review: Answer failed: Invalid logic verifier",
+      "case": "six-fact-implication",
+      "wall_seconds": 92.45,
+      "passed": false,
+      "generated_tokens": 443,
+      "effective_tps": 4.792,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.8,
+          "request_seconds": 19.29,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 129,
+          "completion_tokens": 105,
+          "generation_tps": 6.169,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 24.35,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 231,
+          "completion_tokens": 126,
+          "generation_tps": 6.144,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 1.75,
+          "request_seconds": 13.78,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 269,
+          "completion_tokens": 56,
+          "generation_tps": 6.279,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "execution",
+          "load_seconds": 0.0,
+          "request_seconds": 9.03,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 275,
+          "completion_tokens": 55,
+          "generation_tps": 6.338,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 1.73,
+          "request_seconds": 20.45,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 212,
+          "completion_tokens": 101,
+          "generation_tps": 6.099,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.9
+    }
+  ],
+  "status": "completed",
+  "prompt_style": "role-aware",
+  "peak_rss_mib": 2083.9,
+  "wall_seconds": 92.56,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.8,
+      "request_seconds": 19.29,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 129,
+      "completion_tokens": 105,
+      "generation_tps": 6.169,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 24.35,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 231,
+      "completion_tokens": 126,
+      "generation_tps": 6.144,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.75,
+      "request_seconds": 13.78,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 269,
+      "completion_tokens": 56,
+      "generation_tps": 6.279,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 9.03,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 275,
+      "completion_tokens": 55,
+      "generation_tps": 6.338,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 1.73,
+      "request_seconds": 20.45,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 212,
+      "completion_tokens": 101,
+      "generation_tps": 6.099,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

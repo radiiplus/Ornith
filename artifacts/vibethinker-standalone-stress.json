@@ -1,0 +1,151 @@
+{
+  "model": "VibeThinker-1.5B",
+  "quantization": "Q4_K_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": false,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "<think>\nWe are given the rates:\n  Pump A: 1/6 tank per hour\n  Pump B: 1/4 tank per hour\n  Leak: 1/12 tank per hour (negative since it's a drain)\n\nThe operation happens in two parts:\n\nPart 1: Both pumps and the leak operate for two hours.\n  Combined rate for part1 = (1/6 + 1/4 - 1/12) tanks per hour.\n\nLet's compute that:\n  1/6 = 2/12, 1/4 = 3/12, so:\n  2/12 + 3/12 - 1/12 = (2+3-1)/12 = 4",
+          "reasoning_chars": 0,
+          "finish_reason": "length",
+          "seconds": 54.01,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 134,
+            "total_tokens": 294,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 3.2565194803152
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "<think>\nWe are given a set of premises and a set of variables. The premises are:\n \"not a or b\", \"not b or c\", \"not c or d\", \"not d or e\", \"a or f\", and \"not f\".\n\n We also have the chain of implications from the problem: A implies B, B implies C, C implies D, D implies E.\n\n However, note that the premises already include:\n   not a or b  --> which is equivalent to B (since if a implies B, then if a is true then B is true, but here we have the negation: not a OR B. But note: the problem states that A implies B, so A -> B, which is equivalent to not B OR A. The premise given is",
+          "reasoning_chars": 0,
+          "finish_reason": "length",
+          "seconds": 52.48,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 149,
+            "total_tokens": 309,
+            "prompt_tokens_details": {
+              "cached_tokens": 39
+            }
+          },
+          "generation_tps": 3.298469958033505
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "<think>\nWe are given a scenario where an incident has already opened and we have some initial conditions (backup_ready, change_approved). We need to produce a recovery plan that includes deploying a patch, restoring service, completing an audit, and closing the incident. The actions must be taken only when all their prerequisites are met.\n\nWe are also provided with a sample JSON structure that we must use. The structure includes:\n- question: the problem statement\n- initial: an array of prerequisites that must be in place before any actions can be taken\n- goal: an array of actions that must be completed to close the incident\n- actions: a detailed breakdown of each action in the plan, including what they require and what they remove.\n\nHowever, note that the problem says: \"Return one JSON object with",
+          "reasoning_chars": 0,
+          "finish_reason": "length",
+          "seconds": 59.42,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 314,
+            "total_tokens": 474,
+            "prompt_tokens_details": {
+              "cached_tokens": 39
+            }
+          },
+          "generation_tps": 3.2512664603032633
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": null,
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": false,
+          "feedback": "Expecting value: line 1 column 1 (char 0)",
+          "content": "<think>\nWe are to count the number of valid committees of six people from eight engineers and nine designers, with the constraints:\n 1. At least three engineers and at least two designers.\n 2. One named engineer and one named designer cannot both serve.\n\n However, note that the problem does not explicitly give the names of the engineers and designers. \n But the constraint says \"One named engineer and one named designer cannot both serve.\" \n This implies that there are specific named individuals. Let's assume that there are some engineers with names and some designers with names.\n\n Since the problem does not provide the exact numbers of named engineers and designers, we must look for the data in the problem. \n But wait, the problem statement does not give any numbers for named individuals. This suggests that the constraint might",
+          "reasoning_chars": 0,
+          "finish_reason": "length",
+          "seconds": 50.89,
+          "usage": {
+            "completion_tokens": 160,
+            "prompt_tokens": 106,
+            "total_tokens": 266,
+            "prompt_tokens_details": {
+              "cached_tokens": 44
+            }
+          },
+          "generation_tps": 3.283057946716094
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2046.6,
+  "peak_anonymous_mib": 1070.9,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 4208.1,
+  "peak_cgroup_memory_full_avg10": 0.18,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "3.32.769.430 I slot print_timing: id  0 | task 486 | n_gen =    110, tg =   3.28 t/s, tg_3s =   3.32 t/s",
+    "3.35.790.835 I slot print_timing: id  0 | task 486 | n_gen =    120, tg =   3.28 t/s, tg_3s =   3.31 t/s",
+    "3.38.856.478 I slot print_timing: id  0 | task 486 | n_gen =    130, tg =   3.28 t/s, tg_3s =   3.26 t/s",
+    "3.41.867.686 I slot print_timing: id  0 | task 486 | n_gen =    140, tg =   3.29 t/s, tg_3s =   3.32 t/s",
+    "3.44.956.029 I slot print_timing: id  0 | task 486 | n_gen =    150, tg =   3.28 t/s, tg_3s =   3.24 t/s",
+    "3.47.986.507 I slot print_timing: id  0 | task 486 | prompt eval time =    2399.30 ms /    62 tokens (   38.70 ms per token,    25.84 tokens per second)",
+    "3.47.986.514 I slot print_timing: id  0 | task 486 |        eval time =   48430.46 ms /   160 tokens (  304.59 ms per token,     3.28 tokens per second)",
+    "3.47.986.515 I slot print_timing: id  0 | task 486 |       total time =   50829.76 ms /   222 tokens",
+    "3.47.986.516 I slot print_timing: id  0 | task 486 |    graphs reused =        632",
+    "3.47.986.517 I slot print_timing: id  0 | task 486 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "3.47.986.553 I slot      release: id  0 | task 486 | stop processing: n_tokens = 265, truncated = 0",
+    "3.47.988.512 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

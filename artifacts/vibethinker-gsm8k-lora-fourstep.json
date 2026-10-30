@@ -1,0 +1,32 @@
+{
+  "model_dir": "models/vibethinker-1.5b-bf16",
+  "data_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+  "adapter_dir": "models/vibethinker-gsm8k-lora-fourstep",
+  "max_steps": 4,
+  "sequence_length": 128,
+  "losses": [
+    6.299429416656494,
+    6.953507423400879,
+    7.126903057098389,
+    6.371799945831299
+  ],
+  "selected_rows": [
+    1,
+    2,
+    49,
+    71
+  ],
+  "status": "completed",
+  "chat_template": "Qwen role delimiters matching the GGUF template",
+  "selected_eval_rows": [
+    2,
+    4,
+    24,
+    33
+  ],
+  "heldout_loss_before": 6.195193648338318,
+  "trainable_parameters": 544768,
+  "heldout_loss_after": 6.2202394008636475,
+  "wall_seconds": 22.64,
+  "peak_rss_mib": 3703.4
+}

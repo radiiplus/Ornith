@@ -1,0 +1,137 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "task_id": 1,
+      "status": "failed",
+      "objective": "Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?",
+      "steps": [],
+      "plan_revisions": 0,
+      "metrics": [
+        {
+          "role": "reasoning",
+          "kind": "objective_gate",
+          "load_seconds": 1.7,
+          "request_seconds": 28.15,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 6.236,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 30.69,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 559,
+          "completion_tokens": 128,
+          "generation_tps": 6.201,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "kind": "plan",
+          "load_seconds": 0.0,
+          "request_seconds": 21.25,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 565,
+          "completion_tokens": 130,
+          "generation_tps": 6.207,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "conclusion": "Original objective: Pump A fills 1/6 of a tank per hour, pump B fills 1/4 per hour, and a leak drains 1/12 per hour. Both pumps and the leak operate for two hours. Then B switches off while A and the leak continue for one more hour. Starting empty, what fraction of the tank is filled?. Router stopped: Planning failed: Final plan step must use checked_answer",
+      "case": "staggered-pumps",
+      "wall_seconds": 81.82,
+      "passed": false,
+      "generated_tokens": 415,
+      "effective_tps": 5.072,
+      "model_events": [
+        {
+          "role": "reasoning",
+          "load_seconds": 1.7,
+          "request_seconds": 28.15,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 166,
+          "completion_tokens": 157,
+          "generation_tps": 6.236,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 30.69,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 559,
+          "completion_tokens": 128,
+          "generation_tps": 6.201,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "role": "reasoning",
+          "load_seconds": 0.0,
+          "request_seconds": 21.25,
+          "time_to_first_chunk_seconds": null,
+          "prompt_tokens": 565,
+          "completion_tokens": 130,
+          "generation_tps": 6.207,
+          "reasoning_chars": 0,
+          "finish_reason": "stop"
+        }
+      ],
+      "peak_rss_mib": 2083.7
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.7,
+  "wall_seconds": 81.94,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.7,
+      "request_seconds": 28.15,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 166,
+      "completion_tokens": 157,
+      "generation_tps": 6.236,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 30.69,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 559,
+      "completion_tokens": 128,
+      "generation_tps": 6.201,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 21.25,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 565,
+      "completion_tokens": 130,
+      "generation_tps": 6.207,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}

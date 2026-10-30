@@ -1,0 +1,65 @@
+{
+  "model": "VibeThinker-1.5B",
+  "quantization": "Q4_K_M",
+  "thinking": false,
+  "context_tokens": 1024,
+  "constrained": true,
+  "brief_reasoning_tokens": 64,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "12/36",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Compute the first two hours and final hour separately, then add them",
+          "content": "{\n  \"answer\": \"12/36\"\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 19.29,
+          "usage": {
+            "completion_tokens": 39,
+            "prompt_tokens": 134,
+            "total_tokens": 173,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 2.7568439012591375
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.7,
+  "peak_anonymous_mib": 1075.2,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6023.0,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "0.11.009.516 I srv  llama_server: model loaded",
+    "0.11.009.524 I srv  llama_server: listening on http://127.0.0.1:56115",
+    "0.11.109.549 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1",
+    "0.11.109.732 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0",
+    "0.15.911.089 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    128, progress = 0.96, t =   4.80 s / 26.66 tokens per second",
+    "0.30.395.227 I slot print_timing: id  0 | task 0 | prompt eval time =    5501.56 ms /   134 tokens (   41.06 ms per token,    24.36 tokens per second)",
+    "0.30.395.246 I slot print_timing: id  0 | task 0 |        eval time =   13783.88 ms /    39 tokens (  362.73 ms per token,     2.76 tokens per second)",
+    "0.30.395.247 I slot print_timing: id  0 | task 0 |       total time =   19285.44 ms /   173 tokens",
+    "0.30.395.253 I slot print_timing: id  0 | task 0 |    graphs reused =         38",
+    "0.30.395.254 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "0.30.395.337 I slot      release: id  0 | task 0 | stop processing: n_tokens = 172, truncated = 0",
+    "0.30.408.506 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

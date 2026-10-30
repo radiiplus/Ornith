@@ -1,0 +1,18 @@
+{
+  "model_dir": "models/vibethinker-1.5b-bf16",
+  "data_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+  "adapter_dir": "models/vibethinker-gsm8k-lora-pilot",
+  "max_steps": 1,
+  "sequence_length": 128,
+  "losses": [
+    6.299429416656494
+  ],
+  "selected_rows": [
+    1
+  ],
+  "status": "completed",
+  "chat_template": "Qwen role delimiters matching the GGUF template",
+  "trainable_parameters": 544768,
+  "wall_seconds": 6.74,
+  "peak_rss_mib": 3668.6
+}

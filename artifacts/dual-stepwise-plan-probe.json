@@ -1,0 +1,172 @@
+{
+  "models": {
+    "reasoning": "VibeThinker-1.5B Q4_K_M",
+    "execution": "DeepSeek-R1-Distill-Qwen-1.5B Q4_K_M"
+  },
+  "cpu_quota": "100%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [],
+  "status": "failed",
+  "prompt_style": "system",
+  "error": "Two-model run deadline reached",
+  "peak_rss_mib": 2084.5,
+  "wall_seconds": 206.63,
+  "model_events": [
+    {
+      "role": "reasoning",
+      "load_seconds": 1.79,
+      "request_seconds": 20.88,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 134,
+      "completion_tokens": 116,
+      "generation_tps": 6.259,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "reasoning",
+      "load_seconds": 0.0,
+      "request_seconds": 38.31,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 530,
+      "completion_tokens": 176,
+      "generation_tps": 6.14,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 1.7,
+      "request_seconds": 19.66,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 608,
+      "completion_tokens": 52,
+      "generation_tps": 6.196,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.04,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 659,
+      "completion_tokens": 50,
+      "generation_tps": 6.019,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.11,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 667,
+      "completion_tokens": 50,
+      "generation_tps": 6.105,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.11,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 678,
+      "completion_tokens": 50,
+      "generation_tps": 6.127,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.7,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 689,
+      "completion_tokens": 50,
+      "generation_tps": 6.077,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.78,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 694,
+      "completion_tokens": 51,
+      "generation_tps": 5.979,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.9,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 692,
+      "completion_tokens": 50,
+      "generation_tps": 6.019,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 11.2,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 700,
+      "completion_tokens": 51,
+      "generation_tps": 6.024,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.91,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 698,
+      "completion_tokens": 50,
+      "generation_tps": 6.102,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 11.01,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 706,
+      "completion_tokens": 51,
+      "generation_tps": 6.077,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 10.69,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 704,
+      "completion_tokens": 50,
+      "generation_tps": 6.034,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 11.38,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 712,
+      "completion_tokens": 51,
+      "generation_tps": 5.919,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ]
+}
