@@ -1,0 +1,33 @@
+{
+  "model": "Granite-4.0-H-1B",
+  "role": "execution",
+  "case": "repair-demo",
+  "chat_template_kwargs": null,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 1,
+  "patch": "[{\"new\": \"def add(a, b):\\n    return a + b\", \"old\": \"def add(a, b):\\n    return a - b\", \"path\": \"calc.py\"}]",
+  "detail": "Patch tested in staging only",
+  "passed": true,
+  "wall_seconds": 45.1,
+  "peak_rss_mib": 2021.3,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 3.08,
+      "request_seconds": 41.7,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 290,
+      "completion_tokens": 89,
+      "generation_tps": 3.154,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 89,
+  "effective_tps": 1.973
+}

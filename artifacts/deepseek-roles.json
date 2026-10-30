@@ -1,0 +1,259 @@
+{
+  "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+  "model_path": "/home/ec2-user/xing-specialist/models/deepseek-r1-distill-qwen-1.5b-q4_k_m.gguf",
+  "chat_template_kwargs": null,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "objective_gates": [
+    {
+      "case": "six-fact-implication",
+      "format_valid": true,
+      "objective_fidelity": false,
+      "response": "{\n  \"objective\": \"Must E be true?\",\n  \"subgoals\": [\"E must be true\"],\n  \"assumptions\": [],\n  \"done_when\": \"Must E be true?\"\n}",
+      "metrics": {
+        "request_seconds": 19.79,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 104,
+        "completion_tokens": 50,
+        "generation_tps": 3.138,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      },
+      "feedback": "Restatement omitted key terms from the original objective"
+    },
+    {
+      "case": "converse-fallacy",
+      "format_valid": true,
+      "objective_fidelity": false,
+      "response": "{\n  \"objective\": \"Passing tests is sufficient for deployment.\",\n  \"subgoals\": [\n    \"A build was deployed.\",\n    \"Must it have passed tests?\"\n  ],\n  \"assumptions\": [],\n  \"done_when\": \"A build was deployed. Must it have passed tests?\"\n}",
+      "metrics": {
+        "request_seconds": 22.8,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 88,
+        "completion_tokens": 70,
+        "generation_tps": 3.164,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      },
+      "feedback": "Restatement turned a question into an action"
+    },
+    {
+      "case": "tenant_reports",
+      "format_valid": true,
+      "objective_fidelity": true,
+      "response": "{\n  \"objective\": \"A user authorized for two tenants sees the first tenant report after switching to the second. Find and repair the cause.\",\n  \"subgoals\": [\n    \"Identify the cause of the tenant report after switching tenants.\",\n    \"Conduct a thorough investigation to determine the root cause of the report.\"\n  ],\n  \"assumptions\": [],\n  \"done_when\": \"A user authorized for two tenants reports after switching to the second, and the user must find and repair the cause of.\"\n}",
+      "metrics": {
+        "request_seconds": 36.79,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 93,
+        "completion_tokens": 114,
+        "generation_tps": 3.165,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      }
+    }
+  ],
+  "workflows": [
+    {
+      "case": "incident-deployment",
+      "actions": [
+        "diagnose",
+        "restart",
+        "patch",
+        "snapshot",
+        "deploy",
+        "audit",
+        "close"
+      ],
+      "turns": [
+        {
+          "available": [
+            "diagnose",
+            "snapshot",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"diagnose\"\n}",
+          "metrics": {
+            "request_seconds": 20.09,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 359,
+            "completion_tokens": 19,
+            "generation_tps": 3.061,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "snapshot",
+            "patch",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"restart\"\n}",
+          "metrics": {
+            "request_seconds": 7.51,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 367,
+            "completion_tokens": 17,
+            "generation_tps": 3.03,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "snapshot",
+            "patch"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"patch\"\n}",
+          "metrics": {
+            "request_seconds": 7.9,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 372,
+            "completion_tokens": 18,
+            "generation_tps": 3.031,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "snapshot"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"snapshot\"\n}",
+          "metrics": {
+            "request_seconds": 8.2,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 376,
+            "completion_tokens": 18,
+            "generation_tps": 3.032,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "deploy",
+            "audit"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"deploy\"\n}",
+          "metrics": {
+            "request_seconds": 8.19,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 386,
+            "completion_tokens": 18,
+            "generation_tps": 3.037,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "audit"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"audit\"\n}",
+          "metrics": {
+            "request_seconds": 8.6,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 391,
+            "completion_tokens": 18,
+            "generation_tps": 3.048,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "close"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"close\"\n}",
+          "metrics": {
+            "request_seconds": 9.01,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 398,
+            "completion_tokens": 17,
+            "generation_tps": 3.035,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        }
+      ],
+      "shortest_actions": 7,
+      "passed": true,
+      "extra_actions": 0
+    },
+    {
+      "case": "incident-workflow",
+      "actions": [
+        "diagnose",
+        "restart",
+        "close"
+      ],
+      "turns": [
+        {
+          "available": [
+            "diagnose"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"diagnose\"\n}",
+          "metrics": {
+            "request_seconds": 10.69,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 147,
+            "completion_tokens": 19,
+            "generation_tps": 3.108,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"restart\"\n}",
+          "metrics": {
+            "request_seconds": 6.44,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 153,
+            "completion_tokens": 17,
+            "generation_tps": 3.118,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "close"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"close\"\n}",
+          "metrics": {
+            "request_seconds": 6.96,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 161,
+            "completion_tokens": 17,
+            "generation_tps": 3.074,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        }
+      ],
+      "shortest_actions": 3,
+      "passed": true,
+      "extra_actions": 0
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2083.9,
+  "wall_seconds": 176.82
+}

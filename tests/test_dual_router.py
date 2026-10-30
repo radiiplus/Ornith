@@ -86,6 +86,15 @@ class DualRouterTests(unittest.TestCase):
                        'assumptions': [], 'done_when': 'E is checked as true or false'}
         self.assertEqual(objective_gate(question, restatement), restatement)
 
+    def test_gate_rejects_asserted_answer_as_definition_of_done(self):
+        question = ('A implies B, B implies C, C implies D, and D implies E. '
+                    'Either A or F is true, and F is false. Must E be true?')
+        with self.assertRaisesRegex(ValueError, 'resolve the original question'):
+            objective_gate(question, {
+                'objective': 'Must E be true?',
+                'subgoals': ['Follow the implications', 'Consider F being false'],
+                'assumptions': [], 'done_when': 'E is true'})
+
     def test_repair_schema_limits_edit_paths(self):
         provider = FakeProvider([{'hypothesis': 'wrong operator', 'expected': 'sum passes',
                                   'edits': [{'path': 'calc.py', 'old': 'a - b',

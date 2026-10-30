@@ -1,0 +1,44 @@
+{
+  "model": "Granite-4.0-H-1B",
+  "role": "execution",
+  "case": "tenant_reports",
+  "chat_template_kwargs": null,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 2,
+  "patch": "",
+  "detail": "Staging failed: Invalid or unapproved exact-text edit",
+  "passed": false,
+  "wall_seconds": 115.42,
+  "peak_rss_mib": 2290.6,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 3.11,
+      "request_seconds": 58.78,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 603,
+      "completion_tokens": 97,
+      "generation_tps": 3.107,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 53.11,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 581,
+      "completion_tokens": 87,
+      "generation_tps": 3.093,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 184,
+  "effective_tps": 1.594
+}

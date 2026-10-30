@@ -27,6 +27,17 @@ REVIEW_HINTS = {
 }
 
 
+def selected_cases(case, include_seed):
+    rows = load_cases(CHALLENGES)
+    if include_seed:
+        rows += [row for row in load_cases(SEED)
+                 if row.get('kind') == 'reasoning' and row.get('split') == 'eval']
+    selected = rows if case == 'all' else [row for row in rows if row['id'] == case]
+    if not selected:
+        raise ValueError('Selected case is absent; use --include-seed for held-out seed cases')
+    return selected
+
+
 def deadline_reached(_signum, _frame):
     raise RuntimeError('Stress-test deadline reached')
 
@@ -190,6 +201,8 @@ def main():
     parser.add_argument('--lora', type=Path, help='Optional GGUF LoRA adapter for a controlled comparison')
     parser.add_argument('--model-name', default='Ornith-1.5-9B')
     parser.add_argument('--quantization', default='IQ2_M')
+    parser.add_argument('--chat-template-kwargs', type=str,
+                        help='JSON object passed to llama.cpp chat template')
     parser.add_argument('--thinking', action='store_true')
     parser.add_argument('--constrained', action='store_true',
                         help='Request llama.cpp JSON-schema output grammar')
@@ -204,6 +217,9 @@ def main():
     parser.add_argument('--max-attempts', type=int, default=3)
     parser.add_argument('--brief-reasoning-tokens', type=int, default=0,
                         help='Cap small-model reasoning before a schema-constrained answer')
+    parser.add_argument('--max-output-tokens', type=int,
+                        help='Override the per-attempt generation budget')
+    parser.add_argument('--context-tokens', type=int, default=1024)
     parser.add_argument('--check-envelope', action='store_true')
     args = parser.parse_args()
     require_envelope()
@@ -214,13 +230,16 @@ def main():
         raise ValueError('max-attempts must be between 1 and 4')
     if not 0 <= args.brief_reasoning_tokens <= 128:
         raise ValueError('brief-reasoning-tokens must be between 0 and 128')
+    if args.max_output_tokens is not None and not 32 <= args.max_output_tokens <= 768:
+        raise ValueError('max-output-tokens must be between 32 and 768')
+    if args.context_tokens not in (1024, 2048):
+        raise ValueError('context-tokens must be 1024 or 2048')
+    template_kwargs = json.loads(args.chat_template_kwargs) if args.chat_template_kwargs else None
+    if template_kwargs is not None and (set(template_kwargs) != {'enable_thinking'} or
+                                        type(template_kwargs['enable_thinking']) is not bool):
+        raise ValueError('chat-template-kwargs must contain only boolean enable_thinking')
     signal.signal(signal.SIGTERM, deadline_reached)
-    cases = load_cases(CHALLENGES)
-    if args.include_seed:
-        cases += [row for row in load_cases(SEED)
-                  if row.get('kind') == 'reasoning' and row.get('split') == 'eval']
-    if args.case != 'all':
-        cases = [row for row in cases if row['id'] == args.case]
+    cases = selected_cases(args.case, args.include_seed)
     if args.tool_assisted and any(row['verifier']['kind'] != 'arithmetic' for row in cases):
         raise ValueError('Tool-assisted mode requires a quantitative --case')
     model = args.model_path.resolve(strict=True)
@@ -228,11 +247,13 @@ def main():
     with model.open('rb') as stream:
         os.posix_fadvise(stream.fileno(), 0, 0, os.POSIX_FADV_DONTNEED)
     port = free_port()
-    engine = LlamaCppAdapter(SERVER, model, 1024, 1, port, 'mmap',
+    engine = LlamaCppAdapter(SERVER, model, args.context_tokens, 1, port, 'mmap',
                              batch_size=128, ubatch_size=64, no_warmup=True,
                              request_timeout=420, fit='on', numa='isolate')
     if args.lora:
         engine.command += ['--lora', str(args.lora.resolve(strict=True))]
+    if template_kwargs is not None:
+        engine.command += ['--chat-template-kwargs', json.dumps(template_kwargs)]
     if args.model_name == 'Ornith-1.5-9B':
         engine.command += ['--chat-template-kwargs',
                            '{"enable_thinking":true}' if args.thinking else '{"enable_thinking":false}',
@@ -245,7 +266,8 @@ def main():
         engine.command += ['--reasoning-budget', '48']
     result = {'model': args.model_name, 'quantization': args.quantization,
               'lora': str(args.lora.resolve()) if args.lora else None,
-              'thinking': args.thinking, 'context_tokens': 1024,
+              'chat_template_kwargs': template_kwargs,
+              'thinking': args.thinking, 'context_tokens': args.context_tokens,
               'constrained': args.constrained,
               'brief_reasoning_tokens': args.brief_reasoning_tokens,
               'tool_assisted': args.tool_assisted,
@@ -280,7 +302,8 @@ def main():
 
             max_attempts = args.max_attempts if row['verifier']['kind'] == 'plan' else min(2, args.max_attempts)
             run_challenge(port, row, max_attempts,
-                          128 if args.thinking else (160 if args.model_name != 'Ornith-1.5-9B' else 72),
+                          args.max_output_tokens or (128 if args.thinking else
+                              (160 if args.model_name != 'Ornith-1.5-9B' else 72)),
                           args.constrained, args.tool_assisted, monitor, progress)
         result['status'] = 'completed'
     except Exception as exc:

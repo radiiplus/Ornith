@@ -1,0 +1,260 @@
+{
+  "model": "VibeThinker-1.5B",
+  "model_path": "/home/ec2-user/xing-specialist/models/vibethinker-1.5b-q4_k_m.gguf",
+  "chat_template_kwargs": null,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "objective_gates": [
+    {
+      "case": "six-fact-implication",
+      "format_valid": true,
+      "objective_fidelity": true,
+      "response": "{\n    \"objective\": \"A implies B, B implies C, C implies D, and D implies E. Either A or F is true, and F is false. Must E be true?\",\n    \"subgoals\": [\"A implies B\", \"B implies C', \" ],\"assumptions\": [],\n    \"done_when\": \"Must E be true?\"\n  }",
+      "metrics": {
+        "request_seconds": 37.68,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 129,
+        "completion_tokens": 102,
+        "generation_tps": 3.09,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "case": "converse-fallacy",
+      "format_valid": true,
+      "objective_fidelity": false,
+      "response": "{\n    \"objective\": \"Pass the tests for the application before deployment.\",\n    \"subgoals\": [\"Pass the unit tests\", \"Pass the integration tests\"],\n    \"assumptions\": [],\n    \"done_when\": \"After passing the tests, before deployment starts\"\n  }",
+      "metrics": {
+        "request_seconds": 26.81,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 113,
+        "completion_tokens": 81,
+        "generation_tps": 3.112,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      },
+      "feedback": "Restatement omitted key terms from the original objective"
+    },
+    {
+      "case": "tenant_reports",
+      "format_valid": true,
+      "objective_fidelity": false,
+      "response": "{\n    \"objective\": \"A user authorized for two tenants sees the first tenant report after switching to the second.\",\n    \"subgoals\": [\"tenant_switching_report\", \"find_and_repair\"],\n    \"assumptions\": [],\n    \"done_when\": \"after_reporting_and_repairing\"\n  }",
+      "metrics": {
+        "request_seconds": 28.81,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 118,
+        "completion_tokens": 87,
+        "generation_tps": 3.125,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      },
+      "feedback": "Definition of done does not match the original objective"
+    }
+  ],
+  "workflows": [
+    {
+      "case": "incident-deployment",
+      "actions": [
+        "diagnose",
+        "snapshot",
+        "patch",
+        "deploy",
+        "restart",
+        "audit",
+        "close"
+      ],
+      "turns": [
+        {
+          "available": [
+            "diagnose",
+            "snapshot",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"diagnose\"\n    }",
+          "metrics": {
+            "request_seconds": 25.48,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 384,
+            "completion_tokens": 34,
+            "generation_tps": 2.917,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "snapshot",
+            "patch",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"snapshot\"\n    }",
+          "metrics": {
+            "request_seconds": 12.6,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 392,
+            "completion_tokens": 30,
+            "generation_tps": 2.901,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "patch",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"patch\"\n  }",
+          "metrics": {
+            "request_seconds": 13.09,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 396,
+            "completion_tokens": 32,
+            "generation_tps": 2.928,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "deploy",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"deploy\"\n  }",
+          "metrics": {
+            "request_seconds": 14.63,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 403,
+            "completion_tokens": 35,
+            "generation_tps": 2.885,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "verify",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"restart\"\n  }",
+          "metrics": {
+            "request_seconds": 13.7,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 411,
+            "completion_tokens": 32,
+            "generation_tps": 2.925,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "audit"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"audit\"\n  }",
+          "metrics": {
+            "request_seconds": 15.5,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 416,
+            "completion_tokens": 37,
+            "generation_tps": 2.855,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "close"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"close\"\n    }",
+          "metrics": {
+            "request_seconds": 15.77,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 423,
+            "completion_tokens": 35,
+            "generation_tps": 2.887,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        }
+      ],
+      "shortest_actions": 7,
+      "passed": true,
+      "extra_actions": 0
+    },
+    {
+      "case": "incident-workflow",
+      "actions": [
+        "diagnose",
+        "restart",
+        "close"
+      ],
+      "turns": [
+        {
+          "available": [
+            "diagnose"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"diagnose\"\n    }",
+          "metrics": {
+            "request_seconds": 15.8,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 172,
+            "completion_tokens": 32,
+            "generation_tps": 2.955,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"restart\"\n    }",
+          "metrics": {
+            "request_seconds": 11.81,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 178,
+            "completion_tokens": 30,
+            "generation_tps": 2.902,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "close"
+          ],
+          "format_valid": true,
+          "response": "{\n    \"action\": \"close\"\n    }",
+          "metrics": {
+            "request_seconds": 13.2,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 186,
+            "completion_tokens": 34,
+            "generation_tps": 2.921,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        }
+      ],
+      "shortest_actions": 3,
+      "passed": true,
+      "extra_actions": 0
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2062.5,
+  "wall_seconds": 255.91
+}

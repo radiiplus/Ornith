@@ -127,6 +127,11 @@ def objective_gate(original, value):
     if qualifiers - core:
         raise ValueError('Restatement omitted a logical constraint')
     if '?' in original:
+        if not ('?' in item['done_when'] or re.search(
+                r'\b(?:answer\w*|assess\w*|check\w*|decid\w*|determin\w*|'
+                r'evaluat\w*|find|infer\w*|prov\w*|solv\w*|calculat\w*|whether)\b',
+                item['done_when'], re.IGNORECASE)):
+            raise ValueError('Definition of done must resolve the original question')
         question = original.rsplit('.', 1)[-1]
         question_terms = words(question) - {
             'what', 'which', 'must', 'does', 'have', 'true', 'false', 'the',

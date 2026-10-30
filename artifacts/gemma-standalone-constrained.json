@@ -1,0 +1,255 @@
+{
+  "model": "Gemma-3-1B-IT",
+  "quantization": "Q4_K_M",
+  "lora": null,
+  "chat_template_kwargs": null,
+  "thinking": false,
+  "context_tokens": 2048,
+  "constrained": true,
+  "brief_reasoning_tokens": 0,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "staggered-pumps",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": ":[",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Invalid literal for Fraction: ':['. Compute the first two hours and final hour separately, then add them",
+          "content": "{\n  \"answer\": \":[\"\n    \t  \t \t \t \t \t \t \t}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 17.78,
+          "usage": {
+            "completion_tokens": 50,
+            "prompt_tokens": 130,
+            "total_tokens": 180,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 4.056598657928146
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "six-fact-implication",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "not_entailed",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Logic answer does not match the truth table",
+          "content": "{\"answer\":\"not_entailed\"}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 8.1,
+          "usage": {
+            "completion_tokens": 9,
+            "prompt_tokens": 144,
+            "total_tokens": 153,
+            "prompt_tokens_details": {
+              "cached_tokens": 1
+            }
+          },
+          "generation_tps": 4.282517692151216
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-deployment",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "verify",
+            "patch",
+            "deploy",
+            "audit",
+            "close"
+          ],
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Plan violates an action precondition",
+          "content": "{\n  \"answer\": [\n    \"verify\",\n    \"patch\",\n    \"deploy\",\n    \"audit\",\n    \"close\"\n  ]\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 24.03,
+          "usage": {
+            "completion_tokens": 43,
+            "prompt_tokens": 338,
+            "total_tokens": 381,
+            "prompt_tokens_details": {
+              "cached_tokens": 1
+            }
+          },
+          "generation_tps": 4.413669259802444
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "]), ",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Invalid literal for Fraction: ']), '. Enumerate allowed engineer/designer splits, then subtract committees containing both incompatible people",
+          "content": "{\n  \"answer\": \"]), \"\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 8.49,
+          "usage": {
+            "completion_tokens": 17,
+            "prompt_tokens": 104,
+            "total_tokens": 121,
+            "prompt_tokens_details": {
+              "cached_tokens": 1
+            }
+          },
+          "generation_tps": 4.101333702453366
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "price-discount",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": ".45",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect",
+          "content": "{\n  \"answer\": \".45\"\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 6.38,
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 80,
+            "total_tokens": 99,
+            "prompt_tokens_details": {
+              "cached_tokens": 35
+            }
+          },
+          "generation_tps": 4.324785634792036
+        }
+      ],
+      "passed": false
+    },
+    {
+      "id": "incident-workflow",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "diagnose",
+            "restart",
+            "close"
+          ],
+          "normalized_answer": [
+            "diagnose",
+            "restart",
+            "close"
+          ],
+          "passed": true,
+          "semantic_passed": true,
+          "format_valid": true,
+          "feedback": "Objective reached",
+          "content": "{\n  \"answer\": [\n    \"diagnose\",\n    \"restart\",\n    \"close\"\n  ]\n}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 13.1,
+          "usage": {
+            "completion_tokens": 34,
+            "prompt_tokens": 161,
+            "total_tokens": 195,
+            "prompt_tokens_details": {
+              "cached_tokens": 34
+            }
+          },
+          "generation_tps": 4.355291481181841
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "converse-fallacy",
+      "domain": "logic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "entailed",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Logic answer does not match the truth table",
+          "content": "{\"answer\":\"entailed\"}",
+          "reasoning_chars": 0,
+          "finish_reason": "stop",
+          "seconds": 5.81,
+          "usage": {
+            "completion_tokens": 7,
+            "prompt_tokens": 100,
+            "total_tokens": 107,
+            "prompt_tokens_details": {
+              "cached_tokens": 1
+            }
+          },
+          "generation_tps": 4.032721502269414
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 1560.4,
+  "peak_anonymous_mib": 759.1,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6153.6,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "1.26.195.872 I slot print_timing: id  0 | task 155 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "1.26.195.913 I slot      release: id  0 | task 155 | stop processing: n_tokens = 194, truncated = 0",
+    "1.26.199.227 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.350 (> 0.100 thold), f_keep = 0.180",
+    "1.26.202.505 I slot launch_slot_: id  0 | task 192 | processing task, is_child = 0",
+    "1.30.197.812 I slot print_timing: id  0 | task 192 | prompt processing, n_tokens =     95, progress = 0.96, t =   4.00 s / 23.78 tokens per second",
+    "1.32.007.887 I slot print_timing: id  0 | task 192 | prompt eval time =    4317.48 ms /    99 tokens (   43.61 ms per token,    22.93 tokens per second)",
+    "1.32.007.900 I slot print_timing: id  0 | task 192 |        eval time =    1487.83 ms /     7 tokens (  247.97 ms per token,     4.03 tokens per second)",
+    "1.32.007.902 I slot print_timing: id  0 | task 192 |       total time =    5805.31 ms /   106 tokens",
+    "1.32.007.903 I slot print_timing: id  0 | task 192 |    graphs reused =        167",
+    "1.32.007.904 I slot print_timing: id  0 | task 192 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "1.32.008.207 I slot      release: id  0 | task 192 | stop processing: n_tokens = 106, truncated = 0",
+    "1.32.010.016 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

@@ -5,10 +5,16 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from prepare_verified_repairs import load_cases
-from stress_ornith_reasoning import assess_response, normalize_answer, prompt_for, schema_for, score_answer
+from stress_ornith_reasoning import (assess_response, normalize_answer, prompt_for,
+                                    schema_for, score_answer, selected_cases)
 
 
 class OrnithStressTests(unittest.TestCase):
+    def test_seed_case_requires_seed_selection(self):
+        with self.assertRaisesRegex(ValueError, 'include-seed'):
+            selected_cases('converse-fallacy', False)
+        self.assertEqual([row['id'] for row in selected_cases('converse-fallacy', True)],
+                         ['converse-fallacy'])
     def setUp(self):
         self.cases = load_cases(ROOT / 'experiments/verified-reasoning/challenges.jsonl')
 

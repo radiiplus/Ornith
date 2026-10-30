@@ -8,6 +8,9 @@ below document the previous 9B baseline.
 The corrected local suite passed 4/9 cases; a small-data LoRA pilot is
 documented separately in [the training report](docs/lora-pilot.md) and is not
 enabled in the router.
+The [independent candidate evaluation](docs/small-model-candidate-evaluation.md)
+compares Qwen3, Granite, and Gemma against those baselines; Youtu currently
+cannot run on this host's llama.cpp CPU backend.
 
 For a new host or coding-agent session, start with [the handoff](docs/new-instance-handoff.md).
 

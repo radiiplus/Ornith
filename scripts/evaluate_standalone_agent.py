@@ -42,15 +42,25 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--role', choices=MODELS, required=True)
     parser.add_argument('--case', choices=CASES, required=True)
+    parser.add_argument('--model-path', type=Path)
+    parser.add_argument('--model-name')
+    parser.add_argument('--chat-template-kwargs', type=str)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     require_small_model_envelope()
+    template_kwargs = (json.loads(args.chat_template_kwargs)
+                       if args.chat_template_kwargs else None)
+    if template_kwargs is not None and (set(template_kwargs) != {'enable_thinking'} or
+                                        type(template_kwargs['enable_thinking']) is not bool):
+        parser.error('chat-template-kwargs must contain only boolean enable_thinking')
+    model_path = args.model_path.resolve(strict=True) if args.model_path else MODELS[args.role]
     case = CASES[args.case]
     state = Path(tempfile.mkdtemp(prefix='xing-standalone-'))
     store = MemoryStore(state / 'memory.sqlite3')
-    provider = SwappingModelProvider()
+    provider = SwappingModelProvider({args.role: model_path}, template_kwargs)
     started = time.monotonic()
-    result = {'model': MODELS[args.role].name, 'role': args.role, 'case': args.case,
+    result = {'model': args.model_name or model_path.name, 'role': args.role,
+              'case': args.case, 'chat_template_kwargs': template_kwargs,
               'cpu_quota': '50%', 'memory_high': '4G', 'memory_max': '6G',
               'swap_max': '19G'}
     try:

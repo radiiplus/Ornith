@@ -1,0 +1,35 @@
+{
+  "model": "Qwen3-1.7B",
+  "role": "execution",
+  "case": "repair-demo",
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 1,
+  "patch": "[{\"new\": \"return a + b\", \"old\": \"return a - b\", \"path\": \"calc.py\"}]",
+  "detail": "Patch tested in staging only",
+  "passed": true,
+  "wall_seconds": 46.49,
+  "peak_rss_mib": 2358.5,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 4.0,
+      "request_seconds": 42.1,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 297,
+      "completion_tokens": 76,
+      "generation_tps": 2.571,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 76,
+  "effective_tps": 1.635
+}

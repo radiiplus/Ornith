@@ -1,0 +1,72 @@
+{
+  "model": "Qwen3-1.7B",
+  "quantization": "Q4_K_M",
+  "lora": null,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "thinking": false,
+  "context_tokens": 2048,
+  "constrained": true,
+  "brief_reasoning_tokens": 96,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "incident-workflow",
+      "domain": "plan",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": [
+            "diagnose",
+            "restart"
+          ],
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Plan does not reach its goal",
+          "content": "{\"answer\":[\"diagnose\",\"restart\"]}",
+          "reasoning_chars": 442,
+          "finish_reason": "stop",
+          "seconds": 45.88,
+          "usage": {
+            "completion_tokens": 109,
+            "prompt_tokens": 153,
+            "total_tokens": 262,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 2.7344935857135875
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2358.7,
+  "peak_anonymous_mib": 1352.7,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 5553.3,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "0.12.607.614 I srv  llama_server: listening on http://127.0.0.1:35911",
+    "0.12.697.203 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1",
+    "0.12.697.418 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0",
+    "0.17.768.563 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    128, progress = 0.84, t =   5.07 s / 25.24 tokens per second",
+    "0.55.201.047 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =   2.74 t/s, tg_3s =   2.77 t/s",
+    "0.58.575.082 I slot print_timing: id  0 | task 0 | prompt eval time =    6382.19 ms /   153 tokens (   41.71 ms per token,    23.97 tokens per second)",
+    "0.58.575.088 I slot print_timing: id  0 | task 0 |        eval time =   39495.43 ms /   109 tokens (  365.70 ms per token,     2.73 tokens per second)",
+    "0.58.575.089 I slot print_timing: id  0 | task 0 |       total time =   45877.62 ms /   262 tokens",
+    "0.58.575.095 I slot print_timing: id  0 | task 0 |    graphs reused =        107",
+    "0.58.575.096 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "0.58.575.173 I slot      release: id  0 | task 0 | stop processing: n_tokens = 261, truncated = 0",
+    "0.58.576.986 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

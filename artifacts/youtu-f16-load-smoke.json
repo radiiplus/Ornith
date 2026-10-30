@@ -1,0 +1,40 @@
+{
+  "model": "Youtu-LLM-2B",
+  "quantization": "F16",
+  "lora": null,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "thinking": false,
+  "context_tokens": 2048,
+  "constrained": true,
+  "brief_reasoning_tokens": 0,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [],
+  "status": "failed",
+  "error": "timed out",
+  "peak_rss_mib": 56.3,
+  "peak_anonymous_mib": 40.3,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 6714.1,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama.so.0(llama_init_from_model+0x3d3)[0x7fc982a2a443]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-common.so.0(+0x27dd66)[0x7fc98307dd66]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-common.so.0(+0x27f203)[0x7fc98307f203]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-common.so.0(_Z17common_fit_paramsPKcP18llama_model_paramsP20llama_context_paramsPfP32llama_model_tensor_buft_overridePmjPK22common_fit_extra_model14ggml_log_level+0x55)[0x7fc983082eb5]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-common.so.0(_ZN18common_init_resultC2ER13common_paramsb+0x2db)[0x7fc9830522fb]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-common.so.0(_Z23common_init_from_paramsR13common_paramsb+0x39)[0x7fc983053b49]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-server-impl.so(_ZN19server_context_impl10load_modelER13common_params+0x6bc)[0x7fc9835a5c3c]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-server-impl.so(_Z12llama_serverR13common_paramsiPPcR12server_child+0x476d)[0x7fc9834d4d2d]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/libllama-server-impl.so(_Z12llama_serveriPPc+0xfa)[0x7fc9834d615a]",
+    "/lib64/libc.so.6(+0x2a610)[0x7fc981c2a610]",
+    "/lib64/libc.so.6(__libc_start_main+0x80)[0x7fc981c2a6c0]",
+    "/home/ec2-user/xing-specialist/vendor/llama.cpp/build/bin/llama-server[0x401075]"
+  ]
+}

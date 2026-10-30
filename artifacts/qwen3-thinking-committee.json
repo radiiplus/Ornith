@@ -1,0 +1,69 @@
+{
+  "model": "Qwen3-1.7B",
+  "quantization": "Q4_K_M",
+  "lora": null,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "thinking": false,
+  "context_tokens": 2048,
+  "constrained": true,
+  "brief_reasoning_tokens": 96,
+  "tool_assisted": false,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "cases": [
+    {
+      "id": "committee-count",
+      "domain": "arithmetic",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "120",
+          "normalized_answer": null,
+          "passed": false,
+          "semantic_passed": false,
+          "format_valid": true,
+          "feedback": "Numeric answer is incorrect. Enumerate allowed engineer/designer splits, then subtract committees containing both incompatible people",
+          "content": "{\"answer\": \"120\"}",
+          "reasoning_chars": 483,
+          "finish_reason": "stop",
+          "seconds": 42.82,
+          "usage": {
+            "completion_tokens": 108,
+            "prompt_tokens": 106,
+            "total_tokens": 214,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_tps": 2.8003816265862262
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2366.2,
+  "peak_anonymous_mib": 1384.4,
+  "peak_process_swap_mib": 0.0,
+  "min_available_ram_mib": 5533.5,
+  "peak_cgroup_memory_full_avg10": 0,
+  "quality_passed": false,
+  "engine_log_tail": [
+    "0.12.682.320 I srv  llama_server: model loaded",
+    "0.12.682.329 I srv  llama_server: listening on http://127.0.0.1:53999",
+    "0.12.773.916 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1",
+    "0.12.774.147 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0",
+    "0.52.702.641 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =   2.80 t/s, tg_3s =   2.83 t/s",
+    "0.55.585.661 I slot print_timing: id  0 | task 0 | prompt eval time =    4602.39 ms /   106 tokens (   43.42 ms per token,    23.03 tokens per second)",
+    "0.55.585.667 I slot print_timing: id  0 | task 0 |        eval time =   38209.08 ms /   108 tokens (  357.09 ms per token,     2.80 tokens per second)",
+    "0.55.585.668 I slot print_timing: id  0 | task 0 |       total time =   42811.47 ms /   214 tokens",
+    "0.55.585.674 I slot print_timing: id  0 | task 0 |    graphs reused =        106",
+    "0.55.585.674 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)",
+    "0.55.585.725 I slot      release: id  0 | task 0 | stop processing: n_tokens = 213, truncated = 0",
+    "0.55.587.448 I srv    operator(): operator(): cleaning up before exit..."
+  ]
+}

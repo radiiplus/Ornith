@@ -1,0 +1,44 @@
+{
+  "model": "Gemma-3-1B-IT",
+  "role": "execution",
+  "case": "tenant_reports",
+  "chat_template_kwargs": null,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 2,
+  "patch": "",
+  "detail": "Staging failed: Invalid or unapproved exact-text edit",
+  "passed": false,
+  "wall_seconds": 105.04,
+  "peak_rss_mib": 1501.1,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 3.18,
+      "request_seconds": 53.01,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 712,
+      "completion_tokens": 100,
+      "generation_tps": 4.399,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 48.59,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 472,
+      "completion_tokens": 124,
+      "generation_tps": 4.332,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 224,
+  "effective_tps": 2.133
+}

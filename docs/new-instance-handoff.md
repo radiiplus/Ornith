@@ -88,3 +88,12 @@ runner uses the latter setting with the same 4/6 GiB RAM and 19 GiB swap
 bounds. The larger host should remeasure thread count and quota rather than
 reuse the two-vCPU optimum. SQLite task memory is local state and is not
 included in Git; committed artifacts are the portable evaluation record.
+
+The next independent candidate pass is recorded in
+`docs/small-model-candidate-evaluation.md`. Qwen3-1.7B Q4_K_M and Granite
+4.0 H-1B each passed 4/7 checked reasoning cases; Gemma 3 1B passed 1/7.
+All three passed the small repair demo but failed tenant isolation. The
+existing router remains on VibeThinker and DeepSeek until objective fidelity
+and a larger unseen set justify a change. Youtu-LLM-2B has no quality score:
+the current llama.cpp CPU backend cannot execute its MLA graph. Candidate
+GGUFs are not in Git; the report records pinned sources and SHA-256 hashes.

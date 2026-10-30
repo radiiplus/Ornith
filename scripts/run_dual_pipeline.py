@@ -36,8 +36,10 @@ def deadline_reached(_signum, _frame):
 
 
 class SwappingModelProvider:
-    def __init__(self):
+    def __init__(self, models=None, chat_template_kwargs=None):
         self.role = None
+        self.models = models or MODELS
+        self.chat_template_kwargs = chat_template_kwargs
         self.engine = None
         self.monitor = None
         self.port = None
@@ -60,13 +62,16 @@ class SwappingModelProvider:
         if role == self.role:
             return 0.0
         self.close()
-        model = MODELS[role]
+        model = self.models[role]
         preflight(model, 0)
         self.port = free_port()
         self.engine = LlamaCppAdapter(SERVER, model, 2048, 1, self.port, 'mmap',
                                       batch_size=128, ubatch_size=64, no_warmup=True,
                                       request_timeout=180, fit='on')
         self.engine.command += ['--reasoning', 'off']
+        if self.chat_template_kwargs is not None:
+            self.engine.command += ['--chat-template-kwargs',
+                                    json.dumps(self.chat_template_kwargs)]
         if role == 'execution':
             self.engine.command += ['--reasoning-budget', '0']
         started = time.monotonic()

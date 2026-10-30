@@ -1,0 +1,33 @@
+{
+  "model": "Gemma-3-1B-IT",
+  "role": "execution",
+  "case": "repair-demo",
+  "chat_template_kwargs": null,
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 1,
+  "patch": "[{\"new\": \"return a + b\", \"old\": \"return a - b\", \"path\": \"calc.py\"}]",
+  "detail": "Patch tested in staging only",
+  "passed": true,
+  "wall_seconds": 38.42,
+  "peak_rss_mib": 1529.8,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 3.21,
+      "request_seconds": 34.8,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 322,
+      "completion_tokens": 94,
+      "generation_tps": 4.392,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 94,
+  "effective_tps": 2.447
+}

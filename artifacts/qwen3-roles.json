@@ -1,0 +1,262 @@
+{
+  "model": "Qwen3-1.7B",
+  "model_path": "/home/ec2-user/xing-specialist/models/qwen3-1.7b-q4_k_m.gguf",
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "objective_gates": [
+    {
+      "case": "six-fact-implication",
+      "format_valid": true,
+      "objective_fidelity": false,
+      "response": "{\n  \"objective\": \"Must E be true?\",\n  \"subgoals\": [\"A implies B\", \"B implies C', \"],\n  \"assumptions\": [],\n  \"done_when\": \"E is true\"\n}",
+      "metrics": {
+        "request_seconds": 22.51,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 113,
+        "completion_tokens": 47,
+        "generation_tps": 2.616,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      },
+      "feedback": "Definition of done must resolve the original question"
+    },
+    {
+      "case": "converse-fallacy",
+      "format_valid": true,
+      "objective_fidelity": false,
+      "response": "{\n  \"objective\": \"Must it have passed tests?\",\n  \"subgoals\": [\"Passing tests is sufficient for deployment\", \"A build was deployed\"],\n  \"assumptions\": [],\n  \"done_when\": \"A build was deployed\"\n}",
+      "metrics": {
+        "request_seconds": 20.49,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 97,
+        "completion_tokens": 52,
+        "generation_tps": 2.701,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      },
+      "feedback": "Restatement omitted a logical constraint"
+    },
+    {
+      "case": "tenant_reports",
+      "format_valid": true,
+      "objective_fidelity": true,
+      "response": "{\n  \"objective\": \"A user authorized for two tenants sees the first tenant report after switching to the second. Find and repair the cause.\",\n  \"subgoals\": [\"Verify the user's authorization status for both tenants\", \"Check the behavior of the report when switching tenants\"],\n  \"assumptions\": [],\n  \"done_when\": \"The user sees the first tenant report after switching to the second tenant, and the issue is resolved.\"\n}",
+      "metrics": {
+        "request_seconds": 35.03,
+        "time_to_first_chunk_seconds": null,
+        "prompt_tokens": 102,
+        "completion_tokens": 91,
+        "generation_tps": 2.685,
+        "reasoning_chars": 0,
+        "finish_reason": "stop"
+      }
+    }
+  ],
+  "workflows": [
+    {
+      "case": "incident-deployment",
+      "actions": [
+        "diagnose",
+        "patch",
+        "snapshot",
+        "deploy",
+        "verify",
+        "audit",
+        "close"
+      ],
+      "turns": [
+        {
+          "available": [
+            "diagnose",
+            "snapshot",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"diagnose\"\n}",
+          "metrics": {
+            "request_seconds": 20.79,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 368,
+            "completion_tokens": 12,
+            "generation_tps": 2.543,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "snapshot",
+            "patch",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"patch\"\n}",
+          "metrics": {
+            "request_seconds": 6.69,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 376,
+            "completion_tokens": 10,
+            "generation_tps": 2.555,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "snapshot",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"snapshot\"\n}",
+          "metrics": {
+            "request_seconds": 6.8,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 380,
+            "completion_tokens": 10,
+            "generation_tps": 2.504,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "deploy",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"deploy\"\n}",
+          "metrics": {
+            "request_seconds": 6.8,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 387,
+            "completion_tokens": 10,
+            "generation_tps": 2.505,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "verify",
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"verify\"\n}",
+          "metrics": {
+            "request_seconds": 7.31,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 395,
+            "completion_tokens": 10,
+            "generation_tps": 2.501,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "audit"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"audit\"\n}",
+          "metrics": {
+            "request_seconds": 7.07,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 400,
+            "completion_tokens": 10,
+            "generation_tps": 2.5,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "close"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"close\"\n}",
+          "metrics": {
+            "request_seconds": 8.3,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 407,
+            "completion_tokens": 10,
+            "generation_tps": 2.503,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        }
+      ],
+      "shortest_actions": 7,
+      "passed": true,
+      "extra_actions": 0
+    },
+    {
+      "case": "incident-workflow",
+      "actions": [
+        "diagnose",
+        "restart",
+        "close"
+      ],
+      "turns": [
+        {
+          "available": [
+            "diagnose"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"diagnose\"\n}",
+          "metrics": {
+            "request_seconds": 10.11,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 156,
+            "completion_tokens": 12,
+            "generation_tps": 2.694,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "restart"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"restart\"\n}",
+          "metrics": {
+            "request_seconds": 5.5,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 162,
+            "completion_tokens": 10,
+            "generation_tps": 2.715,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        },
+        {
+          "available": [
+            "close"
+          ],
+          "format_valid": true,
+          "response": "{\n  \"action\": \"close\"\n}",
+          "metrics": {
+            "request_seconds": 5.62,
+            "time_to_first_chunk_seconds": null,
+            "prompt_tokens": 170,
+            "completion_tokens": 10,
+            "generation_tps": 2.7,
+            "reasoning_chars": 0,
+            "finish_reason": "stop"
+          }
+        }
+      ],
+      "shortest_actions": 3,
+      "passed": true,
+      "extra_actions": 0
+    }
+  ],
+  "status": "completed",
+  "peak_rss_mib": 2464.6,
+  "wall_seconds": 167.47
+}

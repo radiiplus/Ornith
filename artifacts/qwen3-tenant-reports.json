@@ -1,0 +1,46 @@
+{
+  "model": "Qwen3-1.7B",
+  "role": "execution",
+  "case": "tenant_reports",
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "cpu_quota": "50%",
+  "memory_high": "4G",
+  "memory_max": "6G",
+  "swap_max": "19G",
+  "task_id": 1,
+  "status": "completed",
+  "attempts": 2,
+  "patch": "",
+  "detail": "Repeated failed change without new evidence",
+  "passed": false,
+  "wall_seconds": 118.61,
+  "peak_rss_mib": 2411.7,
+  "model_events": [
+    {
+      "role": "execution",
+      "load_seconds": 4.19,
+      "request_seconds": 68.48,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 610,
+      "completion_tokens": 94,
+      "generation_tps": 2.291,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "role": "execution",
+      "load_seconds": 0.0,
+      "request_seconds": 45.6,
+      "time_to_first_chunk_seconds": null,
+      "prompt_tokens": 420,
+      "completion_tokens": 94,
+      "generation_tps": 2.429,
+      "reasoning_chars": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "generated_tokens": 188,
+  "effective_tps": 1.585
+}
